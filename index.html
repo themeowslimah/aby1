@@ -738,6 +738,187 @@ body {
   .unit-btn .btn-english { font-size: 0.62rem; }
   .lesson-nav { padding: 1rem; }
 }
+/* ——— CREATOR BAR ——— */
+.creator-bar {
+  background: var(--sand-100);
+  border-bottom: 1px solid var(--sand-200);
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--ink-light);
+}
+.creator-bar .creator-name {
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+.creator-bar .creator-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.creator-bar .creator-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: var(--ink-muted);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+.creator-bar .creator-links a:hover {
+  background: rgba(26,107,90,0.08);
+  color: var(--teal-dark);
+}
+.creator-bar .bmc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #ffdd00;
+  color: #1a1a1a !important;
+  font-weight: 600;
+  font-size: 0.73rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.creator-bar .bmc-link:hover {
+  background: #ffca00;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.creator-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--sand-300);
+  margin: 0 0.2rem;
+}
+@media (max-width: 600px) {
+  .creator-bar { padding: 0.6rem 1rem; gap: 0.4rem; }
+  .creator-bar .tagline { display: none; }
+}
+/* ——— PRACTICE SECTION ——— */
+.practice-mode-bar {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.mode-btn {
+  padding: 0.55rem 1.1rem; border-radius: 25px; border: 2px solid var(--sand-200);
+  background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+  font-weight: 600; color: var(--ink-light); cursor: pointer; transition: all 0.25s;
+  white-space: nowrap;
+}
+.mode-btn:hover { border-color: var(--teal); color: var(--teal-dark); background: rgba(26,107,90,0.04); }
+.mode-btn.active { background: var(--teal); color: var(--white); border-color: var(--teal); box-shadow: 0 2px 8px rgba(26,107,90,0.25); }
+
+.practice-card {
+  background: var(--white); border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem; margin: 1.2rem 0; text-align: center; min-height: 300px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.practice-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+}
+.practice-card .prompt-label {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--teal); margin-bottom: 1rem; font-weight: 600;
+  background: rgba(26,107,90,0.06); padding: 0.3rem 1rem; border-radius: 20px;
+}
+.practice-card .big-arabic {
+  font-family: 'Amiri', serif; font-size: 2.8rem; direction: rtl;
+  color: var(--ink); margin-bottom: 0.6rem; line-height: 1.6;
+}
+.practice-card .reveal-area {
+  min-height: 65px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; margin: 0.6rem 0;
+}
+.practice-card .transliteration-answer {
+  font-family: 'Source Serif 4', serif; font-style: italic;
+  font-size: 1.2rem; color: var(--gold-dark);
+}
+.practice-card .english-answer {
+  font-size: 1.05rem; color: var(--ink-light); margin-top: 0.25rem; font-weight: 500;
+}
+.practice-card .unit-badge {
+  position: absolute; top: 1rem; right: 1rem; font-size: 0.65rem;
+  background: var(--sand-100); color: var(--ink-muted); padding: 0.2rem 0.6rem;
+  border-radius: 10px; font-weight: 600;
+}
+
+.practice-btn {
+  padding: 0.75rem 2rem; border-radius: 12px; border: none;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; margin: 0.3rem;
+}
+.practice-btn.primary { background: var(--teal); color: var(--white); box-shadow: 0 2px 8px rgba(26,107,90,0.3); }
+.practice-btn.primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.practice-btn.secondary { background: var(--sand-100); color: var(--ink-light); }
+.practice-btn.secondary:hover { background: var(--sand-200); }
+.practice-btn.success { background: var(--green-accent); color: var(--white); }
+.practice-btn.success:hover { opacity: 0.9; }
+.practice-btn.danger { background: var(--red-accent); color: var(--white); opacity: 0.8; }
+
+.mc-options {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem;
+  width: 100%; max-width: 520px; margin: 1.2rem 0;
+}
+.mc-option {
+  padding: 1rem 1.1rem; border-radius: 14px; border: 2px solid var(--sand-200);
+  background: var(--white); cursor: pointer; transition: all 0.25s; text-align: center;
+  font-size: 1rem; position: relative;
+}
+.mc-option.ar-text { font-family: 'Amiri', serif; font-size: 1.3rem; direction: rtl; }
+.mc-option:hover { border-color: var(--teal); background: rgba(26,107,90,0.03); transform: translateY(-2px); box-shadow: 0 3px 10px rgba(0,0,0,0.06); }
+.mc-option.correct { border-color: var(--green-accent); background: rgba(42,122,58,0.1); color: var(--green-accent); font-weight: 700; }
+.mc-option.correct::after { content: '✓'; position: absolute; top: 0.5rem; right: 0.7rem; font-size: 0.9rem; }
+.mc-option.wrong { border-color: var(--red-accent); background: rgba(184,50,50,0.07); color: var(--red-accent); }
+.mc-option.wrong::after { content: '✗'; position: absolute; top: 0.5rem; right: 0.7rem; font-size: 0.9rem; }
+.mc-option.disabled { pointer-events: none; opacity: 0.5; }
+
+.fill-input {
+  font-family: 'Amiri', serif; font-size: 1.5rem; direction: rtl; text-align: center;
+  padding: 0.8rem 1.4rem; border: 2px solid var(--sand-200); border-radius: 14px;
+  background: var(--sand-50); width: 300px; max-width: 90%; outline: none;
+  transition: all 0.3s;
+}
+.fill-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(26,107,90,0.1); background: var(--white); }
+.fill-input.correct { border-color: var(--green-accent); background: rgba(42,122,58,0.06); box-shadow: 0 0 0 3px rgba(42,122,58,0.1); }
+.fill-input.wrong { border-color: var(--red-accent); background: rgba(184,50,50,0.04); box-shadow: 0 0 0 3px rgba(184,50,50,0.08); }
+
+.score-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--white); border-radius: 14px; padding: 0.9rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 0.5rem;
+}
+.score-bar .score-text { font-weight: 700; color: var(--teal-dark); font-size: 0.95rem; }
+.score-bar .progress-wrap { flex: 1; margin: 0 1rem; height: 8px; background: var(--sand-200); border-radius: 4px; overflow: hidden; }
+.score-bar .progress-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--gold)); border-radius: 4px; transition: width 0.5s ease; }
+.score-bar .counter { font-size: 0.82rem; color: var(--ink-muted); font-weight: 500; }
+
+.unit-filter-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.uf-btn {
+  padding: 0.35rem 0.8rem; border-radius: 20px; border: 1.5px solid var(--sand-200);
+  background: var(--white); font-size: 0.78rem; cursor: pointer; transition: all 0.2s;
+  color: var(--ink-muted); font-weight: 500;
+}
+.uf-btn:hover { border-color: var(--gold); color: var(--gold-dark); }
+.uf-btn.active { background: var(--gold); color: var(--white); border-color: var(--gold); box-shadow: 0 1px 4px rgba(197,148,42,0.3); }
+
+@media (max-width: 600px) {
+  .practice-card { padding: 2rem 1.2rem; min-height: 260px; }
+  .practice-card .big-arabic { font-size: 2.1rem; }
+  .mc-options { grid-template-columns: 1fr; }
+  .mode-btn { font-size: 0.75rem; padding: 0.45rem 0.8rem; }
+  .fill-input { width: 100%; }
+}
 </style>
 </head>
 <body>
@@ -748,6 +929,19 @@ body {
   <p class="subtitle">Al-ʿArabiyyah Bayna Yadayk — Arabic Between Your Hands</p>
   <p class="book-info">Book 1 · Student's Book · Part 1 · Units 1–8</p>
 </header>
+
+<!-- ========== CREATOR BAR ========== -->
+<div class="creator-bar">
+  <span>Made interactive by <span class="creator-name">themeowslimah</span></span>
+  <span class="tagline" style="opacity:0.6">— free for the ummah, always.</span>
+  <span class="creator-sep"></span>
+  <div class="creator-links">
+    <a href="https://www.instagram.com/themeowslimah" target="_blank">📸 IG</a>
+    <a href="https://www.facebook.com/themeowslimah" target="_blank">📘 FB</a>
+    <a href="https://www.threads.net/@themeowslimah" target="_blank">🧵 Threads</a>
+  </div>
+  <a href="https://buymeacoffee.com/themeowslimah" target="_blank" class="bmc-link">☕ Buy me a coffee</a>
+</div>
 
 <!-- ========== STICKY UNIT NAV ========== -->
 <nav class="unit-nav-wrapper">
@@ -783,6 +977,10 @@ body {
     <button class="unit-btn" onclick="showUnit(8)">
       <span class="btn-arabic">العَمَل</span>
       <span class="btn-english">8 · Work</span>
+    </button>
+    <button class="unit-btn" onclick="showUnit(9)" style="border-left:1px solid rgba(255,255,255,0.15)">
+      <span class="btn-arabic" style="color:#f0c040">✎ تَدْريب</span>
+      <span class="btn-english">Practice</span>
     </button>
   </div>
 </nav>
@@ -3091,32 +3289,295 @@ body {
   </div></div><!-- /unit-8 -->
 
 
+<!-- ██████████████████████████████████████████████████
+     ██  PRACTICE PANEL
+     ██████████████████████████████████████████████████ -->
+<div class="unit-panel" id="unit-9">
+  <section class="unit-header" style="background: linear-gradient(135deg, #0f4f42, #1a6b5a);">
+    <p class="unit-number">✎ تَدْريبات — Practice</p>
+    <h2>تَدْريبات تَفاعُلِيَّة</h2>
+    <p class="transliteration">Tadrībāt Tafāʿuliyya</p>
+    <p class="translation">Interactive Exercises — All Units</p>
+  </section>
+  <div class="container" style="padding-top:1.5rem;padding-bottom:3rem">
+
+    <!-- Unit Filter -->
+    <div style="margin-bottom:1.2rem">
+      <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);margin-bottom:0.5rem;font-weight:600">Filter by Unit</p>
+      <div class="unit-filter-bar" id="unitFilter"></div>
+    </div>
+
+    <!-- Mode Selector -->
+    <div style="margin-bottom:1.2rem">
+      <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);margin-bottom:0.5rem;font-weight:600">Exercise Type</p>
+      <div class="practice-mode-bar" id="modeBar"></div>
+    </div>
+
+    <!-- Score -->
+    <div class="score-bar" id="scoreBar">
+      <span class="score-text" id="scoreText">Score: 0</span>
+      <div class="progress-wrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <span class="counter" id="counterText">0 / 0</span>
+    </div>
+
+    <!-- Practice Card Area -->
+    <div id="practiceArea">
+      <div class="practice-card">
+        <p style="color:var(--ink-muted)">Loading practice...</p>
+      </div>
+    </div>
+
+    <!-- Reset -->
+    <div style="text-align:center;margin-top:1rem">
+      <button class="practice-btn secondary" onclick="resetDeck()" style="font-size:0.8rem">↻ Shuffle &amp; Reset</button>
+    </div>
+
+  </div>
+</div>
+
 <!-- ========== BACK TO TOP ========== -->
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <footer class="footer">
   <p>العربيّة بين يديك — Al-Arabiyyah Bayna Yadayk · Book 1, Units 1–8</p>
   <p style="margin-top:0.3rem; opacity:0.7;">Complete study companion with transliteration &amp; translation</p>
+  <div style="margin-top:1.2rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.1);">
+    <p style="font-size:0.85rem; opacity:0.9;">Made interactive by <strong style="color:var(--gold)">themeowslimah</strong> — free for the ummah, always.</p>
+    <div style="margin-top:0.6rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; align-items:center;">
+      <a href="https://www.instagram.com/themeowslimah" target="_blank" style="color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">📸 Instagram</a>
+      <a href="https://www.facebook.com/themeowslimah" target="_blank" style="color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">📘 Facebook</a>
+      <a href="https://www.threads.net/@themeowslimah" target="_blank" style="color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">🧵 Threads</a>
+      <a href="https://buymeacoffee.com/themeowslimah" target="_blank" style="background:#ffdd00; color:#1a1a1a; text-decoration:none; font-size:0.78rem; font-weight:600; padding:0.3rem 0.8rem; border-radius:14px; transition: all 0.2s;" onmouseover="this.style.background='#ffca00'" onmouseout="this.style.background='#ffdd00'">☕ Buy me a coffee</a>
+    </div>
+    <p style="margin-top:0.6rem; font-size:0.7rem; opacity:0.4;">@themeowslimah · If this helped your Arabic journey, feel free to share it forward.</p>
+  </div>
 </footer>
 
 <script>
+// === NAV ===
 function showUnit(num) {
   document.querySelectorAll('.unit-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('unit-' + num).classList.add('active');
   document.querySelectorAll('.unit-btn')[num - 1].classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (num === 9) initPractice();
 }
-window.addEventListener('scroll', () => {
-  const btn = document.getElementById('backTop');
-  btn.classList.toggle('visible', window.scrollY > 400);
+window.addEventListener('scroll', () => { document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400); });
+document.querySelectorAll('.lesson-chip').forEach(c => {
+  c.addEventListener('click', e => { const t = document.querySelector(c.getAttribute('href')); if(t){e.preventDefault(); window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-70,behavior:'smooth'});} });
 });
-document.querySelectorAll('.lesson-chip').forEach(chip => {
-  chip.addEventListener('click', (e) => {
-    const target = document.querySelector(chip.getAttribute('href'));
-    if (target) { e.preventDefault(); window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' }); }
+
+// === PRACTICE DATA ===
+const vocab = [
+  // Unit 1
+  {ar:'السَّلامُ عَلَيْكُم',tr:'As-salāmu ʿalaykum',en:'Peace be upon you',u:1},
+  {ar:'وَعَلَيْكُمُ السَّلام',tr:'Wa ʿalaykumu as-salām',en:'And upon you peace',u:1},
+  {ar:'ما اسْمُكَ ؟',tr:'Mā ismuka?',en:'What is your name?',u:1},
+  {ar:'كَيْفَ حالُكَ ؟',tr:'Kayfa ḥāluka?',en:'How are you?',u:1},
+  {ar:'بِخَيْرٍ',tr:'Bi-khayrin',en:'Fine / Well',u:1},
+  {ar:'مِنْ أيْنَ أنْتَ ؟',tr:'Min ayna anta?',en:'Where are you from?',u:1},
+  {ar:'أهْلاً وَسَهْلاً',tr:'Ahlan wa sahlan',en:'Welcome',u:1},
+  {ar:'مَعَ السَّلامَة',tr:'Maʿa as-salāma',en:'Goodbye',u:1},
+  {ar:'مُدَرِّس',tr:'Mudarris',en:'Teacher',u:1},
+  {ar:'طالِب',tr:'Ṭālib',en:'Student',u:1},
+  {ar:'طَبيب',tr:'Ṭabīb',en:'Doctor',u:1},
+  {ar:'مُهَنْدِس',tr:'Muhandis',en:'Engineer',u:1},
+  // Unit 2
+  {ar:'أُسْرَة',tr:'Usra',en:'Family',u:2},
+  {ar:'والِد',tr:'Wālid',en:'Father',u:2},
+  {ar:'والِدَة',tr:'Wālida',en:'Mother',u:2},
+  {ar:'اِبْن',tr:'Ibn',en:'Son',u:2},
+  {ar:'اِبْنَة',tr:'Ibna',en:'Daughter',u:2},
+  {ar:'جَدّ',tr:'Jadd',en:'Grandfather',u:2},
+  {ar:'جَدَّة',tr:'Jadda',en:'Grandmother',u:2},
+  {ar:'عَمّ',tr:'ʿAmm',en:'Paternal uncle',u:2},
+  {ar:'مَسْجِد',tr:'Masjid',en:'Mosque',u:2},
+  {ar:'القُرْآن',tr:'Al-Qurʾān',en:'The Quran',u:2},
+  {ar:'غُرْفَة',tr:'Ghurfa',en:'Room',u:2},
+  // Unit 3
+  {ar:'بَيْت',tr:'Bayt',en:'House',u:3},
+  {ar:'شَقَّة',tr:'Shaqqa',en:'Apartment',u:3},
+  {ar:'أُريدُ',tr:'Urīdu',en:'I want',u:3},
+  {ar:'جَميلَة',tr:'Jamīla',en:'Beautiful',u:3},
+  {ar:'باب',tr:'Bāb',en:'Door',u:3},
+  {ar:'مَطْبَخ',tr:'Maṭbakh',en:'Kitchen',u:3},
+  {ar:'سَرير',tr:'Sarīr',en:'Bed',u:3},
+  {ar:'ثَلّاجَة',tr:'Thallāja',en:'Refrigerator',u:3},
+  {ar:'أريكَة',tr:'Arīka',en:'Couch / Sofa',u:3},
+  // Unit 4
+  {ar:'يَسْتَيْقِظُ',tr:'Yastayqiẓu',en:'He wakes up',u:4},
+  {ar:'يَنامُ',tr:'Yanāmu',en:'He sleeps',u:4},
+  {ar:'يَذْهَبُ',tr:'Yadhhabu',en:'He goes',u:4},
+  {ar:'المَدْرَسَة',tr:'Al-Madrasa',en:'The school',u:4},
+  {ar:'السَّيّارَة',tr:'As-Sayyāra',en:'The car',u:4},
+  {ar:'الحافِلَة',tr:'Al-Ḥāfila',en:'The bus',u:4},
+  {ar:'المَلابِس',tr:'Al-Malābis',en:'Clothes',u:4},
+  {ar:'التِّلْفاز',tr:'At-Tilfāz',en:'Television',u:4},
+  // Unit 5
+  {ar:'المَطْعَم',tr:'Al-Maṭʿam',en:'Restaurant',u:5},
+  {ar:'الفَطور',tr:'Al-Faṭūr',en:'Breakfast',u:5},
+  {ar:'الغَداء',tr:'Al-Ghadāʾ',en:'Lunch',u:5},
+  {ar:'العَشاء',tr:'Al-ʿAshāʾ',en:'Dinner',u:5},
+  {ar:'الخُبْز',tr:'Al-Khubz',en:'Bread',u:5},
+  {ar:'الأرُزّ',tr:'Al-Aruzz',en:'Rice',u:5},
+  {ar:'السَّمَك',tr:'As-Samak',en:'Fish',u:5},
+  {ar:'القَهْوَة',tr:'Al-Qahwa',en:'Coffee',u:5},
+  {ar:'الشّاي',tr:'Ash-Shāy',en:'Tea',u:5},
+  {ar:'ماء',tr:'Māʾ',en:'Water',u:5},
+  // Unit 6
+  {ar:'الظُّهْر',tr:'Aẓ-Ẓuhr',en:'Noon prayer',u:6},
+  {ar:'العَصْر',tr:'Al-ʿAṣr',en:'Afternoon prayer',u:6},
+  {ar:'المَغْرِب',tr:'Al-Maghrib',en:'Sunset prayer',u:6},
+  {ar:'العِشاء',tr:'Al-ʿIshāʾ',en:'Night prayer',u:6},
+  {ar:'الطّائِرَة',tr:'Aṭ-Ṭāʾira',en:'Airplane',u:6},
+  {ar:'مُسافِر',tr:'Musāfir',en:'Traveler',u:6},
+  {ar:'إنْ شاءَ الله',tr:'In shāʾa Allāh',en:'God willing',u:6},
+  // Unit 7
+  {ar:'السَّبْت',tr:'As-Sabt',en:'Saturday',u:7},
+  {ar:'الأحَد',tr:'Al-Aḥad',en:'Sunday',u:7},
+  {ar:'الإثْنَيْن',tr:'Al-Ithnayn',en:'Monday',u:7},
+  {ar:'الثُّلاثاء',tr:'Ath-Thulāthāʾ',en:'Tuesday',u:7},
+  {ar:'الأرْبِعاء',tr:'Al-Arbiʿāʾ',en:'Wednesday',u:7},
+  {ar:'الخَميس',tr:'Al-Khamīs',en:'Thursday',u:7},
+  {ar:'الرِّياضيّات',tr:'Ar-Riyāḍiyyāt',en:'Mathematics',u:7},
+  {ar:'العُلوم',tr:'Al-ʿUlūm',en:'Science',u:7},
+  // Unit 8
+  {ar:'العَمَل',tr:'Al-ʿAmal',en:'Work / Job',u:8},
+  {ar:'شَرِكَة',tr:'Sharika',en:'Company',u:8},
+  {ar:'المُسْتَشْفى',tr:'Al-Mustashfā',en:'Hospital',u:8},
+  {ar:'يُحِبُّ',tr:'Yuḥibbu',en:'He likes / loves',u:8},
+  {ar:'ساعَة',tr:'Sāʿa',en:'Hour',u:8},
+];
+
+let mode='flashcard', filteredUnits=new Set([1,2,3,4,5,6,7,8]), deck=[], idx=0, score=0, revealed=false;
+
+function shuffle(a) { for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+function initPractice() {
+  // Unit filter
+  const uf = document.getElementById('unitFilter');
+  uf.innerHTML = '<span style="font-size:0.8rem;color:var(--ink-muted);margin-right:0.3rem">Filter:</span>';
+  for(let i=1;i<=8;i++){
+    const b=document.createElement('button'); b.className='uf-btn'+(filteredUnits.has(i)?' active':'');
+    b.textContent='Unit '+i; b.onclick=()=>{
+      if(filteredUnits.has(i))filteredUnits.delete(i); else filteredUnits.add(i);
+      b.classList.toggle('active'); resetDeck();
+    }; uf.appendChild(b);
+  }
+  const allBtn=document.createElement('button'); allBtn.className='uf-btn active'; allBtn.textContent='All';
+  allBtn.onclick=()=>{ filteredUnits=new Set([1,2,3,4,5,6,7,8]); initPractice(); };
+  uf.appendChild(allBtn);
+
+  // Mode bar
+  const mb=document.getElementById('modeBar');
+  mb.innerHTML='';
+  [{id:'flashcard',label:'🔤 Flashcards'},{id:'mc_en',label:'🧠 Arabic → English'},{id:'mc_ar',label:'💬 English → Arabic'},{id:'fill',label:'✏️ Fill in Arabic'}].forEach(m=>{
+    const b=document.createElement('button'); b.className='mode-btn'+(mode===m.id?' active':'');
+    b.textContent=m.label; b.onclick=()=>{mode=m.id; initPractice();}; mb.appendChild(b);
   });
-});
+  resetDeck();
+}
+
+function resetDeck() {
+  deck = shuffle(vocab.filter(v=>filteredUnits.has(v.u)).slice());
+  if(!deck.length) deck = shuffle(vocab.slice());
+  idx=0; score=0; revealed=false; renderCard();
+}
+
+function updateScore() {
+  document.getElementById('scoreText').textContent='Score: '+score;
+  document.getElementById('counterText').textContent=(idx+1)+' / '+deck.length;
+  document.getElementById('progressFill').style.width=((idx+1)/deck.length*100)+'%';
+}
+
+function nextCard() { idx++; if(idx>=deck.length){idx=0; shuffle(deck);} revealed=false; renderCard(); }
+
+function renderCard() {
+  updateScore();
+  const area = document.getElementById('practiceArea');
+  const item = deck[idx];
+  if(mode==='flashcard') renderFlashcard(area,item);
+  else if(mode==='mc_en') renderMC(area,item,'ar','en');
+  else if(mode==='mc_ar') renderMC(area,item,'en','ar');
+  else if(mode==='fill') renderFill(area,item);
+}
+
+function renderFlashcard(area,item) {
+  area.innerHTML=`
+    <div class="practice-card">
+      <span class="unit-badge">Unit ${item.u}</span>
+      <p class="prompt-label">What does this mean?</p>
+      <p class="big-arabic">${item.ar}</p>
+      <div class="reveal-area" id="revealArea">
+        ${revealed?`
+          <p class="transliteration-answer">${item.tr}</p>
+          <p class="english-answer">${item.en}</p>
+        `:`<p style="color:var(--sand-300);font-size:0.85rem;margin:0.5rem 0">Tap below to reveal the answer</p>`}
+      </div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center">
+        ${revealed?`
+          <button class="practice-btn success" onclick="score++;nextCard()">✓ I knew it</button>
+          <button class="practice-btn danger" onclick="nextCard()">✗ Still learning</button>
+        `:`<button class="practice-btn primary" onclick="revealed=true;renderCard()">👁 Show Answer</button>`}
+      </div>
+    </div>`;
+}
+
+function renderMC(area,item,qKey,aKey) {
+  const correct = item[aKey];
+  let opts = [correct];
+  const pool = vocab.filter(v=>v[aKey]!==correct);
+  shuffle(pool);
+  for(let i=0;i<3&&i<pool.length;i++) opts.push(pool[i][aKey]);
+  shuffle(opts);
+  const qText = qKey==='ar'?item.ar:item.en;
+  const label = qKey==='ar'?'Choose the correct meaning':'Choose the Arabic translation';
+  const isArabic = aKey==='ar';
+
+  area.innerHTML=`
+    <div class="practice-card">
+      <span class="unit-badge">Unit ${item.u}</span>
+      <p class="prompt-label">${label}</p>
+      <p class="${qKey==='ar'?'big-arabic':''}" style="${qKey!=='ar'?'font-size:1.6rem;color:var(--ink);margin-bottom:0.8rem;font-weight:600':''}">${qText}</p>
+      <p style="font-size:0.85rem;color:var(--gold-dark);font-style:italic;margin-bottom:0.5rem">${item.tr}</p>
+      <div class="mc-options" id="mcOpts">
+        ${opts.map((o,i)=>`<div class="mc-option ${isArabic?'ar-text':''}" onclick="checkMC(this,'${o.replace(/'/g,"\\'")}','${correct.replace(/'/g,"\\'")}')"><span>${o}</span></div>`).join('')}
+      </div>
+    </div>`;
+}
+
+function checkMC(el,chosen,correct) {
+  document.querySelectorAll('.mc-option').forEach(o=>o.classList.add('disabled'));
+  if(chosen===correct){ el.classList.add('correct'); score++; }
+  else { el.classList.add('wrong'); document.querySelectorAll('.mc-option').forEach(o=>{if(o.textContent===correct)o.classList.add('correct');}); }
+  setTimeout(nextCard, chosen===correct?800:1500);
+}
+
+function renderFill(area,item) {
+  area.innerHTML=`
+    <div class="practice-card">
+      <span class="unit-badge">Unit ${item.u}</span>
+      <p class="prompt-label">Type the Arabic word</p>
+      <p style="font-size:1.5rem;color:var(--ink);margin-bottom:0.3rem;font-weight:600">${item.en}</p>
+      <p class="transliteration-answer" style="margin-bottom:1.2rem;font-size:1rem">${item.tr}</p>
+      <input class="fill-input" id="fillInput" type="text" placeholder="...اكتب هنا" autocomplete="off" onkeydown="if(event.key==='Enter')checkFill('${item.ar.replace(/'/g,"\\'")}')">
+      <div style="margin-top:1.2rem;display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center">
+        <button class="practice-btn primary" onclick="checkFill('${item.ar.replace(/'/g,"\\'")}')">✓ Check</button>
+        <button class="practice-btn secondary" onclick="document.getElementById('fillInput').value='${item.ar.replace(/'/g,"\\'")}';document.getElementById('fillInput').classList.add('correct');">👁 Show</button>
+        <button class="practice-btn secondary" onclick="nextCard()">→ Skip</button>
+      </div>
+    </div>`;
+  setTimeout(()=>{const inp=document.getElementById('fillInput');if(inp)inp.focus();},150);
+}
+
+function checkFill(correct) {
+  const inp=document.getElementById('fillInput');
+  const val=inp.value.trim().replace(/[\u064B-\u065F\u0670]/g,'');
+  const clean=correct.replace(/[\u064B-\u065F\u0670]/g,'').replace(/\s+/g,' ').trim();
+  if(val===clean||val===correct.trim()){ inp.classList.add('correct'); score++; setTimeout(nextCard,800); }
+  else { inp.classList.add('wrong'); inp.value=correct; setTimeout(nextCard,1500); }
+}
 </script>
 
 </body>
