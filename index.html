@@ -4,15 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Al-Arabiyyah Bayna Yadayk — Book 1, Units 1–8</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════════
-   DESIGN DIRECTION: Modern Minimal
-   White canvas · Slate structure · Coral + indigo accents
-   Sharp type · Precise spacing · Zero clutter
-   Memorable: the Arabic text breathes and commands space
-   ═══════════════════════════════════════════════════ */
-
 :root {
   --sand-50: #faf8f1;
   --sand-100: #f3edd8;
@@ -32,58 +25,26 @@
   --lesson-bg: #fdfcf7;
   --card-shadow: 0 2px 16px rgba(0,0,0,0.06);
   --card-shadow-hover: 0 4px 24px rgba(0,0,0,0.1);
-  /* alias mapping for toggle styles */
-  --bg: var(--sand-50);
-  --bg-subtle: var(--sand-100);
-  --slate-100: var(--sand-200);
-  --slate-300: var(--sand-300);
-  --slate-500: var(--ink-muted);
-  --slate-700: var(--ink-light);
-  --slate-900: var(--ink);
-  --coral: var(--gold);
-  --coral-lt: #fdf8ee;
-  --indigo: var(--teal);
-  --indigo-lt: rgba(26,107,90,0.07);
-  --amber: var(--gold-dark);
-  --amber-lt: rgba(154,116,32,0.07);
-  --teal-lt: rgba(26,107,90,0.07);
-  --green: #2a7a3a;
-  --green-lt: rgba(42,122,58,0.08);
-  --red: #b83232;
-  --red-lt: rgba(184,50,50,0.06);
-  --shadow-sm: 0 2px 16px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 24px rgba(0,0,0,0.1);
-  --shadow-lg: 0 6px 32px rgba(0,0,0,0.14);
-  --radius: 16px;
-  --radius-sm: 10px;
-  --radius-pill: 999px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--sand-50);
   color: var(--ink);
-  line-height: 1.65;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  font-size: 15px;
 }
 
-/* ── STICKY TOGGLE BAR ── */
+/* ——— STICKY TOGGLE BAR ——— */
 .sticky-controls {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: rgba(250,248,241,0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--sand-100);
   border-bottom: 1px solid var(--sand-200);
-  padding: 0.55rem 1.4rem;
+  padding: 0.5rem 1.4rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 .controls-label {
   font-size: 0.68rem;
@@ -91,706 +52,411 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--ink-muted);
-  flex-shrink: 0;
-}
-.controls-toggles {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 .toggle-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--slate-300);
-  background: var(--bg);
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--sand-300);
+  background: var(--white);
   cursor: pointer;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--slate-500);
+  color: var(--ink-muted);
   transition: all 0.18s ease;
   user-select: none;
-  letter-spacing: 0.02em;
 }
-.toggle-pill:hover {
-  border-color: var(--teal);
-  color: var(--teal-dark);
-}
-.toggle-pill.on {
-  background: var(--teal);
-  border-color: var(--teal);
-  color: #fff;
-}
+.toggle-pill:hover { border-color: var(--teal); color: var(--teal-dark); }
+.toggle-pill.on { background: var(--teal); border-color: var(--teal); color: #fff; }
 .toggle-pill .t-dot {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: currentColor;
-  opacity: 0.7;
-  transition: opacity 0.18s;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: currentColor; opacity: 0.7;
 }
-.toggle-pill.on .t-dot { opacity: 1; background: rgba(255,255,255,0.9); }
+.toggle-pill.on .t-dot { opacity: 1; }
 
-/* ── HIDE CLASSES ── */
-.translit, .tr, .tr-cell { transition: all 0.15s ease; }
-.english, .en, .en-cell  { transition: all 0.15s ease; }
-
+/* ——— HIDE CLASSES ——— */
 body.hide-translit .translit,
 body.hide-translit .tr,
 body.hide-translit .tr-cell {
-  opacity: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none !important;
+  opacity: 0 !important; height: 0 !important; overflow: hidden !important;
+  margin: 0 !important; padding: 0 !important; pointer-events: none !important;
 }
 body.hide-translit .transliteration-answer {
-  opacity: 0 !important; height: 0 !important;
-  overflow: hidden !important; margin: 0 !important; padding: 0 !important;
+  opacity: 0 !important; height: 0 !important; overflow: hidden !important; margin: 0 !important;
 }
 body.hide-translation .english,
 body.hide-translation .en,
 body.hide-translation .en-cell {
-  opacity: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  pointer-events: none !important;
+  opacity: 0 !important; height: 0 !important; overflow: hidden !important;
+  margin: 0 !important; padding: 0 !important; pointer-events: none !important;
 }
 body.hide-translation .english-answer {
-  opacity: 0 !important; height: 0 !important;
-  overflow: hidden !important; margin: 0 !important; padding: 0 !important;
+  opacity: 0 !important; height: 0 !important; overflow: hidden !important; margin: 0 !important;
 }
 
-/* ── HERO ── */
+/* ——— HERO ——— */
 .hero {
-  padding: 3.5rem 2rem 3rem;
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, #d4a73a 100%);
+  color: var(--white);
+  padding: 4rem 2rem 3rem;
   text-align: center;
-  background: var(--bg);
-  border-bottom: 1px solid var(--slate-100);
   position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: 'بسم الله الرحمن الرحيم';
+  position: absolute;
+  top: 1rem; left: 50%; transform: translateX(-50%);
+  font-family: 'Amiri', serif;
+  font-size: 1rem; opacity: 0.7; white-space: nowrap;
 }
 .hero::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 80px; height: 2px;
-  background: linear-gradient(90deg, var(--coral), var(--indigo));
-  border-radius: 2px;
-}
-.hero-bismillah {
-  font-family: 'Amiri', serif;
-  font-size: 1.05rem;
-  color: var(--slate-400, #9ca3af);
-  opacity: 0.55;
-  margin-bottom: 1.2rem;
-  direction: rtl;
-  letter-spacing: 0.02em;
+  bottom: 0; left: 0; right: 0; height: 6px;
+  background: repeating-linear-gradient(90deg, var(--teal) 0px, var(--teal) 20px, transparent 20px, transparent 24px);
 }
 .hero h1 {
   font-family: 'Amiri', serif;
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 700;
+  margin-bottom: 0.3rem;
   direction: rtl;
-  color: var(--slate-900);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .hero .subtitle {
   font-family: 'Source Serif 4', serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--slate-500);
-  margin-bottom: 0.35rem;
+  font-size: 1.15rem;
+  color: #ffffff;
+  opacity: 0.92; margin-bottom: 0.6rem; font-style: italic;
 }
 .hero .book-info {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--slate-300);
+  font-size: 0.9rem; color: #ffffff; opacity: 0.75;
+  letter-spacing: 0.06em; text-transform: uppercase;
 }
 
-/* ── CREATOR BAR ── */
+
+/* ——— CREATOR BAR ——— */
 .creator-bar {
   background: var(--sand-100);
   border-bottom: 1px solid var(--sand-200);
-  padding: 0.7rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
   flex-wrap: wrap;
   font-size: 0.78rem;
-  color: var(--ink-light);
+  color: var(--ink-muted);
 }
 .creator-bar .creator-name { font-weight: 700; color: var(--teal-dark); }
 .creator-bar .creator-links { display: flex; align-items: center; gap: 0.4rem; }
 .creator-bar .creator-links a {
-  text-decoration: none; color: var(--ink-muted); font-size: 0.75rem;
-  padding: 0.2rem 0.5rem; border-radius: 12px;
-  transition: all 0.2s;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1.5px solid var(--sand-300);
+  text-decoration: none; transition: all 0.2s;
+  opacity: 0.85;
 }
-.creator-bar .creator-links a:hover { background: rgba(26,107,90,0.08); color: var(--teal-dark); }
+.creator-bar .creator-links a:hover { opacity: 1; transform: scale(1.1); border-color: transparent; }
+.creator-bar .creator-links a.ig-link { color: #E1306C; }
+.creator-bar .creator-links a.fb-link { color: #1877F2; }
+.creator-bar .creator-links a.th-link { color: #1a1a1a; }
 .creator-bar .creator-links a svg { flex-shrink: 0; }
+.creator-bar .creator-sep { width: 1px; height: 14px; background: var(--sand-300); }
 .creator-bar .bmc-link {
-  background: #ffdd00; color: #1a1a1a !important;
-  font-weight: 600; font-size: 0.73rem;
-  padding: 0.3rem 0.7rem; border-radius: 14px;
-  text-decoration: none; transition: all 0.25s;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  background: var(--teal); color: #ffffff !important;
+  font-weight: 700; font-size: 0.72rem;
+  padding: 0.38rem 1rem; border-radius: 999px;
+  text-decoration: none; transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(26,107,90,0.3);
+  border: 1.5px solid rgba(0,0,0,0.06);
 }
-.creator-bar .bmc-link:hover { background: #ffca00; transform: translateY(-1px); }
-.creator-sep { width: 1px; height: 14px; background: var(--slate-300); }
+.creator-bar .bmc-link:hover {
+  background: var(--teal-dark); transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(26,107,90,0.4);
+}
 
-/* ── UNIT NAV ── */
+/* ——— UNIT NAV ——— */
 .unit-nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background: var(--teal-dark);
-  border-bottom: none;
-  overflow-x: auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.unit-nav {
+  max-width: 900px; margin: 0 auto;
+  display: flex; overflow-x: auto;
   scrollbar-width: none;
 }
-.unit-nav-wrapper::-webkit-scrollbar { display: none; }
-.unit-nav {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-}
+.unit-nav::-webkit-scrollbar { display: none; }
 .unit-btn {
-  flex: 1;
-  min-width: 0;
-  padding: 0.9rem 1rem 0.7rem;
+  flex: 1; min-width: 0;
+  padding: 0.85rem 1.2rem;
   background: transparent; border: none;
-  border-bottom: 2.5px solid transparent;
   color: rgba(255,255,255,0.55);
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.78rem; font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  text-align: center;
+  font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all 0.25s ease;
+  white-space: nowrap; text-align: center;
+  border-bottom: 3px solid transparent;
 }
 .unit-btn:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.05); }
-.unit-btn.active {
-  color: var(--white);
-  border-bottom-color: var(--gold);
-  background: rgba(255,255,255,0.08);
-}
-.unit-btn .btn-arabic {
-  font-family: 'Amiri', serif;
-  font-size: 1rem; font-weight: 400;
-  display: block; margin-bottom: 0.1rem;
-  color: inherit; opacity: 0.9;
-}
-.unit-btn .btn-english { font-size: 0.65rem; opacity: 0.7; letter-spacing: 0.03em; }
-.unit-btn.active .btn-arabic { color: var(--white); opacity: 1; }
+.unit-btn.active { color: var(--white); border-bottom-color: var(--gold); background: rgba(255,255,255,0.08); }
+.unit-btn .btn-arabic { font-family: 'Amiri', serif; font-size: 1rem; display: block; margin-bottom: 0.15rem; }
+.unit-btn .btn-english { font-size: 0.7rem; opacity: 0.7; letter-spacing: 0.04em; }
 .unit-btn.active .btn-english { opacity: 1; }
 
-/* ── PANELS ── */
-.unit-panel { display: none; animation: panelIn 0.28s ease; }
+/* ——— PANELS ——— */
+.unit-panel { display: none; animation: fadeInPanel 0.3s ease; }
 .unit-panel.active { display: block; }
-@keyframes panelIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeInPanel { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ── UNIT HEADER ── */
+/* ——— UNIT HEADER ——— */
 .unit-header {
-  padding: 2.5rem 2rem 2rem;
-  text-align: center;
   background: var(--teal);
-  border-bottom: none;
+  color: var(--white);
+  padding: 2.5rem 2rem; text-align: center;
 }
-.unit-number {
-  font-size: 0.7rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;
+.unit-header .unit-number {
+  font-size: 0.8rem; letter-spacing: 0.15em;
+  text-transform: uppercase; opacity: 0.7; margin-bottom: 0.4rem;
 }
-.unit-header h2 {
-  font-family: 'Amiri', serif;
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
-  direction: rtl; color: var(--white);
-  margin-bottom: 0.3rem;
-}
-.unit-header .transliteration {
-  font-family: 'Source Serif 4', serif;
-  font-style: italic; font-size: 1rem;
-  color: rgba(255,255,255,0.85);
-}
-.unit-header .translation {
-  font-size: 0.85rem; color: rgba(255,255,255,0.6);
-  margin-top: 0.15rem;
-}
+.unit-header h2 { font-family: 'Amiri', serif; font-size: 2.4rem; direction: rtl; margin-bottom: 0.3rem; }
+.unit-header .transliteration { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 1.1rem; opacity: 0.85; }
+.unit-header .translation { font-size: 1rem; opacity: 0.7; margin-top: 0.2rem; }
 
-/* ── CONTAINER ── */
-.container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+/* ——— CONTAINER ——— */
+.container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
 
-/* ── LESSON NAV ── */
+/* ——— LESSON NAV ——— */
 .lesson-nav {
-  background: var(--white);
-  border-radius: 12px;
-  margin: 1.5rem auto;
-  padding: 1.2rem 1.5rem;
+  background: var(--white); border-radius: 12px;
+  margin: 1.5rem auto; padding: 1.2rem 1.5rem;
   box-shadow: var(--card-shadow);
 }
-.lesson-nav h4 {
-  font-family: 'Source Serif 4', serif;
-  font-size: 0.95rem;
-  color: var(--teal-dark);
-  margin-bottom: 0.7rem;
-}
-.lesson-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.lesson-nav h4 { font-family: 'Source Serif 4', serif; font-size: 0.95rem; color: var(--teal-dark); margin-bottom: 0.7rem; }
+.lesson-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .lesson-chip {
   display: inline-flex; align-items: center; gap: 0.4rem;
   padding: 0.35rem 0.75rem;
   background: var(--sand-50); border: 1px solid var(--sand-200);
-  border-radius: 20px;
-  font-size: 0.8rem; color: var(--ink-light);
+  border-radius: 20px; font-size: 0.8rem; color: var(--ink-light);
   text-decoration: none; transition: all 0.2s;
 }
 .lesson-chip:hover { background: var(--sand-100); border-color: var(--gold); color: var(--teal-dark); }
 .lesson-chip .chip-num {
   background: var(--gold); color: var(--white);
   font-size: 0.65rem; font-weight: 700;
-  width: 18px; height: 18px;
-  border-radius: 50%; display: flex;
-  align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
 }
 
-/* ── LESSON CARD ── */
+/* ——— LESSON CARD ——— */
 .lesson {
-  margin: 1.5rem 0;
-  background: var(--white);
-  border: none;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--card-shadow);
-  transition: box-shadow 0.3s ease;
+  margin: 2.5rem 0; background: var(--white);
+  border-radius: 16px; box-shadow: var(--card-shadow);
+  overflow: hidden; transition: box-shadow 0.3s ease;
 }
 .lesson:hover { box-shadow: var(--card-shadow-hover); }
-
 .lesson-header {
-  padding: 1.2rem 1.8rem;
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-  border-bottom: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  color: var(--white); padding: 1.2rem 1.8rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.5rem;
 }
-.lesson-number {
-  font-size: 0.75rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.8);
-}
-.lesson-header h3 {
-  font-family: 'Amiri', serif;
-  font-size: 1.4rem; direction: rtl;
-  color: var(--white);
-}
-.lesson-title-en {
-  font-size: 0.85rem; font-style: italic;
-  color: rgba(255,255,255,0.8);
-}
-.lesson-body { padding: 1.5rem; }
+.lesson-header .lesson-number { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.8; }
+.lesson-header h3 { font-family: 'Amiri', serif; font-size: 1.4rem; direction: rtl; }
+.lesson-header .lesson-title-en { font-size: 0.85rem; opacity: 0.8; font-style: italic; }
+.lesson-body { padding: 1.8rem; }
 
-/* ── SECTION LABELS ── */
+/* ——— SECTION LABELS ——— */
 .section-label {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 600; font-size: 0.8rem;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--teal);
-  margin-bottom: 1rem;
+  font-family: 'DM Sans', sans-serif; font-weight: 600;
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--teal); margin-bottom: 1rem;
   padding: 0.3rem 0.8rem;
-  background: rgba(26, 107, 90, 0.07);
-  border-radius: 6px;
-  border-left: 3px solid var(--teal);
+  background: rgba(26,107,90,0.07);
+  border-radius: 6px; border-left: 3px solid var(--teal);
 }
 .section-label.gold {
   color: var(--gold-dark);
-  background: rgba(197, 148, 42, 0.08);
+  background: rgba(197,148,42,0.08);
   border-left-color: var(--gold);
 }
 
-/* ── DIALOGUE ── */
-.dialogue { margin-bottom: 1.8rem; }
+/* ——— DIALOGUE ——— */
+.dialogue { margin-bottom: 2rem; }
 .line {
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-sm);
-  margin-bottom: 0.4rem;
-  transition: background 0.15s;
+  padding: 0.9rem 1.2rem; border-radius: 10px;
+  margin-bottom: 0.6rem; transition: background 0.2s;
 }
 .line:nth-child(odd) { background: var(--sand-50); }
 .line:nth-child(even) { background: var(--white); }
 .line:hover { background: var(--sand-100); }
-
-.line .arabic {
-  font-family: 'Amiri', serif;
-  font-size: 1.3rem; direction: rtl; text-align: right;
-  color: var(--slate-900); line-height: 1.9;
-}
+.line .arabic { font-family: 'Amiri', serif; font-size: 1.35rem; direction: rtl; text-align: right; color: var(--ink); line-height: 1.9; }
 .line .speaker { color: var(--teal-dark); font-weight: 700; }
-.line .translit {
-  font-family: 'Source Serif 4', serif;
-  font-style: italic; font-size: 0.95rem;
-  color: var(--gold-dark);
-}
+.line .translit { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.95rem; color: var(--gold-dark); }
 .line .english { font-size: 0.9rem; color: var(--ink-muted); }
 
-/* ── VOCAB GRID ── */
-.vocab-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 0.65rem;
-  margin-bottom: 1.8rem;
-}
-.vocab-card {
-  background: var(--sand-50);
-  border: 1px solid var(--sand-200);
-  border-radius: var(--radius-sm);
-  padding: 1rem 1.2rem;
-  transition: all 0.25s ease;
-}
-.vocab-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-.vocab-card .ar {
-  font-family: 'Amiri', serif;
-  font-size: 1.4rem; direction: rtl; text-align: right;
-  color: var(--slate-900); margin-bottom: 0.15rem;
-}
-.vocab-card .tr {
-  font-family: 'Source Serif 4', serif;
-  font-style: italic; font-size: 0.9rem; color: var(--gold-dark);
-}
+/* ——— VOCAB GRID ——— */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 0.8rem; margin-bottom: 2rem; }
+.vocab-card { background: var(--sand-50); border-radius: 10px; padding: 1rem 1.2rem; border: 1px solid var(--sand-200); transition: all 0.25s ease; }
+.vocab-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.vocab-card .ar { font-family: 'Amiri', serif; font-size: 1.45rem; direction: rtl; text-align: right; color: var(--ink); margin-bottom: 0.2rem; }
+.vocab-card .tr { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.9rem; color: var(--gold-dark); }
 .vocab-card .en { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.1rem; }
 
-/* ── GRAMMAR TABLE ── */
-.grammar-table {
-  width: 100%; border-collapse: separate; border-spacing: 0;
-  margin: 1rem 0 1.8rem;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  border: 1px solid var(--slate-100);
-  font-size: 0.88rem;
-}
-.grammar-table th {
-  background: var(--teal);
-  color: var(--white);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em; padding: 0.8rem 1rem;
-  font-weight: 600;
-}
-.grammar-table td {
-  padding: 0.65rem 0.9rem;
-  border-bottom: 1px solid var(--slate-100);
-  vertical-align: top;
-}
+/* ——— GRAMMAR TABLE ——— */
+.grammar-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 1.2rem 0 2rem; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+.grammar-table th { background: var(--teal); color: var(--white); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.8rem 1rem; font-weight: 600; }
+.grammar-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--sand-200); vertical-align: top; }
 .grammar-table tr:last-child td { border-bottom: none; }
 .grammar-table tr:nth-child(even) td { background: var(--sand-50); }
-.grammar-table .ar-cell {
-  font-family: 'Amiri', serif; font-size: 1.15rem;
-  direction: rtl; text-align: right; color: var(--slate-900);
-}
-.grammar-table .tr-cell {
-  font-family: 'Source Serif 4', serif;
-  font-style: italic; color: var(--gold-dark); font-size: 0.9rem;
-}
+.grammar-table .ar-cell { font-family: 'Amiri', serif; font-size: 1.25rem; direction: rtl; text-align: right; }
+.grammar-table .tr-cell { font-family: 'Source Serif 4', serif; font-style: italic; color: var(--gold-dark); font-size: 0.9rem; }
 .grammar-table .en-cell { font-size: 0.85rem; color: var(--ink-muted); }
 
-/* ── EXERCISE ── */
-.exercise {
-  background: var(--sand-50);
-  border: 1px solid var(--sand-200);
-  border-left: none;
-  border-radius: var(--radius-sm);
-  padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
-}
+/* ——— EXERCISE ——— */
+.exercise { background: var(--sand-50); border: 1px solid var(--sand-200); border-radius: 10px; padding: 1.2rem 1.4rem; margin-bottom: 1.2rem; }
 .exercise-header { font-weight: 600; color: var(--teal-dark); margin-bottom: 0.6rem; font-size: 0.9rem; }
-.exercise-header .ar-label {
-  font-family: 'Amiri', serif; font-size: 1.05rem;
-  direction: rtl; display: block; margin-bottom: 0.15rem;
-  color: var(--slate-900);
-}
-.exercise-items { display: flex; flex-direction: column; gap: 0.4rem; }
-.exercise-item {
-  display: grid; grid-template-columns: 1.8rem 1fr;
-  gap: 0.4rem; align-items: baseline; padding: 0.3rem 0;
-}
-.exercise-item .num { font-weight: 700; color: var(--gold-dark); font-size: 0.85rem; }
-.exercise-item .ar {
-  font-family: 'Amiri', serif; font-size: 1.1rem;
-  direction: rtl; text-align: right; color: var(--slate-900);
-}
-.exercise-item .tr {
-  font-family: 'Source Serif 4', serif; font-style: italic;
-  font-size: 0.85rem; color: var(--gold-dark); grid-column: 2;
-}
+.exercise-header .ar-label { font-family: 'Amiri', serif; font-size: 1.1rem; direction: rtl; display: block; margin-bottom: 0.15rem; }
+.exercise-items { display: flex; flex-direction: column; gap: 0.5rem; }
+.exercise-item { display: grid; grid-template-columns: 2rem 1fr; gap: 0.5rem; align-items: baseline; padding: 0.4rem 0; }
+.exercise-item .num { font-weight: 600; color: var(--gold-dark); font-size: 0.85rem; }
+.exercise-item .ar { font-family: 'Amiri', serif; font-size: 1.2rem; direction: rtl; text-align: right; }
+.exercise-item .tr { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.85rem; color: var(--gold-dark); grid-column: 2; }
 .exercise-item .en { font-size: 0.82rem; color: var(--ink-muted); grid-column: 2; }
 
-/* ── NUMBERS GRID ── */
-.numbers-grid {
-  display: grid; grid-template-columns: repeat(5, 1fr);
-  gap: 0.6rem; margin: 1rem 0 1.5rem;
-}
-.number-card {
-  text-align: center; background: var(--white);
-  border: 2px solid var(--sand-200);
-  border-radius: 12px; padding: 1rem 0.5rem;
-  transition: all 0.25s;
-}
+/* ——— NUMBERS ——— */
+.numbers-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 0.6rem; margin: 1rem 0 1.5rem; }
+.number-card { text-align: center; background: var(--white); border: 2px solid var(--sand-200); border-radius: 12px; padding: 1rem 0.5rem; transition: all 0.25s; }
 .number-card:hover { border-color: var(--teal); background: rgba(26,107,90,0.03); }
 .number-card .digit { font-family: 'Amiri', serif; font-size: 1.8rem; color: var(--teal-dark); }
-.number-card .ar {
-  font-family: 'Amiri', serif; font-size: 1rem;
-  direction: rtl; color: var(--slate-900); margin: 0.15rem 0;
-}
-.number-card .tr {
-  font-family: 'Source Serif 4', serif; font-style: italic;
-  font-size: 0.8rem; color: var(--gold-dark);
-}
+.number-card .ar { font-family: 'Amiri', serif; font-size: 1.1rem; direction: rtl; color: var(--ink); margin: 0.2rem 0; }
+.number-card .tr { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.8rem; color: var(--gold-dark); }
 
-/* ── LETTER CARDS ── */
-.letter-group { display: flex; flex-wrap: wrap; gap: 0.9rem; margin: 1rem 0 1.5rem; }
-.letter-card {
-  flex: 1 1 140px; text-align: center;
-  background: var(--bg); border: 1.5px solid var(--slate-100);
-  border-radius: var(--radius-sm); padding: 1.1rem 0.7rem;
-  transition: all 0.18s;
-}
-.letter-card:hover { border-color: var(--teal); }
+/* ——— LETTERS ——— */
+.letter-group { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.5rem; }
+.letter-card { flex: 1 1 150px; text-align: center; background: var(--white); border: 2px solid var(--sand-200); border-radius: 12px; padding: 1.2rem 0.8rem; }
 .letter-card .big-letter { font-family: 'Amiri', serif; font-size: 3rem; color: var(--teal-dark); line-height: 1.2; }
 .letter-card .name { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.85rem; color: var(--gold-dark); }
-.letter-card .forms { font-family: 'Amiri', serif; font-size: 1rem; color: var(--slate-500); margin-top: 0.25rem; direction: rtl; }
-
-.writing-words {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 0.55rem; margin: 1rem 0;
-}
-.writing-word {
-  text-align: center; padding: 0.65rem;
-  background: var(--bg-subtle); border-radius: var(--radius-sm);
-  border: 1px solid var(--slate-100);
-}
+.letter-card .forms { font-family: 'Amiri', serif; font-size: 1.1rem; color: var(--ink-light); margin-top: 0.3rem; direction: rtl; }
+.writing-words { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 0.6rem; margin: 1rem 0; }
+.writing-word { text-align: center; padding: 0.7rem; background: var(--sand-50); border-radius: 8px; border: 1px solid var(--sand-200); }
 .writing-word .ar { font-family: 'Amiri', serif; font-size: 1.3rem; color: var(--teal-dark); direction: rtl; }
-.writing-word .tr { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.73rem; color: var(--amber); }
-.writing-word .en { font-size: 0.7rem; color: var(--slate-500); }
+.writing-word .tr { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 0.78rem; color: var(--gold-dark); }
+.writing-word .en { font-size: 0.75rem; color: var(--ink-muted); }
 
-/* ── DIVIDER ── */
-.section-divider {
-  border: none; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--slate-100), transparent);
-  margin: 1.6rem 0;
-}
+/* ——— DIVIDER ——— */
+.section-divider { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--sand-300), transparent); margin: 2rem 0; }
 
-/* ── BACK TO TOP ── */
+/* ——— BACK TO TOP ——— */
 .back-top {
   position: fixed; bottom: 1.5rem; right: 1.5rem;
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--teal); color: var(--white); border: none;
   cursor: pointer; box-shadow: 0 3px 12px rgba(0,0,0,0.2);
-  font-size: 1.2rem;
-  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
   opacity: 0; transition: opacity 0.3s; z-index: 50;
 }
 .back-top.visible { opacity: 1; }
 
-/* ── FOOTER ── */
-.footer {
-  background: var(--teal-dark);
-  color: rgba(255,255,255,0.6);
-  text-align: center; padding: 1.5rem 2rem;
-  font-size: 0.8rem; margin-top: 3rem;
-}
+/* ——— FOOTER ——— */
+.footer { background: var(--teal-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 1.5rem 2rem; font-size: 0.8rem; margin-top: 3rem; }
 
-/* ── PRACTICE ── */
-.practice-mode-bar { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-.mode-btn {
-  padding: 0.55rem 1.1rem; border-radius: 25px; border: 2px solid var(--sand-200);
-  background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
-  font-weight: 600; color: var(--ink-light); cursor: pointer; transition: all 0.25s;
-  white-space: nowrap;
-}
+/* ——— PRACTICE ——— */
+.practice-mode-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.mode-btn { padding: 0.55rem 1.1rem; border-radius: 25px; border: 2px solid var(--sand-200); background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--ink-light); cursor: pointer; transition: all 0.25s; white-space: nowrap; }
 .mode-btn:hover { border-color: var(--teal); color: var(--teal-dark); background: rgba(26,107,90,0.04); }
 .mode-btn.active { background: var(--teal); color: var(--white); border-color: var(--teal); box-shadow: 0 2px 8px rgba(26,107,90,0.25); }
-
-.practice-card {
-  background: var(--white); border-radius: 20px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-  padding: 2.5rem 2rem; margin: 1.2rem 0;
-  text-align: center; min-height: 300px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.practice-card::before {
-  content: ''; position: absolute; top: 0; left: 1.5rem; right: 1.5rem; height: 2px;
-  background: linear-gradient(90deg, var(--coral), var(--indigo));
-  border-radius: 0 0 2px 2px;
-}
-.practice-card .prompt-label {
-  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--teal); margin-bottom: 1rem; font-weight: 600;
-  background: rgba(26,107,90,0.06); padding: 0.3rem 1rem; border-radius: 20px;
-}
-.practice-card .big-arabic {
-  font-family: 'Amiri', serif; font-size: 2.8rem;
-  direction: rtl; color: var(--slate-900);
-  margin-bottom: 0.5rem; line-height: 1.7;
-}
-.practice-card .reveal-area {
-  min-height: 60px; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; margin: 0.5rem 0;
-}
-.practice-card .transliteration-answer {
-  font-family: 'Source Serif 4', serif; font-style: italic;
-  font-size: 1.2rem; color: var(--gold-dark);
-}
-.practice-card .english-answer {
-  font-size: 1rem; color: var(--slate-500); margin-top: 0.2rem; font-weight: 500;
-}
-.practice-card .unit-badge {
-  position: absolute; top: 1rem; right: 1rem;
-  font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.08em; background: var(--bg-subtle);
-  color: var(--slate-500); padding: 0.18rem 0.55rem; border-radius: var(--radius-pill);
-}
-
-.practice-btn {
-  padding: 0.65rem 1.8rem; border-radius: var(--radius-sm); border: none;
-  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600;
-  cursor: pointer; transition: all 0.18s; margin: 0.25rem;
-}
+.practice-card { background: var(--white); border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); padding: 2.5rem 2rem; margin: 1.2rem 0; text-align: center; min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.practice-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--teal), var(--gold)); }
+.practice-card .prompt-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); margin-bottom: 1rem; font-weight: 600; background: rgba(26,107,90,0.06); padding: 0.3rem 1rem; border-radius: 20px; }
+.practice-card .big-arabic { font-family: 'Amiri', serif; font-size: 2.8rem; direction: rtl; color: var(--ink); margin-bottom: 0.6rem; line-height: 1.6; }
+.practice-card .reveal-area { min-height: 65px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0.6rem 0; }
+.practice-card .transliteration-answer { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 1.2rem; color: var(--gold-dark); }
+.practice-card .english-answer { font-size: 1.05rem; color: var(--ink-light); margin-top: 0.25rem; font-weight: 500; }
+.practice-card .unit-badge { position: absolute; top: 1rem; right: 1rem; font-size: 0.65rem; background: var(--sand-100); color: var(--ink-muted); padding: 0.2rem 0.6rem; border-radius: 10px; font-weight: 600; }
+.practice-btn { padding: 0.75rem 2rem; border-radius: 12px; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; margin: 0.3rem; }
 .practice-btn.primary { background: var(--teal); color: var(--white); box-shadow: 0 2px 8px rgba(26,107,90,0.3); }
 .practice-btn.primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
 .practice-btn.secondary { background: var(--sand-100); color: var(--ink-light); }
 .practice-btn.secondary:hover { background: var(--sand-200); }
 .practice-btn.success { background: var(--green-accent); color: var(--white); }
 .practice-btn.danger { background: var(--red-accent); color: var(--white); opacity: 0.8; }
-
-.mc-options {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
-  width: 100%; max-width: 500px; margin: 1rem 0;
-}
-.mc-option {
-  padding: 1rem 1.1rem; border-radius: 14px; border: 2px solid var(--sand-200);
-  background: var(--white); cursor: pointer; transition: all 0.25s; text-align: center;
-  font-size: 1rem; position: relative;
-}
+.mc-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; width: 100%; max-width: 520px; margin: 1.2rem 0; }
+.mc-option { padding: 1rem 1.1rem; border-radius: 14px; border: 2px solid var(--sand-200); background: var(--white); cursor: pointer; transition: all 0.25s; text-align: center; font-size: 1rem; position: relative; }
 .mc-option.ar-text { font-family: 'Amiri', serif; font-size: 1.3rem; direction: rtl; }
 .mc-option:hover { border-color: var(--teal); background: rgba(26,107,90,0.03); transform: translateY(-2px); box-shadow: 0 3px 10px rgba(0,0,0,0.06); }
 .mc-option.correct { border-color: var(--green-accent); background: rgba(42,122,58,0.1); color: var(--green-accent); font-weight: 700; }
 .mc-option.correct::after { content: '✓'; position: absolute; top: 0.5rem; right: 0.7rem; font-size: 0.9rem; }
 .mc-option.wrong { border-color: var(--red-accent); background: rgba(184,50,50,0.07); color: var(--red-accent); }
 .mc-option.wrong::after { content: '✗'; position: absolute; top: 0.5rem; right: 0.7rem; font-size: 0.9rem; }
-.mc-option.disabled { pointer-events: none; opacity: 0.4; }
-
-.fill-input {
-  font-family: 'Amiri', serif; font-size: 1.5rem; direction: rtl; text-align: center;
-  padding: 0.8rem 1.4rem; border: 2px solid var(--sand-200); border-radius: 14px;
-  background: var(--sand-50); width: 300px; max-width: 90%; outline: none;
-  transition: all 0.3s;
-}
+.mc-option.disabled { pointer-events: none; opacity: 0.5; }
+.fill-input { font-family: 'Amiri', serif; font-size: 1.5rem; direction: rtl; text-align: center; padding: 0.8rem 1.4rem; border: 2px solid var(--sand-200); border-radius: 14px; background: var(--sand-50); width: 300px; max-width: 90%; outline: none; transition: all 0.3s; }
 .fill-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(26,107,90,0.1); background: var(--white); }
-.fill-input.correct { border-color: var(--green-accent); background: rgba(42,122,58,0.06); box-shadow: 0 0 0 3px rgba(42,122,58,0.1); }
+.fill-input.correct { border-color: var(--green-accent); background: rgba(42,122,58,0.06); }
 .fill-input.wrong { border-color: var(--red-accent); background: rgba(184,50,50,0.04); }
-
-.score-bar {
-  display: flex; align-items: center; justify-content: space-between;
-  background: var(--white); border-radius: 14px;
-  padding: 0.9rem 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 0.5rem;
-}
+.score-bar { display: flex; align-items: center; justify-content: space-between; background: var(--white); border-radius: 14px; padding: 0.9rem 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); margin-bottom: 0.5rem; }
 .score-bar .score-text { font-weight: 700; color: var(--teal-dark); font-size: 0.95rem; }
-.score-bar .progress-wrap { flex: 1; margin: 0 1rem; height: 5px; background: var(--slate-100); border-radius: 3px; overflow: hidden; }
+.score-bar .progress-wrap { flex: 1; margin: 0 1rem; height: 8px; background: var(--sand-200); border-radius: 4px; overflow: hidden; }
 .score-bar .progress-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--gold)); border-radius: 4px; transition: width 0.5s ease; }
-.score-bar .counter { font-size: 0.78rem; color: var(--slate-500); font-weight: 500; }
-
-.unit-filter-bar { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-.uf-btn {
-  padding: 0.35rem 0.8rem; border-radius: 20px;
-  border: 1.5px solid var(--sand-200); background: var(--white);
-  font-size: 0.78rem; cursor: pointer; transition: all 0.2s;
-  color: var(--ink-muted); font-weight: 500;
-}
+.score-bar .counter { font-size: 0.82rem; color: var(--ink-muted); font-weight: 500; }
+.unit-filter-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.uf-btn { padding: 0.35rem 0.8rem; border-radius: 20px; border: 1.5px solid var(--sand-200); background: var(--white); font-size: 0.78rem; cursor: pointer; transition: all 0.2s; color: var(--ink-muted); font-weight: 500; }
 .uf-btn:hover { border-color: var(--gold); color: var(--gold-dark); }
 .uf-btn.active { background: var(--gold); color: var(--white); border-color: var(--gold); box-shadow: 0 1px 4px rgba(197,148,42,0.3); }
 
-/* ── RESPONSIVE ── */
+/* ——— RESPONSIVE ——— */
 @media (max-width: 600px) {
-  .hero { padding: 2.5rem 1.2rem 2rem; }
+  .hero { padding: 3rem 1.2rem 2rem; }
   .hero h1 { font-size: 2rem; }
-  .lesson-body { padding: 1.1rem; }
+  .lesson-body { padding: 1.2rem; }
   .vocab-grid { grid-template-columns: 1fr 1fr; }
-  .numbers-grid { grid-template-columns: repeat(3, 1fr); }
-  .grammar-table { font-size: 0.82rem; }
+  .numbers-grid { grid-template-columns: repeat(3,1fr); }
   .mc-options { grid-template-columns: 1fr; }
   .fill-input { width: 100%; }
-  .sticky-controls { justify-content: flex-start; }
+  .sticky-controls { flex-wrap: wrap; }
 }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════
-     STICKY TOGGLE BAR (always visible)
-     ══════════════════════════════════ -->
-<div class="sticky-controls">
-  <span class="controls-label">Show:</span>
-  <div class="controls-toggles">
-    <span class="toggle-pill on" id="togTranslit" onclick="toggleTranslit()">
-      <span class="t-dot"></span>Transliteration
-    </span>
-    <span class="toggle-pill on" id="togTranslation" onclick="toggleTranslation()">
-      <span class="t-dot"></span>Translation
-    </span>
-  </div>
-</div>
-
 <!-- HERO -->
 <header class="hero">
-  <p class="hero-bismillah">بسم الله الرحمن الرحيم</p>
   <h1>العربيّة بين يديك</h1>
   <p class="subtitle">Al-ʿArabiyyah Bayna Yadayk — Arabic Between Your Hands</p>
   <p class="book-info">Book 1 · Student's Book · Part 1 · Units 1–8</p>
 </header>
 
+
 <!-- CREATOR BAR -->
 <div class="creator-bar">
   <span>Made interactive by <span class="creator-name">themeowslimah</span></span>
   <span style="opacity:0.5">— free for the ummah, always.</span>
-  <span class="creator-sep"></span>
   <div class="creator-links">
-    <a href="https://www.instagram.com/themeowslimah" target="_blank" aria-label="Instagram">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-      </svg>
-      IG
+    <a href="https://www.instagram.com/themeowslimah" target="_blank" aria-label="Instagram" class="ig-link">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
     </a>
-    <a href="https://www.facebook.com/themeowslimah" target="_blank" aria-label="Facebook">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-      </svg>
-      FB
+    <a href="https://www.facebook.com/themeowslimah" target="_blank" aria-label="Facebook" class="fb-link">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
     </a>
-    <a href="https://www.threads.net/@themeowslimah" target="_blank" aria-label="Threads">
-      <svg width="16" height="16" viewBox="0 0 192 192" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.117 5.864 14.055-7.314-1.243-15.224-1.626-23.68-1.141-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.204 17.11 97.013 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.07 0h-.113C68.882.195 47.292 9.642 32.788 28.08 19.882 44.485 13.224 67.315 13.001 96v.065c.223 28.685 6.881 51.515 19.787 67.92 14.504 18.438 36.094 27.885 64.174 28.08h.113c25.305-.174 43.16-6.847 57.938-21.615 19.109-19.096 18.527-43.08 12.222-57.81-4.547-10.598-13.318-19.227-25.698-24.652Zm-44.8 43.52c-10.454.587-21.307-4.098-21.87-14.11-.412-7.719 5.493-16.351 23.164-17.368 2.024-.117 3.997-.173 5.932-.173 6.151 0 11.92.551 17.19 1.608-1.957 24.375-14.006 29.463-24.416 30.043Z"/>
-      </svg>
-      Threads
+    <a href="https://www.threads.net/@themeowslimah" target="_blank" aria-label="Threads" class="th-link">
+      <svg width="15" height="15" viewBox="0 0 192 192" fill="currentColor"><path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.117 5.864 14.055-7.314-1.243-15.224-1.626-23.68-1.141-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.204 17.11 97.013 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.07 0h-.113C68.882.195 47.292 9.642 32.788 28.08 19.882 44.485 13.224 67.315 13.001 96v.065c.223 28.685 6.881 51.515 19.787 67.92 14.504 18.438 36.094 27.885 64.174 28.08h.113c25.305-.174 43.16-6.847 57.938-21.615 19.109-19.096 18.527-43.08 12.222-57.81-4.547-10.598-13.318-19.227-25.698-24.652Zm-44.8 43.52c-10.454.587-21.307-4.098-21.87-14.11-.412-7.719 5.493-16.351 23.164-17.368 2.024-.117 3.997-.173 5.932-.173 6.151 0 11.92.551 17.19 1.608-1.957 24.375-14.006 29.463-24.416 30.043Z"/></svg>
     </a>
   </div>
+  <span class="creator-sep"></span>
   <a href="https://buymeacoffee.com/themeowslimah" target="_blank" class="bmc-link">☕ Buy me a coffee</a>
 </div>
 
-<!-- UNIT NAV -->
+<!-- STICKY UNIT NAV -->
 <nav class="unit-nav-wrapper">
   <div class="unit-nav">
     <button class="unit-btn active" onclick="showUnit(1)"><span class="btn-arabic">التحيّة</span><span class="btn-english">1 · Greetings</span></button>
@@ -801,41 +467,41 @@ body.hide-translation .english-answer {
     <button class="unit-btn" onclick="showUnit(6)"><span class="btn-arabic">الصَّلاة</span><span class="btn-english">6 · Prayer</span></button>
     <button class="unit-btn" onclick="showUnit(7)"><span class="btn-arabic">الدِّراسَة</span><span class="btn-english">7 · Studies</span></button>
     <button class="unit-btn" onclick="showUnit(8)"><span class="btn-arabic">العَمَل</span><span class="btn-english">8 · Work</span></button>
-    <button class="unit-btn" onclick="showUnit(9)" style="border-left:1px solid var(--slate-100)"><span class="btn-arabic" style="color:var(--coral)">✎ تَدْريب</span><span class="btn-english">Practice</span></button>
+    <button class="unit-btn" onclick="showUnit(9)" style="border-left:1px solid rgba(255,255,255,0.15)"><span class="btn-arabic" style="color:#f0c040">✎ تَدْريب</span><span class="btn-english">Practice</span></button>
   </div>
 </nav>
 
 
-<!-- ═══════════ UNIT 1 ═══════════ -->
+<!-- ███ UNIT 1 ███ -->
 <div class="unit-panel active" id="unit-1">
   <section class="unit-header">
-    <p class="unit-number">Unit 1</p>
+    <p class="unit-number">الوحدة ١ — Unit 1</p>
     <h2>التَّحيَّةُ والتَّعارُف</h2>
     <p class="transliteration">At-Taḥiyyatu wat-Taʿāruf</p>
     <p class="translation">Greetings &amp; Introductions</p>
   </section>
+  <!-- TOGGLE BAR -->
+  <div class="sticky-controls">
+    <span class="controls-label">Show:</span>
+    <span class="toggle-pill on tog-translit" onclick="toggleTranslit()"><span class="t-dot"></span>Transliteration</span>
+    <span class="toggle-pill on tog-translation" onclick="toggleTranslation()"><span class="t-dot"></span>Translation</span>
+  </div>
   <div class="container">
-    <nav class="lesson-nav">
-      <h4>Lessons in this unit</h4>
-      <div class="lesson-chips">
-        <a href="#l1" class="lesson-chip"><span class="chip-num">1</span>Greetings</a>
-        <a href="#l2" class="lesson-chip"><span class="chip-num">2</span>Where From?</a>
-        <a href="#l3" class="lesson-chip"><span class="chip-num">3</span>Introducing Others</a>
-        <a href="#l4" class="lesson-chip"><span class="chip-num">4</span>Numbers 1–5</a>
-        <a href="#l5" class="lesson-chip"><span class="chip-num">5</span>Grammar</a>
-        <a href="#l6" class="lesson-chip"><span class="chip-num">6</span>Sounds خ</a>
-        <a href="#l7" class="lesson-chip"><span class="chip-num">7</span>Speaking</a>
-        <a href="#l9" class="lesson-chip"><span class="chip-num">9</span>Writing أ د ذ</a>
-      </div>
-    </nav>
+    <nav class="lesson-nav"><h4>Lessons</h4><div class="lesson-chips">
+      <a href="#l1" class="lesson-chip"><span class="chip-num">1</span>Greetings</a>
+      <a href="#l2" class="lesson-chip"><span class="chip-num">2</span>Where From?</a>
+      <a href="#l3" class="lesson-chip"><span class="chip-num">3</span>Introductions</a>
+      <a href="#l4" class="lesson-chip"><span class="chip-num">4</span>Numbers 1–5</a>
+      <a href="#l5" class="lesson-chip"><span class="chip-num">5</span>Grammar</a>
+      <a href="#l6" class="lesson-chip"><span class="chip-num">6</span>Sounds خ</a>
+      <a href="#l7" class="lesson-chip"><span class="chip-num">7</span>Speaking</a>
+      <a href="#l9" class="lesson-chip"><span class="chip-num">9</span>Writing أ د ذ</a>
+    </div></nav>
 
 <article class="lesson" id="l1">
-  <div class="lesson-header">
-    <div><span class="lesson-number">Lesson 1</span><h3>التَّحيَّة والتَّعارُف</h3></div>
-    <span class="lesson-title-en">Greetings & Getting Acquainted</span>
-  </div>
+  <div class="lesson-header"><div><span class="lesson-number">الدرس ١ — Lesson 1</span><h3>التَّحيَّة والتَّعارُف</h3></div><span class="lesson-title-en">Greetings & Getting to Know Each Other</span></div>
   <div class="lesson-body">
-    <span class="section-label">Dialogue 1 (a) — م/م</span>
+    <span class="section-label">الحوار الأوّل (أ) — Dialogue 1 (a)</span>
     <div class="dialogue">
       <div class="line"><p class="arabic"><span class="speaker">خالد :</span> السَّلامُ عَلَيْكُم .</p><p class="translit">Khālid: As-salāmu ʿalaykum.</p><p class="english">Khalid: Peace be upon you.</p></div>
       <div class="line"><p class="arabic"><span class="speaker">خليل :</span> وَعَلَيْكُمُ السَّلام .</p><p class="translit">Khalīl: Wa ʿalaykumu as-salām.</p><p class="english">Khalil: And upon you peace.</p></div>
@@ -845,7 +511,7 @@ body.hide-translation .english-answer {
       <div class="line"><p class="arabic"><span class="speaker">خليل :</span> بِخَيْرٍ ، وَالحَمْدُ لله . وَكَيْفَ حالُكَ أنْتَ ؟</p><p class="translit">Khalīl: Bi-khayrin, wal-ḥamdu lillāh. Wa kayfa ḥāluka anta?</p><p class="english">Khalil: Fine, praise be to God. And how are you?</p></div>
       <div class="line"><p class="arabic"><span class="speaker">خالد :</span> بِخَيْرٍ ، وَالحَمْدُ لله .</p><p class="translit">Khālid: Bi-khayrin, wal-ḥamdu lillāh.</p><p class="english">Khalid: Fine, praise be to God.</p></div>
     </div>
-    <span class="section-label">Dialogue 1 (b) — ف/ف</span>
+    <span class="section-label">الحوار الأوّل (ب) — Dialogue 1 (b)</span>
     <div class="dialogue">
       <div class="line"><p class="arabic"><span class="speaker">خَوْلة :</span> السَّلامُ عَلَيْكُم .</p><p class="translit">Khawla: As-salāmu ʿalaykum.</p><p class="english">Khawla: Peace be upon you.</p></div>
       <div class="line"><p class="arabic"><span class="speaker">خَديجَة :</span> وَعَلَيْكُمُ السَّلام .</p><p class="translit">Khadīja: Wa ʿalaykumu as-salām.</p><p class="english">Khadija: And upon you peace.</p></div>
@@ -856,7 +522,7 @@ body.hide-translation .english-answer {
       <div class="line"><p class="arabic"><span class="speaker">خَوْلة :</span> بِخَيْرٍ ، وَالحَمْدُ لله .</p><p class="translit">Khawla: Bi-khayrin, wal-ḥamdu lillāh.</p><p class="english">Khawla: Fine, praise be to God.</p></div>
     </div>
     <hr class="section-divider">
-    <span class="section-label gold">Vocabulary — المُفرَدات</span>
+    <span class="section-label gold">المُفرَدات — Vocabulary</span>
     <div class="vocab-grid">
       <div class="vocab-card"><p class="ar">السَّلامُ عَلَيْكُم</p><p class="tr">As-salāmu ʿalaykum</p><p class="en">Peace be upon you</p></div>
       <div class="vocab-card"><p class="ar">وَعَلَيْكُمُ السَّلام</p><p class="tr">Wa ʿalaykumu as-salām</p><p class="en">And upon you peace</p></div>
@@ -869,24 +535,13 @@ body.hide-translation .english-answer {
       <div class="vocab-card"><p class="ar">أنْتَ</p><p class="tr">Anta</p><p class="en">You (m.)</p></div>
       <div class="vocab-card"><p class="ar">أنْتِ</p><p class="tr">Anti</p><p class="en">You (f.)</p></div>
     </div>
-    <span class="section-label">Exercise — أَجِبْ</span>
-    <div class="exercise">
-      <div class="exercise-header"><span class="ar-label">أَجِبْ عَن الأسئلة .</span>Answer the following questions:</div>
-      <div class="exercise-items">
-        <div class="exercise-item"><span class="num">1</span><p class="ar">السَّلامُ عَلَيْكُم .</p><p class="tr">As-salāmu ʿalaykum.</p><p class="en">Peace be upon you. → respond</p></div>
-        <div class="exercise-item"><span class="num">2</span><p class="ar">ما اسْمُكَ ؟</p><p class="tr">Mā ismuka?</p><p class="en">What is your name? → respond</p></div>
-        <div class="exercise-item"><span class="num">3</span><p class="ar">كَيْفَ حالُكَ ؟</p><p class="tr">Kayfa ḥāluka?</p><p class="en">How are you? → respond</p></div>
-        <div class="exercise-item"><span class="num">4</span><p class="ar">ما اسْمُكِ ؟</p><p class="tr">Mā ismuki?</p><p class="en">What is your name? (f.) → respond</p></div>
-        <div class="exercise-item"><span class="num">5</span><p class="ar">كَيْفَ حالُكِ ؟</p><p class="tr">Kayfa ḥāluki?</p><p class="en">How are you? (f.) → respond</p></div>
-      </div>
-    </div>
   </div>
 </article>
 
 <article class="lesson" id="l2">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 2</span><h3>التَّحيَّة والتَّعارُف</h3></div><span class="lesson-title-en">Where Are You From? / Nationality</span></div>
+  <div class="lesson-header"><div><span class="lesson-number">الدرس ٢ — Lesson 2</span><h3>التَّحيَّة والتَّعارُف</h3></div><span class="lesson-title-en">Where Are You From? / Nationality</span></div>
   <div class="lesson-body">
-    <span class="section-label">Dialogue 2 (a) — م/م</span>
+    <span class="section-label">Dialogue 2 (a)</span>
     <div class="dialogue">
       <div class="line"><p class="arabic"><span class="speaker">مُحَمَّد :</span> مِنْ أيْنَ أنْتَ ؟</p><p class="translit">Muḥammad: Min ayna anta?</p><p class="english">Muhammad: Where are you from?</p></div>
       <div class="line"><p class="arabic"><span class="speaker">شَريف :</span> أنا مِنْ باكِسْتان .</p><p class="translit">Sharīf: Anā min Bākistān.</p><p class="english">Sharif: I am from Pakistan.</p></div>
@@ -895,26 +550,18 @@ body.hide-translation .english-answer {
       <div class="line"><p class="arabic"><span class="speaker">مُحَمَّد :</span> أنا تُرْكِيّ . أنا مِنْ تُرْكِيا .</p><p class="translit">Muḥammad: Anā Turkiyy. Anā min Turkiyā.</p><p class="english">Muhammad: I am Turkish. I am from Turkey.</p></div>
       <div class="line"><p class="arabic"><span class="speaker">شَريف :</span> أهْلاً وَسَهْلاً .</p><p class="translit">Sharīf: Ahlan wa sahlan.</p><p class="english">Sharif: Welcome.</p></div>
     </div>
-    <span class="section-label">Dialogue 2 (b) — ف/ف</span>
-    <div class="dialogue">
-      <div class="line"><p class="arabic"><span class="speaker">مَرْيَم :</span> مِنْ أيْنَ أنْتِ ؟</p><p class="translit">Maryam: Min ayna anti?</p><p class="english">Maryam: Where are you from?</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">زَيْنَب :</span> أنا مِنْ مِصْر . أنا مِصْرِيَّة .</p><p class="translit">Zaynab: Anā min Miṣr. Anā Miṣriyya.</p><p class="english">Zaynab: I am from Egypt. I am Egyptian.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">مَرْيَم :</span> أنا سوريَّة . أنا مِنْ سوريا .</p><p class="translit">Maryam: Anā Sūriyya. Anā min Sūriyā.</p><p class="english">Maryam: I am Syrian. I am from Syria.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">زَيْنَب :</span> أهْلاً وَسَهْلاً .</p><p class="translit">Zaynab: Ahlan wa sahlan.</p><p class="english">Zaynab: Welcome.</p></div>
-    </div>
     <hr class="section-divider">
     <span class="section-label gold">Vocabulary — Countries &amp; Nationalities</span>
     <div class="vocab-grid">
-      <div class="vocab-card"><p class="ar">مِنْ أيْنَ أنْتَ ؟</p><p class="tr">Min ayna anta?</p><p class="en">Where are you from? (m.)</p></div>
+      <div class="vocab-card"><p class="ar">مِنْ أيْنَ أنْتَ ؟</p><p class="tr">Min ayna anta?</p><p class="en">Where are you from?</p></div>
       <div class="vocab-card"><p class="ar">ما جِنْسِيَّتُكَ ؟</p><p class="tr">Mā jinsiyyatuka?</p><p class="en">What is your nationality?</p></div>
       <div class="vocab-card"><p class="ar">أنا</p><p class="tr">Anā</p><p class="en">I / I am</p></div>
-      <div class="vocab-card"><p class="ar">مِنْ</p><p class="tr">Min</p><p class="en">From</p></div>
       <div class="vocab-card"><p class="ar">هَلْ</p><p class="tr">Hal</p><p class="en">Question particle</p></div>
       <div class="vocab-card"><p class="ar">نَعَمْ</p><p class="tr">Naʿam</p><p class="en">Yes</p></div>
       <div class="vocab-card"><p class="ar">أهْلاً وَسَهْلاً</p><p class="tr">Ahlan wa sahlan</p><p class="en">Welcome</p></div>
     </div>
     <table class="grammar-table">
-      <thead><tr><th>Country — البلد</th><th class="tr-cell" style="color:#fff">Transliteration</th><th>Male nationality</th><th>Female nationality</th></tr></thead>
+      <thead><tr><th>Country</th><th>Transliteration</th><th>Male nationality</th><th>Female nationality</th></tr></thead>
       <tbody>
         <tr><td class="ar-cell">باكِسْتان</td><td class="tr-cell">Bākistān</td><td class="ar-cell">باكِسْتانيّ <span class="tr-cell" style="display:block;font-size:0.78rem">(Bākistāniyy)</span></td><td class="ar-cell">باكِسْتانيَّة <span class="tr-cell" style="display:block;font-size:0.78rem">(Bākistāniyya)</span></td></tr>
         <tr><td class="ar-cell">تُرْكِيا</td><td class="tr-cell">Turkiyā</td><td class="ar-cell">تُرْكِيّ <span class="tr-cell" style="display:block;font-size:0.78rem">(Turkiyy)</span></td><td class="ar-cell">تُرْكِيَّة <span class="tr-cell" style="display:block;font-size:0.78rem">(Turkiyya)</span></td></tr>
@@ -926,16 +573,16 @@ body.hide-translation .english-answer {
 </article>
 
 <article class="lesson" id="l3">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 3</span><h3>التَّحيَّة والتَّعارُف</h3></div><span class="lesson-title-en">Introducing Others</span></div>
+  <div class="lesson-header"><div><span class="lesson-number">الدرس ٣ — Lesson 3</span><h3>التَّحيَّة والتَّعارُف</h3></div><span class="lesson-title-en">Introducing Others</span></div>
   <div class="lesson-body">
-    <span class="section-label">Dialogue 3 (a) — م/م</span>
+    <span class="section-label">Dialogue 3 (a)</span>
     <div class="dialogue">
       <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> هٰذا أخي . هُوَ مُدَرِّسٌ .</p><p class="translit">Aḥmad: Hādhā akhī. Huwa mudarrisun.</p><p class="english">Ahmad: This is my brother. He is a teacher.</p></div>
       <div class="line"><p class="arabic"><span class="speaker">بَدْر :</span> أهْلاً وَسَهْلاً .</p><p class="translit">Badr: Ahlan wa sahlan.</p><p class="english">Badr: Welcome.</p></div>
       <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> هٰذا صَديقي . هُوَ مُهَنْدِسٌ .</p><p class="translit">Aḥmad: Hādhā ṣadīqī. Huwa muhandisun.</p><p class="english">Ahmad: This is my friend. He is an engineer.</p></div>
       <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> مَعَ السَّلامَة .</p><p class="translit">Aḥmad: Maʿa as-salāma.</p><p class="english">Ahmad: Goodbye.</p></div>
     </div>
-    <span class="section-label">Dialogue 3 (b) — ف/ف</span>
+    <span class="section-label">Dialogue 3 (b)</span>
     <div class="dialogue">
       <div class="line"><p class="arabic"><span class="speaker">نَدى :</span> هٰذِهِ أُخْتي . هِيَ طَبيبَة .</p><p class="translit">Nadā: Hādhihi ukhtī. Hiya ṭabība.</p><p class="english">Nada: This is my sister. She is a doctor.</p></div>
       <div class="line"><p class="arabic"><span class="speaker">هُدى :</span> أهْلاً وَسَهْلاً .</p><p class="translit">Hudā: Ahlan wa sahlan.</p><p class="english">Huda: Welcome.</p></div>
@@ -947,10 +594,8 @@ body.hide-translation .english-answer {
     <div class="vocab-grid">
       <div class="vocab-card"><p class="ar">هٰذا</p><p class="tr">Hādhā</p><p class="en">This (m.)</p></div>
       <div class="vocab-card"><p class="ar">هٰذِهِ</p><p class="tr">Hādhihi</p><p class="en">This (f.)</p></div>
-      <div class="vocab-card"><p class="ar">هُوَ</p><p class="tr">Huwa</p><p class="en">He</p></div>
-      <div class="vocab-card"><p class="ar">هِيَ</p><p class="tr">Hiya</p><p class="en">She</p></div>
-      <div class="vocab-card"><p class="ar">أخ</p><p class="tr">Akh</p><p class="en">Brother</p></div>
-      <div class="vocab-card"><p class="ar">أُخْت</p><p class="tr">Ukht</p><p class="en">Sister</p></div>
+      <div class="vocab-card"><p class="ar">هُوَ / هِيَ</p><p class="tr">Huwa / Hiya</p><p class="en">He / She</p></div>
+      <div class="vocab-card"><p class="ar">أخ / أُخْت</p><p class="tr">Akh / Ukht</p><p class="en">Brother / Sister</p></div>
       <div class="vocab-card"><p class="ar">صَديق / صَديقَة</p><p class="tr">Ṣadīq / Ṣadīqa</p><p class="en">Friend (m./f.)</p></div>
       <div class="vocab-card"><p class="ar">مُدَرِّس / مُدَرِّسَة</p><p class="tr">Mudarris / Mudarrisa</p><p class="en">Teacher (m./f.)</p></div>
       <div class="vocab-card"><p class="ar">طالِب / طالِبَة</p><p class="tr">Ṭālib / Ṭāliba</p><p class="en">Student (m./f.)</p></div>
@@ -962,9 +607,9 @@ body.hide-translation .english-answer {
 </article>
 
 <article class="lesson" id="l4">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 4</span><h3>التَّحيَّة والتَّعارُف</h3></div><span class="lesson-title-en">Numbers 1–5</span></div>
+  <div class="lesson-header"><div><span class="lesson-number">الدرس ٤ — Lesson 4</span><h3>التَّحيَّة والتَّعارُف</h3></div><span class="lesson-title-en">Numbers 1–5</span></div>
   <div class="lesson-body">
-    <span class="section-label gold">Numbers — الأعداد ١–٥</span>
+    <span class="section-label gold">الأعداد ١–٥ — Numbers 1–5</span>
     <div class="numbers-grid">
       <div class="number-card"><p class="digit">١</p><p class="ar">واحِد</p><p class="tr">Wāḥid</p></div>
       <div class="number-card"><p class="digit">٢</p><p class="ar">اِثنان</p><p class="tr">Ithnān</p></div>
@@ -976,7 +621,7 @@ body.hide-translation .english-answer {
 </article>
 
 <article class="lesson" id="l5">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 5</span><h3>التَّراكيبُ النَّحْويَّة</h3></div><span class="lesson-title-en">Grammar Structures</span></div>
+  <div class="lesson-header"><div><span class="lesson-number">الدرس ٥ — Lesson 5</span><h3>التَّراكيبُ النَّحْويَّة</h3></div><span class="lesson-title-en">Grammar Structures</span></div>
   <div class="lesson-body">
     <span class="section-label">Personal Pronouns — الضمائر</span>
     <table class="grammar-table">
@@ -989,34 +634,24 @@ body.hide-translation .english-answer {
         <tr><td class="ar-cell">هِيَ</td><td class="tr-cell">Hiya</td><td class="en-cell">She</td><td class="en-cell">هِيَ طَبيبَة</td></tr>
       </tbody>
     </table>
-    <span class="section-label">Demonstratives — أسماء الإشارة</span>
-    <table class="grammar-table">
-      <thead><tr><th>Arabic</th><th>Transliteration</th><th>English</th><th>Example</th></tr></thead>
-      <tbody>
-        <tr><td class="ar-cell">هٰذا</td><td class="tr-cell">Hādhā</td><td class="en-cell">This (m.)</td><td class="en-cell">هٰذا أخي — This is my brother</td></tr>
-        <tr><td class="ar-cell">هٰذِهِ</td><td class="tr-cell">Hādhihi</td><td class="en-cell">This (f.)</td><td class="en-cell">هٰذِهِ أُخْتي — This is my sister</td></tr>
-      </tbody>
-    </table>
     <span class="section-label">Key Patterns</span>
     <table class="grammar-table">
       <thead><tr><th>#</th><th>Arabic</th><th>Transliteration</th><th>English</th></tr></thead>
       <tbody>
-        <tr><td class="en-cell">1</td><td class="ar-cell">اسْمي + اسم</td><td class="tr-cell">Ismī + [name]</td><td class="en-cell">My name is [name]</td></tr>
-        <tr><td class="en-cell">2</td><td class="ar-cell">أنا مِنْ + بَلَد</td><td class="tr-cell">Anā min + [country]</td><td class="en-cell">I am from [country]</td></tr>
-        <tr><td class="en-cell">3</td><td class="ar-cell">مِنْ أيْنَ أنْتَ/أنْتِ ؟</td><td class="tr-cell">Min ayna anta/anti?</td><td class="en-cell">Where are you from?</td></tr>
-        <tr><td class="en-cell">4</td><td class="ar-cell">هَلْ أنْتَ + جنسية ؟</td><td class="tr-cell">Hal anta + [nationality]?</td><td class="en-cell">Are you [nationality]?</td></tr>
-        <tr><td class="en-cell">5</td><td class="ar-cell">هٰذا أخي / صَديقي</td><td class="tr-cell">Hādhā akhī / ṣadīqī</td><td class="en-cell">This is my brother / friend</td></tr>
+        <tr><td>1</td><td class="ar-cell">اسْمي + اسم</td><td class="tr-cell">Ismī + [name]</td><td class="en-cell">My name is [name]</td></tr>
+        <tr><td>2</td><td class="ar-cell">أنا مِنْ + بَلَد</td><td class="tr-cell">Anā min + [country]</td><td class="en-cell">I am from [country]</td></tr>
+        <tr><td>3</td><td class="ar-cell">مِنْ أيْنَ أنْتَ ؟</td><td class="tr-cell">Min ayna anta?</td><td class="en-cell">Where are you from?</td></tr>
+        <tr><td>4</td><td class="ar-cell">هٰذا أخي / صَديقي</td><td class="tr-cell">Hādhā akhī / ṣadīqī</td><td class="en-cell">This is my brother / friend</td></tr>
       </tbody>
     </table>
   </div>
 </article>
 
 <article class="lesson" id="l6">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 6</span><h3>الأصْوات</h3></div><span class="lesson-title-en">Sounds: خ vs ك</span></div>
+  <div class="lesson-header"><div><span class="lesson-number">الدرس ٦ — Lesson 6</span><h3>الأصْوات</h3></div><span class="lesson-title-en">Sounds: خ vs ك</span></div>
   <div class="lesson-body">
-    <span class="section-label">Sound Contrast</span>
     <table class="grammar-table">
-      <thead><tr><th>خ (Khā') — uvular</th><th>Transliteration</th><th>ك (Kāf) — velar</th><th>Transliteration</th></tr></thead>
+      <thead><tr><th>خ (Khā')</th><th>Transliteration</th><th>ك (Kāf)</th><th>Transliteration</th></tr></thead>
       <tbody>
         <tr><td class="ar-cell">خَرّ</td><td class="tr-cell">Kharr</td><td class="ar-cell">كَرّ</td><td class="tr-cell">Karr</td></tr>
         <tr><td class="ar-cell">خَبير</td><td class="tr-cell">Khabīr</td><td class="ar-cell">كَبير</td><td class="tr-cell">Kabīr</td></tr>
@@ -1024,47 +659,33 @@ body.hide-translation .english-answer {
         <tr><td class="ar-cell">بِخَيْر</td><td class="tr-cell">Bi-khayr</td><td class="ar-cell">بِكَيْر</td><td class="tr-cell">Bi-kayr</td></tr>
       </tbody>
     </table>
-    <span class="section-label gold">Words with خ in Unit 1</span>
-    <div class="vocab-grid">
-      <div class="vocab-card"><p class="ar">خالِد</p><p class="tr">Khālid</p><p class="en">(proper name)</p></div>
-      <div class="vocab-card"><p class="ar">خَليل</p><p class="tr">Khalīl</p><p class="en">(proper name)</p></div>
-      <div class="vocab-card"><p class="ar">خَوْلة</p><p class="tr">Khawla</p><p class="en">(proper name)</p></div>
-      <div class="vocab-card"><p class="ar">خَديجة</p><p class="tr">Khadīja</p><p class="en">(proper name)</p></div>
-      <div class="vocab-card"><p class="ar">بِخَيْر</p><p class="tr">Bi-khayr</p><p class="en">Fine / well</p></div>
-      <div class="vocab-card"><p class="ar">أخ</p><p class="tr">Akh</p><p class="en">Brother</p></div>
-    </div>
   </div>
 </article>
 
 <article class="lesson" id="l7">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 7</span><h3>الكَلام</h3></div><span class="lesson-title-en">Speaking Practice</span></div>
+  <div class="lesson-header"><div><span class="lesson-number">الدرس ٧ — Lesson 7</span><h3>الكَلام</h3></div><span class="lesson-title-en">Speaking Practice</span></div>
   <div class="lesson-body">
-    <span class="section-label">Exercise — Answer</span>
     <div class="exercise">
-      <div class="exercise-header"><span class="ar-label">أَجِبْ .</span>Answer each prompt:</div>
+      <div class="exercise-header"><span class="ar-label">أَجِبْ .</span>Answer the following:</div>
       <div class="exercise-items">
-        <div class="exercise-item"><span class="num">1</span><p class="ar">السَّلامُ عَلَيْكُم .</p><p class="tr">As-salāmu ʿalaykum.</p><p class="en">→ respond with greeting</p></div>
-        <div class="exercise-item"><span class="num">2</span><p class="ar">ما اسْمُكَ ؟</p><p class="tr">Mā ismuka?</p><p class="en">→ give your name</p></div>
-        <div class="exercise-item"><span class="num">3</span><p class="ar">كَيْفَ حالُكَ ؟</p><p class="tr">Kayfa ḥāluka?</p><p class="en">→ reply</p></div>
-        <div class="exercise-item"><span class="num">4</span><p class="ar">مِنْ أيْنَ أنْتَ ؟</p><p class="tr">Min ayna anta?</p><p class="en">→ state your country</p></div>
-        <div class="exercise-item"><span class="num">5</span><p class="ar">ما جِنْسِيَّتُكَ ؟</p><p class="tr">Mā jinsiyyatuka?</p><p class="en">→ state your nationality</p></div>
-        <div class="exercise-item"><span class="num">6</span><p class="ar">هَلْ أنْتَ مِنْ سوريا ؟</p><p class="tr">Hal anta min Sūriyā?</p><p class="en">→ answer yes or no</p></div>
-        <div class="exercise-item"><span class="num">7</span><p class="ar">مَعَ السَّلامَة .</p><p class="tr">Maʿa as-salāma.</p><p class="en">→ respond</p></div>
+        <div class="exercise-item"><span class="num">1</span><p class="ar">السَّلامُ عَلَيْكُم .</p><p class="tr">As-salāmu ʿalaykum.</p><p class="en">Peace be upon you.</p></div>
+        <div class="exercise-item"><span class="num">2</span><p class="ar">ما اسْمُكَ ؟</p><p class="tr">Mā ismuka?</p><p class="en">What is your name?</p></div>
+        <div class="exercise-item"><span class="num">3</span><p class="ar">كَيْفَ حالُكَ ؟</p><p class="tr">Kayfa ḥāluka?</p><p class="en">How are you?</p></div>
+        <div class="exercise-item"><span class="num">4</span><p class="ar">مِنْ أيْنَ أنْتَ ؟</p><p class="tr">Min ayna anta?</p><p class="en">Where are you from?</p></div>
+        <div class="exercise-item"><span class="num">5</span><p class="ar">مَعَ السَّلامَة .</p><p class="tr">Maʿa as-salāma.</p><p class="en">Goodbye.</p></div>
       </div>
     </div>
   </div>
 </article>
 
 <article class="lesson" id="l9">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 9</span><h3>الكِتابَة</h3></div><span class="lesson-title-en">Writing: Letters أ ، د ، ذ</span></div>
+  <div class="lesson-header"><div><span class="lesson-number">الدرس ٩ — Lesson 9</span><h3>الكِتابَة</h3></div><span class="lesson-title-en">Writing: Letters أ ، د ، ذ</span></div>
   <div class="lesson-body">
-    <span class="section-label gold">Letters — الحروف</span>
     <div class="letter-group">
       <div class="letter-card"><p class="big-letter">أ</p><p class="name">Alif (Hamza)</p><p class="forms">أ &nbsp; ـأ</p></div>
       <div class="letter-card"><p class="big-letter">د</p><p class="name">Dāl</p><p class="forms">د &nbsp; ـد</p></div>
       <div class="letter-card"><p class="big-letter">ذ</p><p class="name">Dhāl</p><p class="forms">ذ &nbsp; ـذ</p></div>
     </div>
-    <span class="section-label">Practice Words</span>
     <div class="writing-words">
       <div class="writing-word"><p class="ar">أنا</p><p class="tr">Anā</p><p class="en">I</p></div>
       <div class="writing-word"><p class="ar">دار</p><p class="tr">Dār</p><p class="en">House</p></div>
@@ -1072,8 +693,6 @@ body.hide-translation .english-answer {
       <div class="writing-word"><p class="ar">ذَهَبَ</p><p class="tr">Dhahaba</p><p class="en">He went</p></div>
       <div class="writing-word"><p class="ar">هٰذِهِ</p><p class="tr">Hādhihi</p><p class="en">This (f.)</p></div>
       <div class="writing-word"><p class="ar">لَذيذ</p><p class="tr">Ladhīdh</p><p class="en">Delicious</p></div>
-      <div class="writing-word"><p class="ar">واحِد</p><p class="tr">Wāḥid</p><p class="en">One</p></div>
-      <div class="writing-word"><p class="ar">تَوَضَّأَ</p><p class="tr">Tawaḍḍa'a</p><p class="en">Performed ablution</p></div>
     </div>
   </div>
 </article>
@@ -1081,11 +700,17 @@ body.hide-translation .english-answer {
 </div><!-- /unit-1 -->
 
 
-<!-- ═══════════ UNIT 2 ═══════════ -->
+<!-- ███ UNIT 2 ███ -->
 <div class="unit-panel" id="unit-2">
-  <section class="unit-header"><p class="unit-number">Unit 2</p><h2>الأُسْرَة</h2><p class="transliteration">Al-Usra</p><p class="translation">The Family</p></section>
+  <section class="unit-header"><p class="unit-number">الوحدة ٢ — Unit 2</p><h2>الأُسْرَة</h2><p class="transliteration">Al-Usra</p><p class="translation">The Family</p></section>
+  <!-- TOGGLE BAR -->
+  <div class="sticky-controls">
+    <span class="controls-label">Show:</span>
+    <span class="toggle-pill on tog-translit" onclick="toggleTranslit()"><span class="t-dot"></span>Transliteration</span>
+    <span class="toggle-pill on tog-translation" onclick="toggleTranslation()"><span class="t-dot"></span>Translation</span>
+  </div>
   <div class="container">
-    <nav class="lesson-nav"><h4>Lessons in this unit</h4><div class="lesson-chips">
+    <nav class="lesson-nav"><h4>Lessons</h4><div class="lesson-chips">
       <a href="#l10" class="lesson-chip"><span class="chip-num">10</span>Family Photo</a>
       <a href="#l11" class="lesson-chip"><span class="chip-num">11</span>Prophet's Family</a>
       <a href="#l12" class="lesson-chip"><span class="chip-num">12</span>Morning Routine</a>
@@ -1093,280 +718,219 @@ body.hide-translation .english-answer {
       <a href="#l14" class="lesson-chip"><span class="chip-num">14</span>Grammar &amp; Writing ع غ</a>
     </div></nav>
 
-<article class="lesson" id="l10">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 10</span><h3>الأُسْرَة</h3></div><span class="lesson-title-en">My Family Photo</span></div>
-  <div class="lesson-body">
-    <span class="section-label">Dialogue 1</span>
-    <div class="dialogue">
-      <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذِهِ صورَةُ أُسْرَتي .</p><p class="translit">ʿAlī: Hādhihi ṣūratu usratī.</p><p class="english">Ali: This is a photo of my family.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عَمّار :</span> ما شاءَ الله ! مَنْ هٰذا ؟</p><p class="translit">ʿAmmār: Mā shā'a Allāh! Man hādhā?</p><p class="english">Ammar: Masha'Allah! Who is this?</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذا والِدي عَدْنان وَهُوَ مُهَنْدِسٌ .</p><p class="translit">ʿAlī: Hādhā wālidī ʿAdnān wa huwa muhandisun.</p><p class="english">Ali: This is my father Adnan, and he is an engineer.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذِهِ والِدَتي سَعيدَة وَهِيَ طَبيبَة .</p><p class="translit">ʿAlī: Hādhihi wālidatī Saʿīda wa hiya ṭabība.</p><p class="english">Ali: This is my mother Saida, and she is a doctor.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذا أخي عيسى وَهُوَ طالِبٌ .</p><p class="translit">ʿAlī: Hādhā akhī ʿĪsā wa huwa ṭālibun.</p><p class="english">Ali: This is my brother Isa, and he is a student.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذِهِ أُخْتي عَبْلَة وَهِيَ مُعَلِّمَة . وَهٰذا جَدّي . وَهٰذِهِ جَدَّتي .</p><p class="translit">ʿAlī: Hādhihi ukhtī ʿAbla wa hiya muʿallima. Wa hādhā jaddī. Wa hādhihi jaddatī.</p><p class="english">Ali: This is my sister Abla, a teacher. And this is my grandfather. And my grandmother.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عَمّار :</span> ما شاءَ الله !</p><p class="translit">ʿAmmār: Mā shā'a Allāh!</p><p class="english">Ammar: Masha'Allah!</p></div>
-    </div>
-    <hr class="section-divider">
-    <span class="section-label gold">Vocabulary — Family</span>
-    <div class="vocab-grid">
-      <div class="vocab-card"><p class="ar">أُسْرَة</p><p class="tr">Usra</p><p class="en">Family</p></div>
-      <div class="vocab-card"><p class="ar">صورَة</p><p class="tr">Ṣūra</p><p class="en">Photo / Picture</p></div>
-      <div class="vocab-card"><p class="ar">والِد</p><p class="tr">Wālid</p><p class="en">Father</p></div>
-      <div class="vocab-card"><p class="ar">والِدَة</p><p class="tr">Wālida</p><p class="en">Mother</p></div>
-      <div class="vocab-card"><p class="ar">اِبْن / اِبْنَة</p><p class="tr">Ibn / Ibna</p><p class="en">Son / Daughter</p></div>
-      <div class="vocab-card"><p class="ar">جَدّ / جَدَّة</p><p class="tr">Jadd / Jadda</p><p class="en">Grandfather / Grandmother</p></div>
-      <div class="vocab-card"><p class="ar">عَمّ / عَمَّة</p><p class="tr">ʿAmm / ʿAmma</p><p class="en">Paternal uncle / aunt</p></div>
-      <div class="vocab-card"><p class="ar">مُعَلِّمَة</p><p class="tr">Muʿallima</p><p class="en">Teacher (f.)</p></div>
-      <div class="vocab-card"><p class="ar">مَنْ</p><p class="tr">Man</p><p class="en">Who?</p></div>
-      <div class="vocab-card"><p class="ar">ما شاءَ الله</p><p class="tr">Mā shā'a Allāh</p><p class="en">Masha'Allah!</p></div>
-    </div>
+<article class="lesson" id="l10"><div class="lesson-header"><div><span class="lesson-number">الدرس ١٠ — Lesson 10</span><h3>الأُسْرَة</h3></div><span class="lesson-title-en">My Family Photo</span></div><div class="lesson-body">
+  <div class="dialogue">
+    <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذِهِ صورَةُ أُسْرَتي .</p><p class="translit">ʿAlī: Hādhihi ṣūratu usratī.</p><p class="english">Ali: This is a photo of my family.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عَمّار :</span> ما شاءَ الله ! مَنْ هٰذا ؟</p><p class="translit">ʿAmmār: Mā shā'a Allāh! Man hādhā?</p><p class="english">Ammar: Masha'Allah! Who is this?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذا والِدي عَدْنان وَهُوَ مُهَنْدِسٌ .</p><p class="translit">ʿAlī: Hādhā wālidī ʿAdnān wa huwa muhandisun.</p><p class="english">Ali: This is my father Adnan, and he is an engineer.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذِهِ والِدَتي سَعيدَة وَهِيَ طَبيبَة .</p><p class="translit">ʿAlī: Hādhihi wālidatī Saʿīda wa hiya ṭabība.</p><p class="english">Ali: This is my mother Saida, and she is a doctor.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> هٰذا أخي عيسى وَهُوَ طالِبٌ . هٰذِهِ أُخْتي عَبْلَة وَهِيَ مُعَلِّمَة .</p><p class="translit">ʿAlī: Hādhā akhī ʿĪsā wa huwa ṭālibun. Hādhihi ukhtī ʿAbla wa hiya muʿallima.</p><p class="english">Ali: This is my brother Isa (student). This is my sister Abla (teacher).</p></div>
+    <div class="line"><p class="arabic">وَهٰذا جَدّي . وَهٰذِهِ جَدَّتي .</p><p class="translit">Wa hādhā jaddī. Wa hādhihi jaddatī.</p><p class="english">And this is my grandfather. And this is my grandmother.</p></div>
   </div>
-</article>
+  <hr class="section-divider">
+  <span class="section-label gold">Vocabulary — Family</span>
+  <div class="vocab-grid">
+    <div class="vocab-card"><p class="ar">أُسْرَة</p><p class="tr">Usra</p><p class="en">Family</p></div>
+    <div class="vocab-card"><p class="ar">والِد / والِدَة</p><p class="tr">Wālid / Wālida</p><p class="en">Father / Mother</p></div>
+    <div class="vocab-card"><p class="ar">اِبْن / اِبْنَة</p><p class="tr">Ibn / Ibna</p><p class="en">Son / Daughter</p></div>
+    <div class="vocab-card"><p class="ar">جَدّ / جَدَّة</p><p class="tr">Jadd / Jadda</p><p class="en">Grandfather / Grandmother</p></div>
+    <div class="vocab-card"><p class="ar">عَمّ / عَمَّة</p><p class="tr">ʿAmm / ʿAmma</p><p class="en">Paternal uncle / aunt</p></div>
+    <div class="vocab-card"><p class="ar">مَنْ</p><p class="tr">Man</p><p class="en">Who?</p></div>
+    <div class="vocab-card"><p class="ar">صورَة</p><p class="tr">Ṣūra</p><p class="en">Photo</p></div>
+    <div class="vocab-card"><p class="ar">ما شاءَ الله</p><p class="tr">Mā shā'a Allāh</p><p class="en">Masha'Allah!</p></div>
+  </div>
+</div></article>
 
-<article class="lesson" id="l11">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 11</span><h3>الأُسْرَة</h3></div><span class="lesson-title-en">The Prophet's Family ﷺ</span></div>
-  <div class="lesson-body">
-    <span class="section-label">Dialogue 2</span>
-    <div class="dialogue">
-      <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> نَعَمْ ، هٰذِهِ أُسْرَةُ الرَّسولِ ﷺ .</p><p class="translit">ʿUthmān: Naʿam, hādhihi usratu ar-Rasūli ﷺ.</p><p class="english">Uthman: Yes, this is the family tree of the Prophet ﷺ.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> هٰذا والِدُهُ عَبْدُ الله .</p><p class="translit">ʿUthmān: Hādhā wāliduhu ʿAbdullāh.</p><p class="english">Uthman: This is his father, Abdullah.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عُمَر :</span> وَهٰذِهِ والِدَتُهُ آمِنَة . وَهٰذا جَدُّهُ عَبْدُ المُطَّلِب .</p><p class="translit">ʿUmar: Wa hādhihi wālidatuhu Āmina. Wa hādhā jadduhu ʿAbdu al-Muṭṭalib.</p><p class="english">Umar: This is his mother Amina. And his grandfather Abdul-Muttalib.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عُمَر :</span> وَهٰذا عَمُّهُ العَبّاس . وَهٰذا عَمُّهُ حَمْزَة .</p><p class="translit">ʿUmar: Wa hādhā ʿammuhu al-ʿAbbās. Wa hādhā ʿammuhu Ḥamza.</p><p class="english">Umar: This is his uncle Al-Abbas, and his uncle Hamza.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> وَهٰذِهِ عَمَّتُهُ صَفِيَّة . وَهٰذِهِ اِبْنَتُهُ فاطِمَة .</p><p class="translit">ʿUthmān: Wa hādhihi ʿammatuhu Ṣafiyya. Wa hādhihi ibnatuhu Fāṭima.</p><p class="english">Uthman: And his aunt Safiyya. And his daughter Fatima.</p></div>
-    </div>
-    <hr class="section-divider">
-    <span class="section-label gold">Possessive Suffixes — الضمائر المتصلة</span>
-    <table class="grammar-table">
-      <thead><tr><th>Relation</th><th>My — ـي</th><th>His — ـه</th><th>Her — ـها</th></tr></thead>
-      <tbody>
-        <tr><td class="en-cell">Father</td><td class="ar-cell">والِدي <span class="tr-cell" style="display:block;font-size:0.75rem">(wālidī)</span></td><td class="ar-cell">والِدُهُ <span class="tr-cell" style="display:block;font-size:0.75rem">(wāliduhu)</span></td><td class="ar-cell">والِدُها <span class="tr-cell" style="display:block;font-size:0.75rem">(wāliduhā)</span></td></tr>
-        <tr><td class="en-cell">Mother</td><td class="ar-cell">والِدَتي <span class="tr-cell" style="display:block;font-size:0.75rem">(wālidatī)</span></td><td class="ar-cell">والِدَتُهُ <span class="tr-cell" style="display:block;font-size:0.75rem">(wālidatuhu)</span></td><td class="ar-cell">والِدَتُها <span class="tr-cell" style="display:block;font-size:0.75rem">(wālidatuhā)</span></td></tr>
-        <tr><td class="en-cell">Brother</td><td class="ar-cell">أخي <span class="tr-cell" style="display:block;font-size:0.75rem">(akhī)</span></td><td class="ar-cell">أخوهُ <span class="tr-cell" style="display:block;font-size:0.75rem">(akhūhu)</span></td><td class="ar-cell">أخوها <span class="tr-cell" style="display:block;font-size:0.75rem">(akhūhā)</span></td></tr>
-        <tr><td class="en-cell">Grandfather</td><td class="ar-cell">جَدّي <span class="tr-cell" style="display:block;font-size:0.75rem">(jaddī)</span></td><td class="ar-cell">جَدُّهُ <span class="tr-cell" style="display:block;font-size:0.75rem">(jadduhu)</span></td><td class="ar-cell">جَدُّها <span class="tr-cell" style="display:block;font-size:0.75rem">(jadduhā)</span></td></tr>
-        <tr><td class="en-cell">Uncle</td><td class="ar-cell">عَمّي <span class="tr-cell" style="display:block;font-size:0.75rem">(ʿammī)</span></td><td class="ar-cell">عَمُّهُ <span class="tr-cell" style="display:block;font-size:0.75rem">(ʿammuhu)</span></td><td class="ar-cell">عَمُّها <span class="tr-cell" style="display:block;font-size:0.75rem">(ʿammuhā)</span></td></tr>
-      </tbody>
-    </table>
+<article class="lesson" id="l11"><div class="lesson-header"><div><span class="lesson-number">الدرس ١١ — Lesson 11</span><h3>الأُسْرَة</h3></div><span class="lesson-title-en">The Prophet's Family ﷺ</span></div><div class="lesson-body">
+  <div class="dialogue">
+    <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> نَعَمْ ، هٰذِهِ أُسْرَةُ الرَّسولِ ﷺ .</p><p class="translit">ʿUthmān: Naʿam, hādhihi usratu ar-Rasūli ﷺ.</p><p class="english">Yes, this is the family tree of the Prophet ﷺ.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> هٰذا والِدُهُ عَبْدُ الله . وَهٰذِهِ والِدَتُهُ آمِنَة .</p><p class="translit">ʿUthmān: Hādhā wāliduhu ʿAbdullāh. Wa hādhihi wālidatuhu Āmina.</p><p class="english">This is his father Abdullah. And his mother Amina.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عُمَر :</span> وَهٰذا جَدُّهُ عَبْدُ المُطَّلِب . وَعَمُّهُ حَمْزَة . وَعَمُّهُ العَبّاس .</p><p class="translit">ʿUmar: Wa hādhā jadduhu ʿAbdu al-Muṭṭalib. Wa ʿammuhu Ḥamza. Wa ʿammuhu al-ʿAbbās.</p><p class="english">His grandfather Abdul-Muttalib. His uncle Hamza. His uncle Al-Abbas.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> وَهٰذِهِ عَمَّتُهُ صَفِيَّة . وَهٰذِهِ اِبْنَتُهُ فاطِمَة .</p><p class="translit">ʿUthmān: Wa hādhihi ʿammatuhu Ṣafiyya. Wa hādhihi ibnatuhu Fāṭima.</p><p class="english">His aunt Safiyya. And his daughter Fatima.</p></div>
   </div>
-</article>
+  <hr class="section-divider">
+  <span class="section-label gold">Possessive Suffixes — الضمائر المتصلة</span>
+  <table class="grammar-table">
+    <thead><tr><th>Relation</th><th>My — ـي</th><th>His — ـه</th><th>Her — ـها</th></tr></thead>
+    <tbody>
+      <tr><td>Father</td><td class="ar-cell">والِدي <span class="tr-cell" style="display:block">(wālidī)</span></td><td class="ar-cell">والِدُهُ <span class="tr-cell" style="display:block">(wāliduhu)</span></td><td class="ar-cell">والِدُها <span class="tr-cell" style="display:block">(wāliduhā)</span></td></tr>
+      <tr><td>Mother</td><td class="ar-cell">والِدَتي <span class="tr-cell" style="display:block">(wālidatī)</span></td><td class="ar-cell">والِدَتُهُ <span class="tr-cell" style="display:block">(wālidatuhu)</span></td><td class="ar-cell">والِدَتُها <span class="tr-cell" style="display:block">(wālidatuhā)</span></td></tr>
+      <tr><td>Brother</td><td class="ar-cell">أخي <span class="tr-cell" style="display:block">(akhī)</span></td><td class="ar-cell">أخوهُ <span class="tr-cell" style="display:block">(akhūhu)</span></td><td class="ar-cell">أخوها <span class="tr-cell" style="display:block">(akhūhā)</span></td></tr>
+      <tr><td>Grandfather</td><td class="ar-cell">جَدّي <span class="tr-cell" style="display:block">(jaddī)</span></td><td class="ar-cell">جَدُّهُ <span class="tr-cell" style="display:block">(jadduhu)</span></td><td class="ar-cell">جَدُّها <span class="tr-cell" style="display:block">(jadduhā)</span></td></tr>
+    </tbody>
+  </table>
+</div></article>
 
-<article class="lesson" id="l12">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 12</span><h3>الأُسْرَة</h3></div><span class="lesson-title-en">Morning Routine — Fajr Prayer</span></div>
-  <div class="lesson-body">
-    <span class="section-label">Dialogue 3</span>
-    <div class="dialogue">
-      <div class="line"><p class="arabic"><span class="speaker">الأُمّ :</span> هٰذا أذانُ الفَجْرِ .</p><p class="translit">Al-Umm: Hādhā adhānu al-fajr.</p><p class="english">Mother: This is the Fajr call to prayer.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">الأب :</span> اللهُ أكْبَرُ . أيْنَ الأوْلادُ ؟</p><p class="translit">Al-Ab: Allāhu akbar. Ayna al-awlādu?</p><p class="english">Father: God is the greatest. Where are the children?</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">الأُمّ :</span> سَعْدٌ في الحَمّامِ يَتَوَضَّأُ .</p><p class="translit">Al-Umm: Saʿdun fī al-ḥammāmi yatawḍḍa'u.</p><p class="english">Mother: Saad is in the bathroom performing ablution.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">الأُمّ :</span> سَعيدٌ في الغُرْفَةِ يَقْرَأُ القُرْآنَ .</p><p class="translit">Al-Umm: Saʿīdun fī al-ghurfati yaqra'u al-Qur'ān.</p><p class="english">Mother: Said is in the room reading the Quran.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">الأُمّ :</span> سَعيدَةُ في المُصَلّى تُصَلّي .</p><p class="translit">Al-Umm: Saʿīdatu fī al-muṣallā tuṣallī.</p><p class="english">Mother: Saida is in the prayer area praying.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">سَعْد :</span> هٰذا هُوَ المِعْطَفُ ، يا والِدي .</p><p class="translit">Saʿd: Hādhā huwa al-miʿṭaf, yā wālidī.</p><p class="english">Saad: Here is the coat, father.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">الأب :</span> هَيّا بِنا إلى المَسْجِدِ .</p><p class="translit">Al-Ab: Hayyā binā ilā al-masjidi.</p><p class="english">Father: Let's go to the mosque.</p></div>
-    </div>
-    <hr class="section-divider">
-    <span class="section-label gold">Vocabulary — Daily Life &amp; Places</span>
-    <div class="vocab-grid">
-      <div class="vocab-card"><p class="ar">مَسْجِد</p><p class="tr">Masjid</p><p class="en">Mosque</p></div>
-      <div class="vocab-card"><p class="ar">مُصَلّى</p><p class="tr">Muṣallā</p><p class="en">Prayer area</p></div>
-      <div class="vocab-card"><p class="ar">أذان / الفَجْر</p><p class="tr">Adhān / Al-Fajr</p><p class="en">Call to prayer / Dawn prayer</p></div>
-      <div class="vocab-card"><p class="ar">حَمّام</p><p class="tr">Ḥammām</p><p class="en">Bathroom</p></div>
-      <div class="vocab-card"><p class="ar">غُرْفَة</p><p class="tr">Ghurfa</p><p class="en">Room</p></div>
-      <div class="vocab-card"><p class="ar">مِعْطَف</p><p class="tr">Miʿṭaf</p><p class="en">Coat</p></div>
-      <div class="vocab-card"><p class="ar">نَظّارَة</p><p class="tr">Naẓẓāra</p><p class="en">Eyeglasses</p></div>
-      <div class="vocab-card"><p class="ar">يَتَوَضَّأُ</p><p class="tr">Yatawḍḍa'u</p><p class="en">He performs ablution</p></div>
-      <div class="vocab-card"><p class="ar">يَقْرَأُ</p><p class="tr">Yaqra'u</p><p class="en">He reads</p></div>
-      <div class="vocab-card"><p class="ar">هَيّا بِنا</p><p class="tr">Hayyā binā</p><p class="en">Let's go</p></div>
-    </div>
+<article class="lesson" id="l12"><div class="lesson-header"><div><span class="lesson-number">الدرس ١٢ — Lesson 12</span><h3>الأُسْرَة</h3></div><span class="lesson-title-en">Morning Routine — Fajr Prayer</span></div><div class="lesson-body">
+  <div class="dialogue">
+    <div class="line"><p class="arabic"><span class="speaker">الأُمّ :</span> هٰذا أذانُ الفَجْرِ .</p><p class="translit">Al-Umm: Hādhā adhānu al-fajr.</p><p class="english">Mother: This is the Fajr call to prayer.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">الأب :</span> اللهُ أكْبَرُ . أيْنَ الأوْلادُ ؟</p><p class="translit">Al-Ab: Allāhu akbar. Ayna al-awlādu?</p><p class="english">Father: God is the greatest. Where are the children?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">الأُمّ :</span> سَعْدٌ في الحَمّامِ يَتَوَضَّأُ . سَعيدٌ في الغُرْفَةِ يَقْرَأُ القُرْآنَ . سَعيدَةُ في المُصَلّى تُصَلّي .</p><p class="translit">Al-Umm: Saʿdun fī al-ḥammāmi… Saʿīdun fī al-ghurfati… Saʿīdatu fī al-muṣallā…</p><p class="english">Mother: Saad is doing ablution. Said is reading Quran. Saida is praying.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">الأب :</span> هَيّا بِنا إلى المَسْجِدِ .</p><p class="translit">Al-Ab: Hayyā binā ilā al-masjidi.</p><p class="english">Father: Let's go to the mosque.</p></div>
   </div>
-</article>
+  <hr class="section-divider">
+  <span class="section-label gold">Vocabulary — Daily Life &amp; Places</span>
+  <div class="vocab-grid">
+    <div class="vocab-card"><p class="ar">مَسْجِد</p><p class="tr">Masjid</p><p class="en">Mosque</p></div>
+    <div class="vocab-card"><p class="ar">مُصَلّى</p><p class="tr">Muṣallā</p><p class="en">Prayer area</p></div>
+    <div class="vocab-card"><p class="ar">أذان / الفَجْر</p><p class="tr">Adhān / Al-Fajr</p><p class="en">Call to prayer / Dawn</p></div>
+    <div class="vocab-card"><p class="ar">حَمّام</p><p class="tr">Ḥammām</p><p class="en">Bathroom</p></div>
+    <div class="vocab-card"><p class="ar">غُرْفَة</p><p class="tr">Ghurfa</p><p class="en">Room</p></div>
+    <div class="vocab-card"><p class="ar">يَتَوَضَّأُ</p><p class="tr">Yatawḍḍa'u</p><p class="en">He performs ablution</p></div>
+    <div class="vocab-card"><p class="ar">يَقْرَأُ</p><p class="tr">Yaqra'u</p><p class="en">He reads</p></div>
+    <div class="vocab-card"><p class="ar">هَيّا بِنا</p><p class="tr">Hayyā binā</p><p class="en">Let's go</p></div>
+  </div>
+</div></article>
 
-<article class="lesson" id="l13">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 13</span><h3>الأُسْرَة</h3></div><span class="lesson-title-en">Numbers 6–10</span></div>
-  <div class="lesson-body">
-    <span class="section-label gold">Numbers — الأعداد ٦–١٠</span>
-    <div class="numbers-grid">
-      <div class="number-card"><p class="digit">٦</p><p class="ar">سِتَّة</p><p class="tr">Sitta</p></div>
-      <div class="number-card"><p class="digit">٧</p><p class="ar">سَبْعَة</p><p class="tr">Sabʿa</p></div>
-      <div class="number-card"><p class="digit">٨</p><p class="ar">ثَمانِيَة</p><p class="tr">Thamāniya</p></div>
-      <div class="number-card"><p class="digit">٩</p><p class="ar">تِسْعَة</p><p class="tr">Tisʿa</p></div>
-      <div class="number-card"><p class="digit">١٠</p><p class="ar">عَشَرَة</p><p class="tr">ʿAshara</p></div>
-    </div>
+<article class="lesson" id="l13"><div class="lesson-header"><div><span class="lesson-number">الدرس ١٣ — Lesson 13</span><h3>الأُسْرَة</h3></div><span class="lesson-title-en">Numbers 6–10</span></div><div class="lesson-body">
+  <span class="section-label gold">الأعداد ٦–١٠ — Numbers 6–10</span>
+  <div class="numbers-grid">
+    <div class="number-card"><p class="digit">٦</p><p class="ar">سِتَّة</p><p class="tr">Sitta</p></div>
+    <div class="number-card"><p class="digit">٧</p><p class="ar">سَبْعَة</p><p class="tr">Sabʿa</p></div>
+    <div class="number-card"><p class="digit">٨</p><p class="ar">ثَمانِيَة</p><p class="tr">Thamāniya</p></div>
+    <div class="number-card"><p class="digit">٩</p><p class="ar">تِسْعَة</p><p class="tr">Tisʿa</p></div>
+    <div class="number-card"><p class="digit">١٠</p><p class="ar">عَشَرَة</p><p class="tr">ʿAshara</p></div>
   </div>
-</article>
+</div></article>
 
-<article class="lesson" id="l14">
-  <div class="lesson-header"><div><span class="lesson-number">Lessons 14–18</span><h3>التراكيب والكتابة</h3></div><span class="lesson-title-en">Grammar &amp; Writing: ع ، غ</span></div>
-  <div class="lesson-body">
-    <span class="section-label">Grammar — Possessive (إضافة)</span>
-    <table class="grammar-table">
-      <thead><tr><th>Arabic</th><th>Transliteration</th><th>English</th></tr></thead>
-      <tbody>
-        <tr><td class="ar-cell">هٰذا والِدي</td><td class="tr-cell">Hādhā wālidī</td><td class="en-cell">This is my father</td></tr>
-        <tr><td class="ar-cell">هٰذا والِدُهُ</td><td class="tr-cell">Hādhā wāliduhu</td><td class="en-cell">This is his father</td></tr>
-        <tr><td class="ar-cell">سَعْدٌ في الحَمّام</td><td class="tr-cell">Saʿdun fī al-ḥammām</td><td class="en-cell">Saad is in the bathroom</td></tr>
-        <tr><td class="ar-cell">أيْنَ المِعْطَفُ ؟</td><td class="tr-cell">Ayna al-miʿṭaf?</td><td class="en-cell">Where is the coat?</td></tr>
-        <tr><td class="ar-cell">هٰذا هُوَ المِعْطَفُ</td><td class="tr-cell">Hādhā huwa al-miʿṭaf</td><td class="en-cell">This is the coat</td></tr>
-      </tbody>
-    </table>
-    <span class="section-label gold">Writing — ع ، غ</span>
-    <div class="letter-group">
-      <div class="letter-card"><p class="big-letter">ع</p><p class="name">ʿAyn</p><p class="forms">ع &nbsp; ـع &nbsp; ـعـ &nbsp; عـ</p></div>
-      <div class="letter-card"><p class="big-letter">غ</p><p class="name">Ghayn</p><p class="forms">غ &nbsp; ـغ &nbsp; ـغـ &nbsp; غـ</p></div>
-    </div>
-    <div class="writing-words">
-      <div class="writing-word"><p class="ar">عَلَيْكُم</p><p class="tr">ʿAlaykum</p><p class="en">Upon you</p></div>
-      <div class="writing-word"><p class="ar">عَمّ</p><p class="tr">ʿAmm</p><p class="en">Uncle</p></div>
-      <div class="writing-word"><p class="ar">غُرْفَة</p><p class="tr">Ghurfa</p><p class="en">Room</p></div>
-      <div class="writing-word"><p class="ar">مَعَ</p><p class="tr">Maʿa</p><p class="en">With</p></div>
-    </div>
+<article class="lesson" id="l14"><div class="lesson-header"><div><span class="lesson-number">الدرس ١٤–١٨</span><h3>التراكيب والكتابة</h3></div><span class="lesson-title-en">Grammar &amp; Writing: ع ، غ</span></div><div class="lesson-body">
+  <table class="grammar-table">
+    <thead><tr><th>Arabic</th><th>Transliteration</th><th>English</th></tr></thead>
+    <tbody>
+      <tr><td class="ar-cell">هٰذا والِدي</td><td class="tr-cell">Hādhā wālidī</td><td class="en-cell">This is my father</td></tr>
+      <tr><td class="ar-cell">هٰذا والِدُهُ</td><td class="tr-cell">Hādhā wāliduhu</td><td class="en-cell">This is his father</td></tr>
+      <tr><td class="ar-cell">سَعْدٌ في الحَمّام</td><td class="tr-cell">Saʿdun fī al-ḥammām</td><td class="en-cell">Saad is in the bathroom</td></tr>
+      <tr><td class="ar-cell">أيْنَ المِعْطَفُ ؟</td><td class="tr-cell">Ayna al-miʿṭaf?</td><td class="en-cell">Where is the coat?</td></tr>
+    </tbody>
+  </table>
+  <div class="letter-group">
+    <div class="letter-card"><p class="big-letter">ع</p><p class="name">ʿAyn</p><p class="forms">ع &nbsp; ـع &nbsp; ـعـ &nbsp; عـ</p></div>
+    <div class="letter-card"><p class="big-letter">غ</p><p class="name">Ghayn</p><p class="forms">غ &nbsp; ـغ &nbsp; ـغـ &nbsp; غـ</p></div>
   </div>
-</article>
+</div></article>
   </div>
 </div><!-- /unit-2 -->
 
 
-<!-- ═══════════ UNIT 3 ═══════════ -->
+<!-- ███ UNIT 3 ███ -->
 <div class="unit-panel" id="unit-3">
-  <section class="unit-header"><p class="unit-number">Unit 3</p><h2>السَّكَنُ</h2><p class="transliteration">As-Sakan</p><p class="translation">Housing</p></section>
+  <section class="unit-header"><p class="unit-number">الوحدة ٣ — Unit 3</p><h2>السَّكَنُ</h2><p class="transliteration">As-Sakan</p><p class="translation">Housing</p></section>
+  <!-- TOGGLE BAR -->
+  <div class="sticky-controls">
+    <span class="controls-label">Show:</span>
+    <span class="toggle-pill on tog-translit" onclick="toggleTranslit()"><span class="t-dot"></span>Transliteration</span>
+    <span class="toggle-pill on tog-translation" onclick="toggleTranslation()"><span class="t-dot"></span>Translation</span>
+  </div>
   <div class="container">
-    <nav class="lesson-nav"><h4>Lessons in this unit</h4><div class="lesson-chips">
+    <nav class="lesson-nav"><h4>Lessons</h4><div class="lesson-chips">
       <a href="#l19" class="lesson-chip"><span class="chip-num">19</span>Where Do You Live?</a>
       <a href="#l20" class="lesson-chip"><span class="chip-num">20</span>Renting</a>
       <a href="#l21" class="lesson-chip"><span class="chip-num">21</span>Furniture</a>
       <a href="#l22" class="lesson-chip"><span class="chip-num">22</span>Grammar &amp; Ordinals</a>
     </div></nav>
 
-<article class="lesson" id="l19">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 19</span><h3>السَّكَنُ</h3></div><span class="lesson-title-en">Where Do You Live?</span></div>
-  <div class="lesson-body">
-    <span class="section-label">Dialogue 1</span>
-    <div class="dialogue">
-      <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> أيْنَ تَسْكُنُ ؟</p><p class="translit">Aḥmad: Ayna taskunu?</p><p class="english">Ahmad: Where do you live?</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">حَسّان :</span> أسْكُنُ في حَيِّ المَطارِ . وَأيْنَ تَسْكُنُ أنْتَ ؟</p><p class="translit">Ḥassān: Askunu fī ḥayyi al-maṭār. Wa ayna taskunu anta?</p><p class="english">Hassan: I live in the airport neighborhood. And you?</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> أسْكُنُ في حَيِّ الجامِعَةِ .</p><p class="translit">Aḥmad: Askunu fī ḥayyi al-jāmiʿa.</p><p class="english">Ahmad: I live in the university neighborhood.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">حَسّان :</span> هَلْ تَسْكُنُ في بَيْتٍ ؟</p><p class="translit">Ḥassān: Hal taskunu fī baytin?</p><p class="english">Hassan: Do you live in a house?</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> نَعَمْ ، أسْكُنُ في بَيْتٍ .</p><p class="translit">Aḥmad: Naʿam, askunu fī baytin.</p><p class="english">Ahmad: Yes, I live in a house.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">حَسّان :</span> لا ، أسْكُنُ في شَقَّةٍ . ما رَقْمُ شَقَّتِكَ ؟</p><p class="translit">Ḥassān: Lā, askunu fī shaqqatin. Mā raqmu shaqqatika?</p><p class="english">Hassan: No, I live in an apartment. What is your apartment number?</p></div>
-    </div>
-    <hr class="section-divider">
-    <span class="section-label gold">Vocabulary — Housing</span>
-    <div class="vocab-grid">
-      <div class="vocab-card"><p class="ar">بَيْت</p><p class="tr">Bayt</p><p class="en">House</p></div>
-      <div class="vocab-card"><p class="ar">شَقَّة</p><p class="tr">Shaqqa</p><p class="en">Apartment</p></div>
-      <div class="vocab-card"><p class="ar">حَيّ</p><p class="tr">Ḥayy</p><p class="en">Neighborhood</p></div>
-      <div class="vocab-card"><p class="ar">رَقْم</p><p class="tr">Raqm</p><p class="en">Number</p></div>
-      <div class="vocab-card"><p class="ar">أسْكُنُ</p><p class="tr">Askunu</p><p class="en">I live</p></div>
-      <div class="vocab-card"><p class="ar">تَسْكُنُ</p><p class="tr">Taskunu</p><p class="en">You live</p></div>
-      <div class="vocab-card"><p class="ar">الجامِعَة</p><p class="tr">Al-Jāmiʿa</p><p class="en">The University</p></div>
-      <div class="vocab-card"><p class="ar">المَطار</p><p class="tr">Al-Maṭār</p><p class="en">The Airport</p></div>
-      <div class="vocab-card"><p class="ar">لا</p><p class="tr">Lā</p><p class="en">No</p></div>
-    </div>
+<article class="lesson" id="l19"><div class="lesson-header"><div><span class="lesson-number">الدرس ١٩ — Lesson 19</span><h3>السَّكَنُ</h3></div><span class="lesson-title-en">Where Do You Live?</span></div><div class="lesson-body">
+  <div class="dialogue">
+    <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> أيْنَ تَسْكُنُ ؟</p><p class="translit">Aḥmad: Ayna taskunu?</p><p class="english">Where do you live?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">حَسّان :</span> أسْكُنُ في حَيِّ المَطارِ . وَأيْنَ تَسْكُنُ أنْتَ ؟</p><p class="translit">Ḥassān: Askunu fī ḥayyi al-maṭār. Wa ayna taskunu anta?</p><p class="english">I live in the airport neighborhood. And you?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> أسْكُنُ في بَيْتٍ في حَيِّ الجامِعَةِ .</p><p class="translit">Aḥmad: Askunu fī baytin fī ḥayyi al-jāmiʿa.</p><p class="english">I live in a house in the university neighborhood.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">حَسّان :</span> لا ، أسْكُنُ في شَقَّةٍ . ما رَقْمُ شَقَّتِكَ ؟</p><p class="translit">Ḥassān: Lā, askunu fī shaqqatin. Mā raqmu shaqqatika?</p><p class="english">No, I live in an apartment. What is your number?</p></div>
   </div>
-</article>
+  <hr class="section-divider">
+  <span class="section-label gold">Vocabulary — Housing</span>
+  <div class="vocab-grid">
+    <div class="vocab-card"><p class="ar">بَيْت</p><p class="tr">Bayt</p><p class="en">House</p></div>
+    <div class="vocab-card"><p class="ar">شَقَّة</p><p class="tr">Shaqqa</p><p class="en">Apartment</p></div>
+    <div class="vocab-card"><p class="ar">حَيّ</p><p class="tr">Ḥayy</p><p class="en">Neighborhood</p></div>
+    <div class="vocab-card"><p class="ar">رَقْم</p><p class="tr">Raqm</p><p class="en">Number</p></div>
+    <div class="vocab-card"><p class="ar">أسْكُنُ</p><p class="tr">Askunu</p><p class="en">I live</p></div>
+    <div class="vocab-card"><p class="ar">الجامِعَة / المَطار</p><p class="tr">Al-Jāmiʿa / Al-Maṭār</p><p class="en">University / Airport</p></div>
+    <div class="vocab-card"><p class="ar">لا</p><p class="tr">Lā</p><p class="en">No</p></div>
+  </div>
+</div></article>
 
-<article class="lesson" id="l20">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 20</span><h3>السَّكَنُ</h3></div><span class="lesson-title-en">Renting an Apartment</span></div>
-  <div class="lesson-body">
-    <span class="section-label">Dialogue 2</span>
-    <div class="dialogue">
-      <div class="line"><p class="arabic"><span class="speaker">المُسْتَأجِر :</span> أُريدُ شَقَّةً مِنْ فَضْلِكَ .</p><p class="translit">Al-Musta'jir: Urīdu shaqqatan min faḍlika.</p><p class="english">Tenant: I want an apartment, please.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">المُؤَجِّر :</span> لَدَيْنا شَقَّةٌ جَميلَةٌ . في الشَّقَّةِ خَمْسُ غُرَفٍ .</p><p class="translit">Al-Mu'ajjir: Ladaynā shaqqatun jamīlatun. Fī ash-shaqqati khamsu ghurafin.</p><p class="english">Landlord: We have a beautiful apartment. It has five rooms.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">المُسْتَأجِر :</span> في أيِّ دَوْرٍ الشَّقَّةُ ؟</p><p class="translit">Al-Musta'jir: Fī ayyi dawrin ash-shaqqatu?</p><p class="english">Tenant: On which floor is the apartment?</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">المُؤَجِّر :</span> الشَّقَّةُ في الدَّوْرِ الخامِسِ . تَفَضَّلْ ، اُدْخُلْ .</p><p class="translit">Al-Mu'ajjir: Ash-shaqqatu fī ad-dawri al-khāmisi. Tafaḍḍal, udkhul.</p><p class="english">Landlord: The apartment is on the fifth floor. Please, come in.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">المُسْتَأجِر :</span> هٰذِهِ شَقَّةٌ جَميلَةٌ .</p><p class="translit">Al-Musta'jir: Hādhihi shaqqatun jamīlatun.</p><p class="english">Tenant: This is a beautiful apartment.</p></div>
-    </div>
-    <hr class="section-divider">
-    <span class="section-label gold">Vocabulary — Renting</span>
-    <div class="vocab-grid">
-      <div class="vocab-card"><p class="ar">أُريدُ</p><p class="tr">Urīdu</p><p class="en">I want</p></div>
-      <div class="vocab-card"><p class="ar">مِنْ فَضْلِكَ</p><p class="tr">Min faḍlika</p><p class="en">Please</p></div>
-      <div class="vocab-card"><p class="ar">لَدَيْنا</p><p class="tr">Ladaynā</p><p class="en">We have</p></div>
-      <div class="vocab-card"><p class="ar">جَميل / جَميلَة</p><p class="tr">Jamīl / Jamīla</p><p class="en">Beautiful (m./f.)</p></div>
-      <div class="vocab-card"><p class="ar">كَمْ</p><p class="tr">Kam</p><p class="en">How many?</p></div>
-      <div class="vocab-card"><p class="ar">غُرَف</p><p class="tr">Ghuraf</p><p class="en">Rooms (plural)</p></div>
-      <div class="vocab-card"><p class="ar">دَوْر</p><p class="tr">Dawr</p><p class="en">Floor / Story</p></div>
-      <div class="vocab-card"><p class="ar">الخامِس</p><p class="tr">Al-Khāmis</p><p class="en">The fifth</p></div>
-      <div class="vocab-card"><p class="ar">تَفَضَّلْ</p><p class="tr">Tafaḍḍal</p><p class="en">Please (go ahead)</p></div>
-      <div class="vocab-card"><p class="ar">باب</p><p class="tr">Bāb</p><p class="en">Door</p></div>
-    </div>
+<article class="lesson" id="l20"><div class="lesson-header"><div><span class="lesson-number">الدرس ٢٠ — Lesson 20</span><h3>السَّكَنُ</h3></div><span class="lesson-title-en">Renting an Apartment</span></div><div class="lesson-body">
+  <div class="dialogue">
+    <div class="line"><p class="arabic"><span class="speaker">المُسْتَأجِر :</span> أُريدُ شَقَّةً مِنْ فَضْلِكَ .</p><p class="translit">Al-Musta'jir: Urīdu shaqqatan min faḍlika.</p><p class="english">Tenant: I want an apartment, please.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">المُؤَجِّر :</span> لَدَيْنا شَقَّةٌ جَميلَةٌ . في الشَّقَّةِ خَمْسُ غُرَفٍ .</p><p class="translit">Al-Mu'ajjir: Ladaynā shaqqatun jamīlatun. Fī ash-shaqqati khamsu ghurafin.</p><p class="english">Landlord: We have a beautiful apartment with five rooms.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">المُسْتَأجِر :</span> في أيِّ دَوْرٍ الشَّقَّةُ ؟</p><p class="translit">Al-Musta'jir: Fī ayyi dawrin ash-shaqqatu?</p><p class="english">Tenant: On which floor?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">المُؤَجِّر :</span> الشَّقَّةُ في الدَّوْرِ الخامِسِ . تَفَضَّلْ ، اُدْخُلْ .</p><p class="translit">Al-Mu'ajjir: Ash-shaqqatu fī ad-dawri al-khāmisi. Tafaḍḍal, udkhul.</p><p class="english">Landlord: Fifth floor. Please, come in.</p></div>
   </div>
-</article>
+  <hr class="section-divider">
+  <span class="section-label gold">Vocabulary — Renting</span>
+  <div class="vocab-grid">
+    <div class="vocab-card"><p class="ar">أُريدُ</p><p class="tr">Urīdu</p><p class="en">I want</p></div>
+    <div class="vocab-card"><p class="ar">مِنْ فَضْلِكَ</p><p class="tr">Min faḍlika</p><p class="en">Please</p></div>
+    <div class="vocab-card"><p class="ar">لَدَيْنا</p><p class="tr">Ladaynā</p><p class="en">We have</p></div>
+    <div class="vocab-card"><p class="ar">كَمْ / غُرَف</p><p class="tr">Kam / Ghuraf</p><p class="en">How many / Rooms</p></div>
+    <div class="vocab-card"><p class="ar">دَوْر / الخامِس</p><p class="tr">Dawr / Al-Khāmis</p><p class="en">Floor / The fifth</p></div>
+    <div class="vocab-card"><p class="ar">تَفَضَّلْ</p><p class="tr">Tafaḍḍal</p><p class="en">Please (go ahead)</p></div>
+  </div>
+</div></article>
 
-<article class="lesson" id="l21">
-  <div class="lesson-header"><div><span class="lesson-number">Lesson 21</span><h3>السَّكَنُ</h3></div><span class="lesson-title-en">Buying Furniture</span></div>
-  <div class="lesson-body">
-    <span class="section-label">Dialogue 3</span>
-    <div class="dialogue">
-      <div class="line"><p class="arabic"><span class="speaker">المُشْتَري :</span> أُريدُ بَعْضَ الأثاثِ .</p><p class="translit">Al-Mushtarī: Urīdu baʿḍa al-athāthi.</p><p class="english">Buyer: I want some furniture.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">البائِع :</span> ماذا تُريدُ لِغُرْفَةِ النَّوْمِ ؟</p><p class="translit">Al-Bā'iʿ: Mādhā turīdu li-ghurfati an-nawmi?</p><p class="english">Seller: What do you want for the bedroom?</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">المُشْتَري :</span> أُريدُ سَريراً وَسِتارَةً .</p><p class="translit">Al-Mushtarī: Urīdu sarīran wa sitāratan.</p><p class="english">Buyer: I want a bed and a curtain.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">المُشْتَري :</span> أُريدُ أريكَةً وَسَجّادَةً لِغُرْفَةِ الجُلوسِ .</p><p class="translit">Al-Mushtarī: Urīdu arīkatan wa sajjādatan li-ghurfati al-julūsi.</p><p class="english">Buyer: I want a couch and a carpet for the living room.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">المُشْتَري :</span> أُريدُ فُرْناً وَثَلّاجَةً لِلْمَطْبَخِ .</p><p class="translit">Al-Mushtarī: Urīdu furnan wa thallājatan lil-maṭbakhi.</p><p class="english">Buyer: I want an oven and a refrigerator for the kitchen.</p></div>
-      <div class="line"><p class="arabic"><span class="speaker">المُشْتَري :</span> أُريدُ سَخّاناً وَمِرْآةً لِلْحَمّامِ .</p><p class="translit">Al-Mushtarī: Urīdu sakhkhānan wa mir'ātan lil-ḥammāmi.</p><p class="english">Buyer: I want a water heater and a mirror for the bathroom.</p></div>
-    </div>
-    <hr class="section-divider">
-    <span class="section-label gold">Vocabulary — Furniture &amp; Rooms</span>
-    <div class="vocab-grid">
-      <div class="vocab-card"><p class="ar">أثاث</p><p class="tr">Athāth</p><p class="en">Furniture</p></div>
-      <div class="vocab-card"><p class="ar">غُرْفَة نَوْم</p><p class="tr">Ghurfat nawm</p><p class="en">Bedroom</p></div>
-      <div class="vocab-card"><p class="ar">غُرْفَة جُلوس</p><p class="tr">Ghurfat julūs</p><p class="en">Living room</p></div>
-      <div class="vocab-card"><p class="ar">مَطْبَخ</p><p class="tr">Maṭbakh</p><p class="en">Kitchen</p></div>
-      <div class="vocab-card"><p class="ar">سَرير</p><p class="tr">Sarīr</p><p class="en">Bed</p></div>
-      <div class="vocab-card"><p class="ar">سِتارَة</p><p class="tr">Sitāra</p><p class="en">Curtain</p></div>
-      <div class="vocab-card"><p class="ar">أريكَة</p><p class="tr">Arīka</p><p class="en">Couch / Sofa</p></div>
-      <div class="vocab-card"><p class="ar">سَجّادَة</p><p class="tr">Sajjāda</p><p class="en">Carpet</p></div>
-      <div class="vocab-card"><p class="ar">فُرْن</p><p class="tr">Furn</p><p class="en">Oven</p></div>
-      <div class="vocab-card"><p class="ar">ثَلّاجَة</p><p class="tr">Thallāja</p><p class="en">Refrigerator</p></div>
-      <div class="vocab-card"><p class="ar">سَخّان</p><p class="tr">Sakhkhān</p><p class="en">Water heater</p></div>
-      <div class="vocab-card"><p class="ar">مِرْآة</p><p class="tr">Mir'āh</p><p class="en">Mirror</p></div>
-      <div class="vocab-card"><p class="ar">ماذا</p><p class="tr">Mādhā</p><p class="en">What?</p></div>
-      <div class="vocab-card"><p class="ar">شُكْراً</p><p class="tr">Shukran</p><p class="en">Thank you</p></div>
-    </div>
+<article class="lesson" id="l21"><div class="lesson-header"><div><span class="lesson-number">الدرس ٢١ — Lesson 21</span><h3>السَّكَنُ</h3></div><span class="lesson-title-en">Buying Furniture</span></div><div class="lesson-body">
+  <div class="dialogue">
+    <div class="line"><p class="arabic"><span class="speaker">المُشْتَري :</span> أُريدُ بَعْضَ الأثاثِ . ماذا لَدَيْكُم لِغُرْفَةِ النَّوْمِ ؟</p><p class="translit">Al-Mushtarī: Urīdu baʿḍa al-athāthi. Mādhā ladaykum li-ghurfati an-nawmi?</p><p class="english">Buyer: I want some furniture. What do you have for the bedroom?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">المُشْتَري :</span> أُريدُ سَريراً وَسِتارَةً . وَأريكَةً وَسَجّادَةً لِغُرْفَةِ الجُلوسِ .</p><p class="translit">Al-Mushtarī: Urīdu sarīran wa sitāratan. Wa arīkatan wa sajjādatan li-ghurfati al-julūsi.</p><p class="english">Buyer: A bed and curtain. And a couch and carpet for the living room.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">المُشْتَري :</span> أُريدُ فُرْناً وَثَلّاجَةً لِلْمَطْبَخِ . وَسَخّاناً وَمِرْآةً لِلْحَمّامِ .</p><p class="translit">Al-Mushtarī: Urīdu furnan wa thallājatan lil-maṭbakhi. Wa sakhkhānan wa mir'ātan lil-ḥammāmi.</p><p class="english">Buyer: Oven and fridge for kitchen. Water heater and mirror for bathroom.</p></div>
   </div>
-</article>
+  <hr class="section-divider">
+  <span class="section-label gold">Vocabulary — Furniture &amp; Rooms</span>
+  <div class="vocab-grid">
+    <div class="vocab-card"><p class="ar">أثاث</p><p class="tr">Athāth</p><p class="en">Furniture</p></div>
+    <div class="vocab-card"><p class="ar">غُرْفَة نَوْم</p><p class="tr">Ghurfat nawm</p><p class="en">Bedroom</p></div>
+    <div class="vocab-card"><p class="ar">غُرْفَة جُلوس</p><p class="tr">Ghurfat julūs</p><p class="en">Living room</p></div>
+    <div class="vocab-card"><p class="ar">مَطْبَخ</p><p class="tr">Maṭbakh</p><p class="en">Kitchen</p></div>
+    <div class="vocab-card"><p class="ar">سَرير / سِتارَة</p><p class="tr">Sarīr / Sitāra</p><p class="en">Bed / Curtain</p></div>
+    <div class="vocab-card"><p class="ar">أريكَة / سَجّادَة</p><p class="tr">Arīka / Sajjāda</p><p class="en">Couch / Carpet</p></div>
+    <div class="vocab-card"><p class="ar">فُرْن / ثَلّاجَة</p><p class="tr">Furn / Thallāja</p><p class="en">Oven / Refrigerator</p></div>
+    <div class="vocab-card"><p class="ar">سَخّان / مِرْآة</p><p class="tr">Sakhkhān / Mir'āh</p><p class="en">Water heater / Mirror</p></div>
+    <div class="vocab-card"><p class="ar">ماذا / شُكْراً</p><p class="tr">Mādhā / Shukran</p><p class="en">What? / Thank you</p></div>
+  </div>
+</div></article>
 
-<article class="lesson" id="l22">
-  <div class="lesson-header"><div><span class="lesson-number">Lessons 22–27</span><h3>التراكيب والكتابة</h3></div><span class="lesson-title-en">Grammar, Ordinals &amp; Writing</span></div>
-  <div class="lesson-body">
-    <span class="section-label">Key Patterns</span>
-    <table class="grammar-table">
-      <thead><tr><th>#</th><th>Arabic</th><th>Transliteration</th><th>English</th></tr></thead>
-      <tbody>
-        <tr><td class="en-cell">1</td><td class="ar-cell">أيْنَ تَسْكُنُ ؟</td><td class="tr-cell">Ayna taskunu?</td><td class="en-cell">Where do you live?</td></tr>
-        <tr><td class="en-cell">2</td><td class="ar-cell">أسْكُنُ في + مكان</td><td class="tr-cell">Askunu fī + [place]</td><td class="en-cell">I live in [place]</td></tr>
-        <tr><td class="en-cell">3</td><td class="ar-cell">أُريدُ + شيء</td><td class="tr-cell">Urīdu + [thing]</td><td class="en-cell">I want [thing]</td></tr>
-        <tr><td class="en-cell">4</td><td class="ar-cell">كَمْ غُرْفَةً في الشَّقَّةِ ؟</td><td class="tr-cell">Kam ghurfatan fī ash-shaqqati?</td><td class="en-cell">How many rooms?</td></tr>
-        <tr><td class="en-cell">5</td><td class="ar-cell">ماذا تُريدُ لِـ + مكان ؟</td><td class="tr-cell">Mādhā turīdu li- + [room]?</td><td class="en-cell">What do you want for [room]?</td></tr>
-      </tbody>
-    </table>
-    <span class="section-label gold">Ordinal Numbers — الأعداد الترتيبية</span>
-    <table class="grammar-table">
-      <thead><tr><th>Cardinal</th><th>Ordinal</th><th>Transliteration</th><th>English</th></tr></thead>
-      <tbody>
-        <tr><td class="ar-cell">١</td><td class="ar-cell">الأوَّل</td><td class="tr-cell">Al-Awwal</td><td class="en-cell">The first</td></tr>
-        <tr><td class="ar-cell">٢</td><td class="ar-cell">الثاني</td><td class="tr-cell">Ath-Thānī</td><td class="en-cell">The second</td></tr>
-        <tr><td class="ar-cell">٣</td><td class="ar-cell">الثالِث</td><td class="tr-cell">Ath-Thālith</td><td class="en-cell">The third</td></tr>
-        <tr><td class="ar-cell">٤</td><td class="ar-cell">الرابِع</td><td class="tr-cell">Ar-Rābiʿ</td><td class="en-cell">The fourth</td></tr>
-        <tr><td class="ar-cell">٥</td><td class="ar-cell">الخامِس</td><td class="tr-cell">Al-Khāmis</td><td class="en-cell">The fifth</td></tr>
-      </tbody>
-    </table>
-  </div>
-</article>
+<article class="lesson" id="l22"><div class="lesson-header"><div><span class="lesson-number">الدرس ٢٢–٢٧</span><h3>التراكيب والكتابة</h3></div><span class="lesson-title-en">Grammar, Ordinals &amp; Writing</span></div><div class="lesson-body">
+  <table class="grammar-table">
+    <thead><tr><th>#</th><th>Arabic</th><th>Transliteration</th><th>English</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="ar-cell">أيْنَ تَسْكُنُ ؟</td><td class="tr-cell">Ayna taskunu?</td><td class="en-cell">Where do you live?</td></tr>
+      <tr><td>2</td><td class="ar-cell">أسْكُنُ في + مكان</td><td class="tr-cell">Askunu fī + [place]</td><td class="en-cell">I live in [place]</td></tr>
+      <tr><td>3</td><td class="ar-cell">أُريدُ + شيء</td><td class="tr-cell">Urīdu + [thing]</td><td class="en-cell">I want [thing]</td></tr>
+      <tr><td>4</td><td class="ar-cell">ماذا تُريدُ لِـ + مكان ؟</td><td class="tr-cell">Mādhā turīdu li- + [room]?</td><td class="en-cell">What do you want for [room]?</td></tr>
+    </tbody>
+  </table>
+  <span class="section-label gold">Ordinal Numbers — الأعداد الترتيبية</span>
+  <table class="grammar-table">
+    <thead><tr><th>Cardinal</th><th>Ordinal</th><th>Transliteration</th><th>English</th></tr></thead>
+    <tbody>
+      <tr><td class="ar-cell">١</td><td class="ar-cell">الأوَّل</td><td class="tr-cell">Al-Awwal</td><td class="en-cell">The first</td></tr>
+      <tr><td class="ar-cell">٢</td><td class="ar-cell">الثاني</td><td class="tr-cell">Ath-Thānī</td><td class="en-cell">The second</td></tr>
+      <tr><td class="ar-cell">٣</td><td class="ar-cell">الثالِث</td><td class="tr-cell">Ath-Thālith</td><td class="en-cell">The third</td></tr>
+      <tr><td class="ar-cell">٤</td><td class="ar-cell">الرابِع</td><td class="tr-cell">Ar-Rābiʿ</td><td class="en-cell">The fourth</td></tr>
+      <tr><td class="ar-cell">٥</td><td class="ar-cell">الخامِس</td><td class="tr-cell">Al-Khāmis</td><td class="en-cell">The fifth</td></tr>
+    </tbody>
+  </table>
+</div></article>
   </div>
 </div><!-- /unit-3 -->
 
 
-<!-- ═══ UNITS 4–8: Concise but complete ═══ -->
+<!-- ███ UNITS 4–8 ███ -->
 <div class="unit-panel" id="unit-4">
-  <section class="unit-header"><p class="unit-number">Unit 4</p><h2>الحَياةُ اليَوْمِيَّة</h2><p class="transliteration">Al-Ḥayātu al-Yawmiyya</p><p class="translation">Daily Life</p></section>
+  <section class="unit-header"><p class="unit-number">الوحدة ٤ — Unit 4</p><h2>الحَياةُ اليَوْمِيَّة</h2><p class="transliteration">Al-Ḥayātu al-Yawmiyya</p><p class="translation">Daily Life</p></section>
+  <!-- TOGGLE BAR -->
+  <div class="sticky-controls">
+    <span class="controls-label">Show:</span>
+    <span class="toggle-pill on tog-translit" onclick="toggleTranslit()"><span class="t-dot"></span>Transliteration</span>
+    <span class="toggle-pill on tog-translation" onclick="toggleTranslation()"><span class="t-dot"></span>Translation</span>
+  </div>
   <div class="container">
     <nav class="lesson-nav"><h4>Lessons</h4><div class="lesson-chips"><a href="#l28" class="lesson-chip"><span class="chip-num">28</span>Daily Routine</a><a href="#l29" class="lesson-chip"><span class="chip-num">29</span>Weekend Chores</a><a href="#l30" class="lesson-chip"><span class="chip-num">30</span>Holiday Routine</a></div></nav>
-
 <article class="lesson" id="l28"><div class="lesson-header"><div><span class="lesson-number">Lesson 28</span><h3>الحَياةُ اليَوْمِيَّة</h3></div><span class="lesson-title-en">Daily Routine</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">طارق :</span> مَتى تَسْتَيْقِظُ ؟</p><p class="translit">Ṭāriq: Matā tastayqiẓu?</p><p class="english">When do you wake up?</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">طاهر :</span> أسْتَيْقِظُ عِنْدَ الفَجْرِ . أُصَلّي الفَجْرَ في المَسْجِدِ .</p><p class="translit">Ṭāhir: Astayqiẓu ʿinda al-fajr. Uṣallī al-fajra fī al-masjidi.</p><p class="english">I wake up at dawn. I pray Fajr in the mosque.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">طاهر :</span> لا ، لا أنامُ بَعْدَ الصَّلاةِ . أقْرَأُ القُرْآنَ .</p><p class="translit">Ṭāhir: Lā, lā anāmu baʿda aṣ-ṣalāti. Aqra'u al-Qur'ān.</p><p class="english">No, I don't sleep after prayer. I read the Quran.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">طاهر :</span> أذْهَبُ السّاعَةَ السّابِعَةَ بِالحافِلَةِ .</p><p class="translit">Ṭāhir: Adhhabu as-sāʿata as-sābiʿa bil-ḥāfilati.</p><p class="english">I go at seven o'clock by bus.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">طارق :</span> مَتى تَسْتَيْقِظُ ؟</p><p class="translit">Matā tastayqiẓu?</p><p class="english">When do you wake up?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">طاهر :</span> أسْتَيْقِظُ عِنْدَ الفَجْرِ . أُصَلّي في المَسْجِدِ . أقْرَأُ القُرْآنَ .</p><p class="translit">Astayqiẓu ʿinda al-fajr. Uṣallī fī al-masjidi. Aqra'u al-Qur'ān.</p><p class="english">I wake up at dawn. I pray at the mosque. I read the Quran.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">طاهر :</span> أذْهَبُ السّاعَةَ السّابِعَةَ بِالحافِلَةِ .</p><p class="translit">Adhhabu as-sāʿata as-sābiʿa bil-ḥāfilati.</p><p class="english">I go at seven o'clock by bus.</p></div>
   </div>
   <hr class="section-divider">
   <span class="section-label gold">Vocabulary</span>
@@ -1376,24 +940,18 @@ body.hide-translation .english-answer {
     <div class="vocab-card"><p class="ar">يَنامُ</p><p class="tr">Yanāmu</p><p class="en">He sleeps</p></div>
     <div class="vocab-card"><p class="ar">يَذْهَبُ</p><p class="tr">Yadhhabu</p><p class="en">He goes</p></div>
     <div class="vocab-card"><p class="ar">بَعْدَ</p><p class="tr">Baʿda</p><p class="en">After</p></div>
-    <div class="vocab-card"><p class="ar">عِنْدَ</p><p class="tr">ʿInda</p><p class="en">At (time)</p></div>
-    <div class="vocab-card"><p class="ar">الصَّلاة</p><p class="tr">Aṣ-Ṣalāh</p><p class="en">The prayer</p></div>
     <div class="vocab-card"><p class="ar">المَدْرَسَة</p><p class="tr">Al-Madrasa</p><p class="en">The school</p></div>
     <div class="vocab-card"><p class="ar">السَّيّارَة</p><p class="tr">As-Sayyāra</p><p class="en">Car</p></div>
     <div class="vocab-card"><p class="ar">الحافِلَة</p><p class="tr">Al-Ḥāfila</p><p class="en">Bus</p></div>
   </div>
 </div></article>
-
 <article class="lesson" id="l29"><div class="lesson-header"><div><span class="lesson-number">Lesson 29</span><h3>الحَياةُ اليَوْمِيَّة</h3></div><span class="lesson-title-en">Weekend Chores</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">الأُمّ :</span> هٰذا يَوْمُ العُطْلَةِ . ماذا سَتَفْعَلُ يا طارِقُ ؟</p><p class="translit">Al-Umm: Hādhā yawmu al-ʿuṭlati. Mādhā satafʿalu yā Ṭāriqu?</p><p class="english">Mother: This is the day off. What will you do, Tariq?</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">طارق :</span> سَأكْنُسُ غُرْفَةَ الجُلوسِ .</p><p class="translit">Ṭāriq: Sa-aknusu ghurfata al-julūsi.</p><p class="english">Tariq: I will sweep the living room.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">أحْمَد :</span> سَأغْسِلُ المَلابِسَ .</p><p class="translit">Aḥmad: Sa-aghsilu al-malābisa.</p><p class="english">Ahmad: I will wash the clothes.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">لَطيفة :</span> سَأكْوي المَلابِسَ .</p><p class="translit">Laṭīfa: Sa-akwī al-malābisa.</p><p class="english">Latifa: I will iron the clothes.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">الجَدَّة :</span> سَأغْسِلُ الأطْباقَ .</p><p class="translit">Al-Jadda: Sa-aghsilu al-aṭbāqa.</p><p class="english">Grandmother: I will wash the dishes.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">الأُمّ :</span> هٰذا يَوْمُ العُطْلَةِ . ماذا سَتَفْعَلُ يا طارِقُ ؟</p><p class="translit">Hādhā yawmu al-ʿuṭlati. Mādhā satafʿalu yā Ṭāriqu?</p><p class="english">This is the day off. What will you do, Tariq?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">طارق :</span> سَأكْنُسُ . أحْمَد سَيَغْسِلُ المَلابِسَ . الجَدَّة سَتَغْسِلُ الأطْباقَ .</p><p class="translit">Sa-aknusu. Aḥmad sa-yaghsilu al-malābisa. Al-jadda sa-taghsilu al-aṭbāqa.</p><p class="english">I'll sweep. Ahmad will wash clothes. Grandmother will wash dishes.</p></div>
   </div>
   <hr class="section-divider">
-  <span class="section-label gold">Vocabulary — Future &amp; Chores</span>
+  <span class="section-label gold">Vocabulary</span>
   <div class="vocab-grid">
     <div class="vocab-card"><p class="ar">سَـ + فعل</p><p class="tr">Sa- + verb</p><p class="en">Will (future prefix)</p></div>
     <div class="vocab-card"><p class="ar">يَكْنُسُ</p><p class="tr">Yaknusu</p><p class="en">He sweeps</p></div>
@@ -1403,23 +961,18 @@ body.hide-translation .english-answer {
     <div class="vocab-card"><p class="ar">الأطْباق</p><p class="tr">Al-Aṭbāq</p><p class="en">Dishes</p></div>
   </div>
 </div></article>
-
 <article class="lesson" id="l30"><div class="lesson-header"><div><span class="lesson-number">Lesson 30</span><h3>الحَياةُ اليَوْمِيَّة</h3></div><span class="lesson-title-en">Holiday Routine</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">فَيْصَل :</span> أسْتَيْقِظُ مُبَكِّراً .</p><p class="translit">Fayṣal: Astayqiẓu mubakkiran.</p><p class="english">Faisal: I wake up early.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">عادل :</span> أسْتَيْقِظُ مُتَأخِّراً . أُشاهِدُ التِّلْفازَ .</p><p class="translit">ʿĀdil: Astayqiẓu muta'akhkhiran. Ushāhidu at-tilfāza.</p><p class="english">Adil: I wake up late. I watch TV.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">فَيْصَل :</span> أقْرَأُ صَحيفَةً أوْ كِتاباً .</p><p class="translit">Fayṣal: Aqra'u ṣaḥīfatan aw kitāban.</p><p class="english">Faisal: I read a newspaper or a book.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">فَيْصَل :</span> أُصَلّي الجُمُعَةَ في المَسْجِدِ الكَبيرِ .</p><p class="translit">Fayṣal: Uṣallī al-jumuʿata fī al-masjidi al-kabīri.</p><p class="english">Faisal: I pray Jumu'ah in the big mosque.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">فَيْصَل :</span> أسْتَيْقِظُ مُبَكِّراً . أقْرَأُ صَحيفَةً أوْ كِتاباً .</p><p class="translit">Astayqiẓu mubakkiran. Aqra'u ṣaḥīfatan aw kitāban.</p><p class="english">I wake up early. I read a newspaper or a book.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عادل :</span> أسْتَيْقِظُ مُتَأخِّراً . أُشاهِدُ التِّلْفازَ .</p><p class="translit">Astayqiẓu muta'akhkhiran. Ushāhidu at-tilfāza.</p><p class="english">I wake up late. I watch TV.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">فَيْصَل :</span> أُصَلّي الجُمُعَةَ في المَسْجِدِ الكَبيرِ .</p><p class="translit">Uṣallī al-jumuʿata fī al-masjidi al-kabīri.</p><p class="english">I pray Jumu'ah in the big mosque.</p></div>
   </div>
   <hr class="section-divider">
   <span class="section-label gold">Vocabulary</span>
   <div class="vocab-grid">
-    <div class="vocab-card"><p class="ar">مُبَكِّراً</p><p class="tr">Mubakkiran</p><p class="en">Early</p></div>
-    <div class="vocab-card"><p class="ar">مُتَأخِّراً</p><p class="tr">Muta'akhkhiran</p><p class="en">Late</p></div>
-    <div class="vocab-card"><p class="ar">يُشاهِدُ</p><p class="tr">Yushāhidu</p><p class="en">He watches</p></div>
+    <div class="vocab-card"><p class="ar">مُبَكِّراً / مُتَأخِّراً</p><p class="tr">Mubakkiran / Muta'akhkhiran</p><p class="en">Early / Late</p></div>
     <div class="vocab-card"><p class="ar">التِّلْفاز</p><p class="tr">At-Tilfāz</p><p class="en">Television</p></div>
-    <div class="vocab-card"><p class="ar">صَحيفَة</p><p class="tr">Ṣaḥīfa</p><p class="en">Newspaper</p></div>
-    <div class="vocab-card"><p class="ar">كِتاب</p><p class="tr">Kitāb</p><p class="en">Book</p></div>
+    <div class="vocab-card"><p class="ar">صَحيفَة / كِتاب</p><p class="tr">Ṣaḥīfa / Kitāb</p><p class="en">Newspaper / Book</p></div>
     <div class="vocab-card"><p class="ar">الجُمُعَة</p><p class="tr">Al-Jumuʿa</p><p class="en">Friday prayer</p></div>
   </div>
 </div></article>
@@ -1427,52 +980,44 @@ body.hide-translation .english-answer {
 </div><!-- /unit-4 -->
 
 <div class="unit-panel" id="unit-5">
-  <section class="unit-header"><p class="unit-number">Unit 5</p><h2>الطَّعامُ والشَّرابُ</h2><p class="transliteration">Aṭ-Ṭaʿāmu wash-Sharāb</p><p class="translation">Food &amp; Drink</p></section>
+  <section class="unit-header"><p class="unit-number">الوحدة ٥ — Unit 5</p><h2>الطَّعامُ والشَّرابُ</h2><p class="transliteration">Aṭ-Ṭaʿāmu wash-Sharāb</p><p class="translation">Food &amp; Drink</p></section>
+  <!-- TOGGLE BAR -->
+  <div class="sticky-controls">
+    <span class="controls-label">Show:</span>
+    <span class="toggle-pill on tog-translit" onclick="toggleTranslit()"><span class="t-dot"></span>Transliteration</span>
+    <span class="toggle-pill on tog-translation" onclick="toggleTranslation()"><span class="t-dot"></span>Translation</span>
+  </div>
   <div class="container">
     <nav class="lesson-nav"><h4>Lessons</h4><div class="lesson-chips"><a href="#l37" class="lesson-chip"><span class="chip-num">37</span>Meals</a><a href="#l38" class="lesson-chip"><span class="chip-num">38</span>Ordering Food</a></div></nav>
-
 <article class="lesson" id="l37"><div class="lesson-header"><div><span class="lesson-number">Lesson 37</span><h3>الطَّعامُ والشَّرابُ</h3></div><span class="lesson-title-en">Meals &amp; Eating</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">سالم :</span> آكُلُ ثَلاثَ وَجَباتٍ : الفَطورَ ، والغَداءَ ، والعَشاءَ .</p><p class="translit">Sālim: Ākulu thalātha wajabātin: al-faṭūra, wal-ghadā'a, wal-ʿashā'a.</p><p class="english">I eat three meals: breakfast, lunch, and dinner.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">قاسم :</span> هٰذا كَثيرٌ جِدّاً . أنا آكُلُ وَجْبَةً واحِدَةً .</p><p class="translit">Qāsim: Hādhā kathīrun jiddan. Anā ākulu wajbatan wāḥidatan.</p><p class="english">That's a lot. I eat one meal.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">سالم :</span> آكُلُ الأرُزَّ والخُبْزَ . آكُلُ السَّمَكَ والسَّلَطَةَ والفاكِهَةَ .</p><p class="translit">Sālim: Ākulu al-aruzza wal-khubza. Ākulu as-samaka was-salaṭata wal-fākihata.</p><p class="english">I eat rice and bread. I eat fish, salad, and fruit.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">سالم :</span> آكُلُ ثَلاثَ وَجَباتٍ : الفَطورَ ، والغَداءَ ، والعَشاءَ .</p><p class="translit">Ākulu thalātha wajabātin: al-faṭūra, wal-ghadā'a, wal-ʿashā'a.</p><p class="english">I eat three meals: breakfast, lunch, and dinner.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">قاسم :</span> هٰذا كَثيرٌ جِدّاً . أنا آكُلُ وَجْبَةً واحِدَةً .</p><p class="translit">Hādhā kathīrun jiddan. Anā ākulu wajbatan wāḥidatan.</p><p class="english">That's a lot. I eat one meal.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">سالم :</span> آكُلُ الأرُزَّ والخُبْزَ والسَّمَكَ والسَّلَطَةَ والفاكِهَةَ .</p><p class="translit">Ākulu al-aruzza wal-khubza was-samaka was-salaṭata wal-fākihata.</p><p class="english">I eat rice, bread, fish, salad, and fruit.</p></div>
   </div>
   <hr class="section-divider">
   <span class="section-label gold">Vocabulary — Food</span>
   <div class="vocab-grid">
-    <div class="vocab-card"><p class="ar">المَطْعَم</p><p class="tr">Al-Maṭʿam</p><p class="en">Restaurant</p></div>
-    <div class="vocab-card"><p class="ar">الفَطور</p><p class="tr">Al-Faṭūr</p><p class="en">Breakfast</p></div>
-    <div class="vocab-card"><p class="ar">الغَداء</p><p class="tr">Al-Ghadāʾ</p><p class="en">Lunch</p></div>
-    <div class="vocab-card"><p class="ar">العَشاء</p><p class="tr">Al-ʿAshāʾ</p><p class="en">Dinner</p></div>
-    <div class="vocab-card"><p class="ar">الأرُزّ</p><p class="tr">Al-Aruzz</p><p class="en">Rice</p></div>
-    <div class="vocab-card"><p class="ar">الخُبْز</p><p class="tr">Al-Khubz</p><p class="en">Bread</p></div>
-    <div class="vocab-card"><p class="ar">السَّمَك</p><p class="tr">As-Samak</p><p class="en">Fish</p></div>
-    <div class="vocab-card"><p class="ar">السَّلَطَة</p><p class="tr">As-Salaṭa</p><p class="en">Salad</p></div>
+    <div class="vocab-card"><p class="ar">الفَطور / الغَداء / العَشاء</p><p class="tr">Al-Faṭūr / Al-Ghadāʾ / Al-ʿAshāʾ</p><p class="en">Breakfast / Lunch / Dinner</p></div>
+    <div class="vocab-card"><p class="ar">الأرُزّ / الخُبْز</p><p class="tr">Al-Aruzz / Al-Khubz</p><p class="en">Rice / Bread</p></div>
+    <div class="vocab-card"><p class="ar">السَّمَك / السَّلَطَة</p><p class="tr">As-Samak / As-Salaṭa</p><p class="en">Fish / Salad</p></div>
     <div class="vocab-card"><p class="ar">الفاكِهَة</p><p class="tr">Al-Fākiha</p><p class="en">Fruit</p></div>
-    <div class="vocab-card"><p class="ar">كَثير / قَليل</p><p class="tr">Kathīr / Qalīl</p><p class="en">A lot / A little</p></div>
-    <div class="vocab-card"><p class="ar">جِدّاً</p><p class="tr">Jiddan</p><p class="en">Very</p></div>
+    <div class="vocab-card"><p class="ar">كَثير / قَليل / جِدّاً</p><p class="tr">Kathīr / Qalīl / Jiddan</p><p class="en">A lot / A little / Very</p></div>
   </div>
 </div></article>
-
 <article class="lesson" id="l38"><div class="lesson-header"><div><span class="lesson-number">Lesson 38</span><h3>الطَّعامُ والشَّرابُ</h3></div><span class="lesson-title-en">Ordering Food</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">المُضيفَة :</span> ماذا تَطْلُبينَ ؟</p><p class="translit">Al-Muḍīfa: Mādhā taṭlubīna?</p><p class="english">Hostess: What would you like?</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">المُسافِرَة :</span> بَعْضَ السَّمَكِ والأرُزِّ مِنْ فَضْلِكِ . ماءً مِنْ فَضْلِكِ .</p><p class="translit">Al-Musāfira: Baʿḍa as-samaki wal-aruzzi min faḍliki. Māʾan min faḍliki.</p><p class="english">Traveler: Some fish and rice please. Water please.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">المُضيفَة :</span> هَلْ تَشْرَبينَ الشّايَ ؟</p><p class="translit">Al-Muḍīfa: Hal tashrabīna ash-shāya?</p><p class="english">Hostess: Do you drink tea?</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">المُسافِرَة :</span> لا ، أُفَضِّلُ القَهْوَةَ بِالحَليبِ .</p><p class="translit">Al-Musāfira: Lā, ufaḍḍilu al-qahwata bil-ḥalībi.</p><p class="english">Traveler: No, I prefer coffee with milk.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">المُضيفَة :</span> عَفْواً .</p><p class="translit">Al-Muḍīfa: ʿAfwan.</p><p class="english">Hostess: You're welcome.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">المُضيفَة :</span> ماذا تَطْلُبينَ ؟</p><p class="translit">Mādhā taṭlubīna?</p><p class="english">What would you like?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">المُسافِرَة :</span> بَعْضَ السَّمَكِ والأرُزِّ مِنْ فَضْلِكِ . ماءً مِنْ فَضْلِكِ .</p><p class="translit">Baʿḍa as-samaki wal-aruzzi min faḍliki. Māʾan min faḍliki.</p><p class="english">Some fish and rice please. Water please.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">المُسافِرَة :</span> لا ، أُفَضِّلُ القَهْوَةَ بِالحَليبِ .</p><p class="translit">Lā, ufaḍḍilu al-qahwata bil-ḥalībi.</p><p class="english">No, I prefer coffee with milk.</p></div>
   </div>
   <hr class="section-divider">
-  <span class="section-label gold">Vocabulary — Drinks &amp; Ordering</span>
+  <span class="section-label gold">Vocabulary — Drinks</span>
   <div class="vocab-grid">
-    <div class="vocab-card"><p class="ar">يَطْلُبُ</p><p class="tr">Yaṭlubu</p><p class="en">He orders</p></div>
-    <div class="vocab-card"><p class="ar">يُفَضِّلُ</p><p class="tr">Yufaḍḍilu</p><p class="en">He prefers</p></div>
-    <div class="vocab-card"><p class="ar">يَشْرَبُ</p><p class="tr">Yashrabu</p><p class="en">He drinks</p></div>
-    <div class="vocab-card"><p class="ar">ماء</p><p class="tr">Māʾ</p><p class="en">Water</p></div>
-    <div class="vocab-card"><p class="ar">الشّاي</p><p class="tr">Ash-Shāy</p><p class="en">Tea</p></div>
-    <div class="vocab-card"><p class="ar">القَهْوَة</p><p class="tr">Al-Qahwa</p><p class="en">Coffee</p></div>
+    <div class="vocab-card"><p class="ar">ماء / الشّاي / القَهْوَة</p><p class="tr">Māʾ / Ash-Shāy / Al-Qahwa</p><p class="en">Water / Tea / Coffee</p></div>
     <div class="vocab-card"><p class="ar">الحَليب</p><p class="tr">Al-Ḥalīb</p><p class="en">Milk</p></div>
     <div class="vocab-card"><p class="ar">التَّمْر / العِنَب</p><p class="tr">At-Tamr / Al-ʿInab</p><p class="en">Dates / Grapes</p></div>
+    <div class="vocab-card"><p class="ar">يُفَضِّلُ</p><p class="tr">Yufaḍḍilu</p><p class="en">He prefers</p></div>
     <div class="vocab-card"><p class="ar">عَفْواً</p><p class="tr">ʿAfwan</p><p class="en">You're welcome</p></div>
   </div>
 </div></article>
@@ -1480,50 +1025,46 @@ body.hide-translation .english-answer {
 </div><!-- /unit-5 -->
 
 <div class="unit-panel" id="unit-6">
-  <section class="unit-header"><p class="unit-number">Unit 6</p><h2>الصَّلاة</h2><p class="transliteration">Aṣ-Ṣalāh</p><p class="translation">Prayer</p></section>
+  <section class="unit-header"><p class="unit-number">الوحدة ٦ — Unit 6</p><h2>الصَّلاة</h2><p class="transliteration">Aṣ-Ṣalāh</p><p class="translation">Prayer</p></section>
+  <!-- TOGGLE BAR -->
+  <div class="sticky-controls">
+    <span class="controls-label">Show:</span>
+    <span class="toggle-pill on tog-translit" onclick="toggleTranslit()"><span class="t-dot"></span>Transliteration</span>
+    <span class="toggle-pill on tog-translation" onclick="toggleTranslation()"><span class="t-dot"></span>Translation</span>
+  </div>
   <div class="container">
     <nav class="lesson-nav"><h4>Lessons</h4><div class="lesson-chips"><a href="#l46" class="lesson-chip"><span class="chip-num">46</span>Five Prayers</a><a href="#l47" class="lesson-chip"><span class="chip-num">47</span>Travel to Makkah</a></div></nav>
-
 <article class="lesson" id="l46"><div class="lesson-header"><div><span class="lesson-number">Lesson 46</span><h3>الصَّلاة</h3></div><span class="lesson-title-en">The Five Daily Prayers</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">مُصْطَفى :</span> أيْنَ تُصَلّي الصَّلَواتِ الخَمْسَ ؟</p><p class="translit">Muṣṭafā: Ayna tuṣallī aṣ-ṣalawāti al-khamsa?</p><p class="english">Mustafa: Where do you pray the five prayers?</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">قُصَيّ :</span> أُصَلّي الظُّهْرَ والعَصْرَ والمَغْرِبَ والعِشاءَ في مَسْجِدِ بِلال .</p><p class="translit">Quṣayy: Uṣallī aẓ-ẓuhra wal-ʿaṣra wal-maghriba wal-ʿishā'a fī masjidi Bilāl.</p><p class="english">Qusay: I pray Dhuhr, Asr, Maghrib, and Isha in Bilal's mosque.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">قُصَيّ :</span> لا أسْمَعُ الأذانَ . لا أسْتَطيعُ ، أعْمَلُ في اللَّيْلِ .</p><p class="translit">Quṣayy: Lā asmaʿu al-adhāna. Lā astaṭīʿu, aʿmalu fī al-layli.</p><p class="english">Qusay: I don't hear the call. I can't, I work at night.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">مُصْطَفى :</span> ضَعِ المُنَبِّهَ بِجانِبِكَ .</p><p class="translit">Muṣṭafā: Ḍaʿi al-munabbiha bi-jānibika.</p><p class="english">Mustafa: Put the alarm clock next to you.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">قُصَيّ :</span> هٰذِهِ فِكْرَةٌ طَيِّبَةٌ . جَزاكَ اللهُ خَيْراً .</p><p class="translit">Quṣayy: Hādhihi fikratun ṭayyibatun. Jazāka Allāhu khayran.</p><p class="english">Qusay: That's a good idea. May God reward you.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">مُصْطَفى :</span> أيْنَ تُصَلّي الصَّلَواتِ الخَمْسَ ؟</p><p class="translit">Ayna tuṣallī aṣ-ṣalawāti al-khamsa?</p><p class="english">Where do you pray the five prayers?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">قُصَيّ :</span> أُصَلّي الظُّهْرَ والعَصْرَ والمَغْرِبَ والعِشاءَ في مَسْجِدِ بِلال .</p><p class="translit">Uṣallī aẓ-ẓuhra wal-ʿaṣra wal-maghriba wal-ʿishā'a fī masjidi Bilāl.</p><p class="english">I pray Dhuhr, Asr, Maghrib, and Isha in Bilal's mosque.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">قُصَيّ :</span> لا أسْمَعُ الأذانَ . لا أسْتَطيعُ ، أعْمَلُ في اللَّيْلِ .</p><p class="translit">Lā asmaʿu al-adhāna. Lā astaṭīʿu, aʿmalu fī al-layli.</p><p class="english">I don't hear the call. I can't — I work at night.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">مُصْطَفى :</span> ضَعِ المُنَبِّهَ بِجانِبِكَ .</p><p class="translit">Ḍaʿi al-munabbiha bi-jānibika.</p><p class="english">Put the alarm clock next to you.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">قُصَيّ :</span> هٰذِهِ فِكْرَةٌ طَيِّبَةٌ . جَزاكَ اللهُ خَيْراً .</p><p class="translit">Hādhihi fikratun ṭayyibatun. Jazāka Allāhu khayran.</p><p class="english">That's a good idea. May God reward you.</p></div>
   </div>
   <hr class="section-divider">
   <span class="section-label gold">Vocabulary — Prayer Times</span>
   <div class="vocab-grid">
-    <div class="vocab-card"><p class="ar">الظُّهْر</p><p class="tr">Aẓ-Ẓuhr</p><p class="en">Noon prayer</p></div>
-    <div class="vocab-card"><p class="ar">العَصْر</p><p class="tr">Al-ʿAṣr</p><p class="en">Afternoon prayer</p></div>
-    <div class="vocab-card"><p class="ar">المَغْرِب</p><p class="tr">Al-Maghrib</p><p class="en">Sunset prayer</p></div>
-    <div class="vocab-card"><p class="ar">العِشاء</p><p class="tr">Al-ʿIshāʾ</p><p class="en">Night prayer</p></div>
+    <div class="vocab-card"><p class="ar">الظُّهْر / العَصْر</p><p class="tr">Aẓ-Ẓuhr / Al-ʿAṣr</p><p class="en">Noon / Afternoon prayer</p></div>
+    <div class="vocab-card"><p class="ar">المَغْرِب / العِشاء</p><p class="tr">Al-Maghrib / Al-ʿIshāʾ</p><p class="en">Sunset / Night prayer</p></div>
     <div class="vocab-card"><p class="ar">لِماذا</p><p class="tr">Limādhā</p><p class="en">Why?</p></div>
-    <div class="vocab-card"><p class="ar">يَسْمَعُ</p><p class="tr">Yasmaʿu</p><p class="en">He hears</p></div>
     <div class="vocab-card"><p class="ar">يَسْتَطيعُ</p><p class="tr">Yastaṭīʿu</p><p class="en">He is able / can</p></div>
     <div class="vocab-card"><p class="ar">المُنَبِّه</p><p class="tr">Al-Munabbih</p><p class="en">Alarm clock</p></div>
-    <div class="vocab-card"><p class="ar">اللَّيْل</p><p class="tr">Al-Layl</p><p class="en">The night</p></div>
     <div class="vocab-card"><p class="ar">جَزاكَ اللهُ خَيْراً</p><p class="tr">Jazāka Allāhu khayran</p><p class="en">May God reward you</p></div>
   </div>
 </div></article>
-
 <article class="lesson" id="l47"><div class="lesson-header"><div><span class="lesson-number">Lesson 47</span><h3>الصَّلاة</h3></div><span class="lesson-title-en">Traveling for Prayer</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">عِصام :</span> أنا مُسافِرٌ إلى مَكَّةَ لِلصَّلاةِ في المَسْجِدِ الحَرامِ .</p><p class="translit">ʿIṣām: Anā musāfirun ilā Makkata liṣ-ṣalāti fī al-masjidi al-ḥarāmi.</p><p class="english">Isam: I'm traveling to Makkah to pray in the Sacred Mosque.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">صالح :</span> أنا مُسافِرٌ إلى المَدينَةِ لِلصَّلاةِ في المَسْجِدِ النَّبَوِيِّ .</p><p class="translit">Ṣāliḥ: Anā musāfirun ilā al-Madīnati liṣ-ṣalāti fī al-masjidi an-nabawiyyi.</p><p class="english">Salih: I'm traveling to Madinah to pray in the Prophet's Mosque.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">صالح :</span> أرْكَبُ الطّائِرَةَ .</p><p class="translit">Ṣāliḥ: Arkabu aṭ-ṭā'irata.</p><p class="english">Salih: I'll take the plane.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عِصام :</span> أنا مُسافِرٌ إلى مَكَّةَ لِلصَّلاةِ في المَسْجِدِ الحَرامِ .</p><p class="translit">Anā musāfirun ilā Makkata liṣ-ṣalāti fī al-masjidi al-ḥarāmi.</p><p class="english">I'm traveling to Makkah to pray in the Sacred Mosque.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">صالح :</span> أنا مُسافِرٌ إلى المَدينَةِ . أرْكَبُ الطّائِرَةَ .</p><p class="translit">Anā musāfirun ilā al-Madīnati. Arkabu aṭ-ṭā'irata.</p><p class="english">I'm traveling to Madinah. I'll take the plane.</p></div>
   </div>
   <hr class="section-divider">
-  <span class="section-label gold">Vocabulary — Travel &amp; Sacred Places</span>
+  <span class="section-label gold">Vocabulary</span>
   <div class="vocab-grid">
-    <div class="vocab-card"><p class="ar">مُسافِر</p><p class="tr">Musāfir</p><p class="en">Traveler</p></div>
-    <div class="vocab-card"><p class="ar">مَكَّة</p><p class="tr">Makka</p><p class="en">Makkah</p></div>
-    <div class="vocab-card"><p class="ar">المَدينَة</p><p class="tr">Al-Madīna</p><p class="en">Madinah</p></div>
+    <div class="vocab-card"><p class="ar">مَكَّة / المَدينَة</p><p class="tr">Makka / Al-Madīna</p><p class="en">Makkah / Madinah</p></div>
     <div class="vocab-card"><p class="ar">المَسْجِد الحَرام</p><p class="tr">Al-Masjid al-Ḥarām</p><p class="en">The Sacred Mosque</p></div>
     <div class="vocab-card"><p class="ar">المَسْجِد النَّبَوِيّ</p><p class="tr">Al-Masjid an-Nabawiyy</p><p class="en">The Prophet's Mosque</p></div>
     <div class="vocab-card"><p class="ar">الطّائِرَة</p><p class="tr">Aṭ-Ṭāʾira</p><p class="en">Airplane</p></div>
-    <div class="vocab-card"><p class="ar">يَرْكَبُ</p><p class="tr">Yarkabu</p><p class="en">He rides / takes</p></div>
     <div class="vocab-card"><p class="ar">إنْ شاءَ الله</p><p class="tr">In shāʾa Allāh</p><p class="en">God willing</p></div>
   </div>
 </div></article>
@@ -1531,15 +1072,19 @@ body.hide-translation .english-answer {
 </div><!-- /unit-6 -->
 
 <div class="unit-panel" id="unit-7">
-  <section class="unit-header"><p class="unit-number">Unit 7</p><h2>الدِّراسَة</h2><p class="transliteration">Ad-Dirāsa</p><p class="translation">Studies</p></section>
+  <section class="unit-header"><p class="unit-number">الوحدة ٧ — Unit 7</p><h2>الدِّراسَة</h2><p class="transliteration">Ad-Dirāsa</p><p class="translation">Studies</p></section>
+  <!-- TOGGLE BAR -->
+  <div class="sticky-controls">
+    <span class="controls-label">Show:</span>
+    <span class="toggle-pill on tog-translit" onclick="toggleTranslit()"><span class="t-dot"></span>Transliteration</span>
+    <span class="toggle-pill on tog-translation" onclick="toggleTranslation()"><span class="t-dot"></span>Translation</span>
+  </div>
   <div class="container">
     <nav class="lesson-nav"><h4>Lessons</h4><div class="lesson-chips"><a href="#l55" class="lesson-chip"><span class="chip-num">55</span>School Schedule</a></div></nav>
-
 <article class="lesson" id="l55"><div class="lesson-header"><div><span class="lesson-number">Lesson 55</span><h3>الدِّراسَة</h3></div><span class="lesson-title-en">School Schedule &amp; Days of the Week</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">غالب :</span> الدِّراسَةُ خَمْسَةُ أيّامٍ في الأُسْبوعِ : السَّبْتُ إلى الأرْبِعاءِ .</p><p class="translit">Ghālib: Ad-dirāsatu khamsatu ayyāmin fī al-usbūʿi: As-sabt ilā al-arbiʿāʾ.</p><p class="english">Ghalib: School is five days a week: Saturday to Wednesday.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">غانم :</span> العُطْلَةُ يَوْمَ الخَميسِ وَيَوْمَ الجُمُعَةِ .</p><p class="translit">Ghānim: Al-ʿuṭlatu yawma al-khamīsi wa yawma al-jumuʿati.</p><p class="english">Ghanim: The day off is Thursday and Friday.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">غانم :</span> في شَهْرِ رَمَضانَ . العُطْلَةُ ثَلاثَةُ أشْهُرٍ .</p><p class="translit">Ghānim: Fī shahri Ramaḍāna. Al-ʿuṭlatu thalāthatu ashhurin.</p><p class="english">Ghanim: In the month of Ramadan. The holiday is three months.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">غالب :</span> الدِّراسَةُ خَمْسَةُ أيّامٍ في الأُسْبوعِ : مِنَ السَّبْتِ إلى الأرْبِعاءِ .</p><p class="translit">Ad-dirāsatu khamsatu ayyāmin fī al-usbūʿi: mina as-sabti ilā al-arbiʿāʾ.</p><p class="english">School is five days a week: Saturday to Wednesday.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">غانم :</span> العُطْلَةُ يَوْمَ الخَميسِ وَيَوْمَ الجُمُعَةِ . في شَهْرِ رَمَضانَ .</p><p class="translit">Al-ʿuṭlatu yawma al-khamīsi wa yawma al-jumuʿati. Fī shahri Ramaḍāna.</p><p class="english">Day off is Thursday and Friday. (Exams end) in Ramadan.</p></div>
   </div>
   <hr class="section-divider">
   <span class="section-label gold">Days of the Week — أيّام الأُسْبوع</span>
@@ -1563,41 +1108,41 @@ body.hide-translation .english-answer {
     <div class="vocab-card"><p class="ar">العُلوم</p><p class="tr">Al-ʿUlūm</p><p class="en">Science</p></div>
     <div class="vocab-card"><p class="ar">الحاسوب</p><p class="tr">Al-Ḥāsūb</p><p class="en">Computer</p></div>
     <div class="vocab-card"><p class="ar">الاِخْتِبارات</p><p class="tr">Al-Ikhtibārāt</p><p class="en">Exams</p></div>
-    <div class="vocab-card"><p class="ar">الأُسْبوع</p><p class="tr">Al-Usbūʿ</p><p class="en">Week</p></div>
-    <div class="vocab-card"><p class="ar">شَهْر</p><p class="tr">Shahr</p><p class="en">Month</p></div>
   </div>
 </div></article>
   </div>
 </div><!-- /unit-7 -->
 
 <div class="unit-panel" id="unit-8">
-  <section class="unit-header"><p class="unit-number">Unit 8</p><h2>العَمَل</h2><p class="transliteration">Al-ʿAmal</p><p class="translation">Work</p></section>
+  <section class="unit-header"><p class="unit-number">الوحدة ٨ — Unit 8</p><h2>العَمَل</h2><p class="transliteration">Al-ʿAmal</p><p class="translation">Work</p></section>
+  <!-- TOGGLE BAR -->
+  <div class="sticky-controls">
+    <span class="controls-label">Show:</span>
+    <span class="toggle-pill on tog-translit" onclick="toggleTranslit()"><span class="t-dot"></span>Transliteration</span>
+    <span class="toggle-pill on tog-translation" onclick="toggleTranslation()"><span class="t-dot"></span>Translation</span>
+  </div>
   <div class="container">
     <nav class="lesson-nav"><h4>Lessons</h4><div class="lesson-chips"><a href="#l64" class="lesson-chip"><span class="chip-num">64</span>Jobs &amp; Workplace</a></div></nav>
-
 <article class="lesson" id="l64"><div class="lesson-header"><div><span class="lesson-number">Lesson 64</span><h3>العَمَل</h3></div><span class="lesson-title-en">Jobs &amp; Workplace</span></div><div class="lesson-body">
   <div class="dialogue">
-    <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> أعْمَلُ طَبيباً . ماذا تَعْمَلُ أنْتَ ؟</p><p class="translit">ʿUthmān: Aʿmalu ṭabīban. Mādhā taʿmalu anta?</p><p class="english">Uthman: I work as a doctor. What do you do?</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> أعْمَلُ مُهَنْدِساً في شَرِكَةٍ .</p><p class="translit">ʿAlī: Aʿmalu muhandisan fī sharikatin.</p><p class="english">Ali: I work as an engineer in a company.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> أعْمَلُ في المُسْتَشْفى . أعْمَلُ ثَماني ساعاتٍ في اليَوْمِ .</p><p class="translit">ʿUthmān: Aʿmalu fī al-mustashfā. Aʿmalu thamānī sāʿātin fī al-yawmi.</p><p class="english">Uthman: I work in the hospital. I work eight hours a day.</p></div>
-    <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> نَعَمْ ، أُحِبُّ عَمَلي . وَأنا أُحِبُّ عَمَلي أيْضاً .</p><p class="translit">ʿAlī: Naʿam, uḥibbu ʿamalī. Wa anā uḥibbu ʿamalī ayḍan.</p><p class="english">Ali: Yes, I love my work. And I love my work too.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عُثْمان :</span> أعْمَلُ طَبيباً في المُسْتَشْفى . ماذا تَعْمَلُ ؟</p><p class="translit">Aʿmalu ṭabīban fī al-mustashfā. Mādhā taʿmalu?</p><p class="english">I work as a doctor in the hospital. What do you do?</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> أعْمَلُ مُهَنْدِساً في شَرِكَةٍ . أعْمَلُ سَبْعَ ساعاتٍ .</p><p class="translit">Aʿmalu muhandisan fī sharikatin. Aʿmalu sabʿa sāʿātin.</p><p class="english">I work as an engineer in a company. I work seven hours.</p></div>
+    <div class="line"><p class="arabic"><span class="speaker">عَلِيّ :</span> نَعَمْ ، أُحِبُّ عَمَلي . وَأنا أُحِبُّ عَمَلي أيْضاً .</p><p class="translit">Naʿam, uḥibbu ʿamalī. Wa anā uḥibbu ʿamalī ayḍan.</p><p class="english">Yes, I love my work. And I love my work too.</p></div>
   </div>
   <hr class="section-divider">
   <span class="section-label gold">Vocabulary — Work</span>
   <div class="vocab-grid">
     <div class="vocab-card"><p class="ar">يَعْمَلُ</p><p class="tr">Yaʿmalu</p><p class="en">He works</p></div>
-    <div class="vocab-card"><p class="ar">العَمَل</p><p class="tr">Al-ʿAmal</p><p class="en">Work / Job</p></div>
     <div class="vocab-card"><p class="ar">شَرِكَة</p><p class="tr">Sharika</p><p class="en">Company</p></div>
     <div class="vocab-card"><p class="ar">المُسْتَشْفى</p><p class="tr">Al-Mustashfā</p><p class="en">Hospital</p></div>
     <div class="vocab-card"><p class="ar">يُحِبُّ</p><p class="tr">Yuḥibbu</p><p class="en">He likes / loves</p></div>
     <div class="vocab-card"><p class="ar">ساعَة</p><p class="tr">Sāʿa</p><p class="en">Hour</p></div>
     <div class="vocab-card"><p class="ar">أيْضاً</p><p class="tr">Ayḍan</p><p class="en">Also / Too</p></div>
   </div>
-  <span class="section-label">Key Patterns</span>
   <table class="grammar-table">
     <thead><tr><th>Arabic</th><th>Transliteration</th><th>English</th></tr></thead>
     <tbody>
-      <tr><td class="ar-cell">ماذا تَعْمَلُ ؟</td><td class="tr-cell">Mādhā taʿmalu?</td><td class="en-cell">What do you do for work?</td></tr>
+      <tr><td class="ar-cell">ماذا تَعْمَلُ ؟</td><td class="tr-cell">Mādhā taʿmalu?</td><td class="en-cell">What do you do?</td></tr>
       <tr><td class="ar-cell">أعْمَلُ طَبيباً</td><td class="tr-cell">Aʿmalu ṭabīban</td><td class="en-cell">I work as a doctor</td></tr>
       <tr><td class="ar-cell">أيْنَ تَعْمَلُ ؟</td><td class="tr-cell">Ayna taʿmalu?</td><td class="en-cell">Where do you work?</td></tr>
       <tr><td class="ar-cell">كَمْ ساعَةً تَعْمَلُ ؟</td><td class="tr-cell">Kam sāʿatan taʿmalu?</td><td class="en-cell">How many hours do you work?</td></tr>
@@ -1609,21 +1154,21 @@ body.hide-translation .english-answer {
 </div><!-- /unit-8 -->
 
 
-<!-- ═══════════ PRACTICE ═══════════ -->
+<!-- ███ PRACTICE ███ -->
 <div class="unit-panel" id="unit-9">
-  <section class="unit-header" style="background: linear-gradient(135deg, var(--teal-dark), var(--teal));">
-    <p class="unit-number" style="opacity:0.7">✎ تَدْريبات — Practice</p>
+  <section class="unit-header" style="background:linear-gradient(135deg,var(--teal-dark),var(--teal))">
+    <p class="unit-number">✎ تَدْريبات — Practice</p>
     <h2>تَدْريبات تَفاعُلِيَّة</h2>
     <p class="transliteration">Tadrībāt Tafāʿuliyya</p>
     <p class="translation">Interactive Exercises — All Units</p>
   </section>
   <div class="container" style="padding-top:1.5rem;padding-bottom:3rem">
     <div style="margin-bottom:1rem">
-      <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate-300);margin-bottom:0.5rem">Filter by unit</p>
+      <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);margin-bottom:0.5rem">Filter by unit</p>
       <div class="unit-filter-bar" id="unitFilter"></div>
     </div>
     <div style="margin-bottom:1rem">
-      <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate-300);margin-bottom:0.5rem">Exercise type</p>
+      <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-muted);margin-bottom:0.5rem">Exercise type</p>
       <div class="practice-mode-bar" id="modeBar"></div>
     </div>
     <div class="score-bar" id="scoreBar">
@@ -1631,11 +1176,9 @@ body.hide-translation .english-answer {
       <div class="progress-wrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
       <span class="counter" id="counterText">0 / 0</span>
     </div>
-    <div id="practiceArea">
-      <div class="practice-card"><p style="color:var(--slate-300);font-style:italic">Tap a unit above to start…</p></div>
-    </div>
+    <div id="practiceArea"><div class="practice-card"><p style="color:var(--ink-muted);font-style:italic">Select a unit above to start…</p></div></div>
     <div style="text-align:center;margin-top:1rem">
-      <button class="practice-btn secondary" onclick="resetDeck()" style="font-size:0.78rem">↻ Shuffle &amp; Reset</button>
+      <button class="practice-btn secondary" onclick="resetDeck()" style="font-size:0.8rem">↻ Shuffle &amp; Reset</button>
     </div>
   </div>
 </div>
@@ -1643,25 +1186,23 @@ body.hide-translation .english-answer {
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <footer class="footer">
-  <p>العربيّة بين يديك · Book 1, Units 1–8</p>
-  <p style="margin-top:0.3rem;opacity:0.4;font-size:0.72rem">Complete study companion with transliteration &amp; translation</p>
-  <div style="margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.08)">
-    <p>Made interactive by <strong>themeowslimah</strong> — free for the ummah, always.</p>
-    <div style="margin-top:0.6rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;align-items:center;font-size:0.75rem">
-      <a href="https://www.instagram.com/themeowslimah" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        Instagram
-      </a>
-      <a href="https://www.facebook.com/themeowslimah" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Facebook
-      </a>
-      <a href="https://www.threads.net/@themeowslimah" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;display:inline-flex;align-items:center;gap:0.3rem">
-        <svg width="14" height="14" viewBox="0 0 192 192" fill="currentColor"><path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.117 5.864 14.055-7.314-1.243-15.224-1.626-23.68-1.141-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.204 17.11 97.013 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.07 0h-.113C68.882.195 47.292 9.642 32.788 28.08 19.882 44.485 13.224 67.315 13.001 96v.065c.223 28.685 6.881 51.515 19.787 67.92 14.504 18.438 36.094 27.885 64.174 28.08h.113c25.305-.174 43.16-6.847 57.938-21.615 19.109-19.096 18.527-43.08 12.222-57.81-4.547-10.598-13.318-19.227-25.698-24.652Zm-44.8 43.52c-10.454.587-21.307-4.098-21.87-14.11-.412-7.719 5.493-16.351 23.164-17.368 2.024-.117 3.997-.173 5.932-.173 6.151 0 11.92.551 17.19 1.608-1.957 24.375-14.006 29.463-24.416 30.043Z"/></svg>
-        Threads
-      </a>
-      <a href="https://buymeacoffee.com/themeowslimah" target="_blank" style="background:#ffdd00;color:#1a1a1a;text-decoration:none;font-size:0.72rem;font-weight:700;padding:0.25rem 0.7rem;border-radius:999px">☕ Buy me a coffee</a>
-    </div>
+  <p>العربيّة بين يديك · Al-Arabiyyah Bayna Yadayk · Book 1, Units 1–8</p>
+  <p style="margin-top:0.3rem;opacity:0.5;font-size:0.72rem">Complete study companion · Made interactive by themeowslimah</p>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.72rem;color:rgba(255,255,255,0.4);line-height:1.7">
+    <p><span style="font-family:'Amiri',serif;font-size:0.9rem;color:rgba(197,148,42,0.7)">العربيّة بين يديك</span> — Original textbook by:</p>
+    <p style="font-family:'Source Serif 4',serif;font-style:italic;color:rgba(255,255,255,0.55);margin-top:0.2rem">
+      Dr. Abdul Rahman ibn Ibrahim Al-Fawzan &nbsp;·&nbsp;
+      Dr. Mukhtar Al-Tahir Hussain &nbsp;·&nbsp;
+      Dr. Muhammad Abdul Khaliq Muhammad Fadhlal
+    </p>
+    <p style="margin-top:0.2rem">Published by <span style="color:rgba(197,148,42,0.7);font-weight:600">Arabic For All</span>, Riyadh, Saudi Arabia</p>
+    <p style="margin-top:0.3rem;font-size:0.68rem;opacity:0.6;font-style:italic">This interactive companion is an unofficial study aid — all original content belongs to its authors and publisher.</p>
+  </div>
+  <div style="margin-top:1rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;font-size:0.75rem">
+    <a href="https://www.instagram.com/themeowslimah" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none">Instagram</a>
+    <a href="https://www.facebook.com/themeowslimah" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none">Facebook</a>
+    <a href="https://www.threads.net/@themeowslimah" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none">Threads</a>
+    <a href="https://buymeacoffee.com/themeowslimah" target="_blank" style="background:var(--teal);color:#ffffff;text-decoration:none;font-size:0.72rem;font-weight:700;padding:0.25rem 0.7rem;border-radius:999px">☕ Buy me a coffee</a>
   </div>
 </footer>
 
@@ -1687,20 +1228,20 @@ document.querySelectorAll('.lesson-chip').forEach(c => {
 
 // ── TOGGLES ──
 function toggleTranslit() {
-  const isOn = !document.body.classList.contains('hide-translit');
-  document.body.classList.toggle('hide-translit', isOn);
-  document.getElementById('togTranslit').classList.toggle('on', !isOn);
+  const on = !document.body.classList.contains('hide-translit');
+  document.body.classList.toggle('hide-translit', on);
+  document.querySelectorAll('.tog-translit').forEach(el => el.classList.toggle('on', !on));
 }
 function toggleTranslation() {
-  const isOn = !document.body.classList.contains('hide-translation');
-  document.body.classList.toggle('hide-translation', isOn);
-  document.getElementById('togTranslation').classList.toggle('on', !isOn);
+  const on = !document.body.classList.contains('hide-translation');
+  document.body.classList.toggle('hide-translation', on);
+  document.querySelectorAll('.tog-translation').forEach(el => el.classList.toggle('on', !on));
 }
 
 // ── VOCAB DATA ──
 const vocab = [
   {ar:'السَّلامُ عَلَيْكُم',tr:'As-salāmu ʿalaykum',en:'Peace be upon you',u:1},
-  {ar:'وَعَلَيْكُمُ السَّلام',tr:'Wa ʿalaykumu as-salām',en:'And upon you peace',u:1},
+  {ar:'وَعَلَيْكُمُ السَّلام',tr:"Wa ʿalaykumu as-salām",en:'And upon you peace',u:1},
   {ar:'ما اسْمُكَ ؟',tr:'Mā ismuka?',en:'What is your name?',u:1},
   {ar:'كَيْفَ حالُكَ ؟',tr:'Kayfa ḥāluka?',en:'How are you?',u:1},
   {ar:'بِخَيْرٍ',tr:'Bi-khayrin',en:'Fine / Well',u:1},
@@ -1714,8 +1255,6 @@ const vocab = [
   {ar:'أُسْرَة',tr:'Usra',en:'Family',u:2},
   {ar:'والِد',tr:'Wālid',en:'Father',u:2},
   {ar:'والِدَة',tr:'Wālida',en:'Mother',u:2},
-  {ar:'اِبْن',tr:'Ibn',en:'Son',u:2},
-  {ar:'اِبْنَة',tr:'Ibna',en:'Daughter',u:2},
   {ar:'جَدّ',tr:'Jadd',en:'Grandfather',u:2},
   {ar:'جَدَّة',tr:'Jadda',en:'Grandmother',u:2},
   {ar:'عَمّ',tr:'ʿAmm',en:'Paternal uncle',u:2},
@@ -1724,8 +1263,6 @@ const vocab = [
   {ar:'بَيْت',tr:'Bayt',en:'House',u:3},
   {ar:'شَقَّة',tr:'Shaqqa',en:'Apartment',u:3},
   {ar:'أُريدُ',tr:'Urīdu',en:'I want',u:3},
-  {ar:'جَميلَة',tr:'Jamīla',en:'Beautiful',u:3},
-  {ar:'باب',tr:'Bāb',en:'Door',u:3},
   {ar:'مَطْبَخ',tr:'Maṭbakh',en:'Kitchen',u:3},
   {ar:'سَرير',tr:'Sarīr',en:'Bed',u:3},
   {ar:'ثَلّاجَة',tr:'Thallāja',en:'Refrigerator',u:3},
@@ -1738,7 +1275,6 @@ const vocab = [
   {ar:'الحافِلَة',tr:'Al-Ḥāfila',en:'Bus',u:4},
   {ar:'المَلابِس',tr:'Al-Malābis',en:'Clothes',u:4},
   {ar:'التِّلْفاز',tr:'At-Tilfāz',en:'Television',u:4},
-  {ar:'المَطْعَم',tr:'Al-Maṭʿam',en:'Restaurant',u:5},
   {ar:'الفَطور',tr:'Al-Faṭūr',en:'Breakfast',u:5},
   {ar:'الغَداء',tr:"Al-Ghadāʾ",en:'Lunch',u:5},
   {ar:'العَشاء',tr:"Al-ʿAshāʾ",en:'Dinner',u:5},
@@ -1772,17 +1308,16 @@ const vocab = [
 let mode = 'flashcard', filteredUnits = new Set([1,2,3,4,5,6,7,8]);
 let deck = [], idx = 0, score = 0, revealed = false;
 
-const shuffle = a => { for (let i = a.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const shuffle = a => { for (let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a; };
 
 function initPractice() {
-  // Unit filter
   const uf = document.getElementById('unitFilter');
   uf.innerHTML = '';
-  for (let i = 1; i <= 8; i++) {
+  for (let i=1;i<=8;i++) {
     const b = document.createElement('button');
-    b.className = 'uf-btn' + (filteredUnits.has(i) ? ' active' : '');
+    b.className = 'uf-btn' + (filteredUnits.has(i)?' active':'');
     b.textContent = 'Unit ' + i;
-    b.onclick = () => { filteredUnits.has(i) ? filteredUnits.delete(i) : filteredUnits.add(i); b.classList.toggle('active'); resetDeck(); };
+    b.onclick = () => { filteredUnits.has(i)?filteredUnits.delete(i):filteredUnits.add(i); b.classList.toggle('active'); resetDeck(); };
     uf.appendChild(b);
   }
   const all = document.createElement('button');
@@ -1790,109 +1325,95 @@ function initPractice() {
   all.onclick = () => { filteredUnits = new Set([1,2,3,4,5,6,7,8]); initPractice(); };
   uf.appendChild(all);
 
-  // Modes
   const mb = document.getElementById('modeBar');
   mb.innerHTML = '';
   [{id:'flashcard',label:'🔤 Flashcards'},{id:'mc_en',label:'🧠 Arabic → English'},{id:'mc_ar',label:'💬 English → Arabic'},{id:'fill',label:'✏️ Type Arabic'}].forEach(m => {
     const b = document.createElement('button');
-    b.className = 'mode-btn' + (mode === m.id ? ' active' : '');
+    b.className = 'mode-btn'+(mode===m.id?' active':'');
     b.textContent = m.label;
-    b.onclick = () => { mode = m.id; initPractice(); };
+    b.onclick = () => { mode=m.id; initPractice(); };
     mb.appendChild(b);
   });
   resetDeck();
 }
 
 function resetDeck() {
-  deck = shuffle(vocab.filter(v => filteredUnits.has(v.u)).slice());
+  deck = shuffle(vocab.filter(v=>filteredUnits.has(v.u)).slice());
   if (!deck.length) deck = shuffle(vocab.slice());
-  idx = 0; score = 0; revealed = false; renderCard();
+  idx=0; score=0; revealed=false; renderCard();
 }
 
 function updateScore() {
-  document.getElementById('scoreText').textContent = 'Score: ' + score;
-  document.getElementById('counterText').textContent = (idx+1) + ' / ' + deck.length;
-  document.getElementById('progressFill').style.width = ((idx+1)/deck.length*100) + '%';
+  document.getElementById('scoreText').textContent = 'Score: '+score;
+  document.getElementById('counterText').textContent = (idx+1)+' / '+deck.length;
+  document.getElementById('progressFill').style.width = ((idx+1)/deck.length*100)+'%';
 }
 
-function nextCard() { idx++; if (idx >= deck.length) { idx = 0; shuffle(deck); } revealed = false; renderCard(); }
+function nextCard() { idx++; if(idx>=deck.length){idx=0;shuffle(deck);} revealed=false; renderCard(); }
 
 function renderCard() {
   updateScore();
   const area = document.getElementById('practiceArea');
   const item = deck[idx];
-  if (mode === 'flashcard') renderFlashcard(area, item);
-  else if (mode === 'mc_en') renderMC(area, item, 'ar', 'en');
-  else if (mode === 'mc_ar') renderMC(area, item, 'en', 'ar');
-  else renderFill(area, item);
+  if (mode==='flashcard') renderFlashcard(area,item);
+  else if (mode==='mc_en') renderMC(area,item,'ar','en');
+  else if (mode==='mc_ar') renderMC(area,item,'en','ar');
+  else renderFill(area,item);
 }
 
-function renderFlashcard(area, item) {
-  area.innerHTML = `
-    <div class="practice-card">
-      <span class="unit-badge">Unit ${item.u}</span>
-      <p class="prompt-label">What does this mean?</p>
-      <p class="big-arabic">${item.ar}</p>
-      <div class="reveal-area">
-        ${revealed
-          ? `<p class="transliteration-answer">${item.tr}</p><p class="english-answer">${item.en}</p>`
-          : `<p style="color:var(--slate-300);font-size:0.83rem;font-style:italic">tap to reveal</p>`}
-      </div>
-      <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center">
-        ${revealed
-          ? `<button class="practice-btn success" onclick="score++;nextCard()">✓ Got it</button>
-             <button class="practice-btn danger" onclick="nextCard()">✗ Review again</button>`
-          : `<button class="practice-btn primary" onclick="revealed=true;renderCard()">Show Answer</button>`}
-      </div>
-    </div>`;
+function renderFlashcard(area,item) {
+  area.innerHTML = `<div class="practice-card">
+    <span class="unit-badge">Unit ${item.u}</span>
+    <p class="prompt-label">What does this mean?</p>
+    <p class="big-arabic">${item.ar}</p>
+    <div class="reveal-area">${revealed?`<p class="transliteration-answer">${item.tr}</p><p class="english-answer">${item.en}</p>`:`<p style="color:var(--sand-300);font-style:italic;font-size:0.85rem">tap to reveal</p>`}</div>
+    <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center">
+      ${revealed?`<button class="practice-btn success" onclick="score++;nextCard()">✓ Got it</button><button class="practice-btn danger" onclick="nextCard()">✗ Review again</button>`:`<button class="practice-btn primary" onclick="revealed=true;renderCard()">Show Answer</button>`}
+    </div>
+  </div>`;
 }
 
-function renderMC(area, item, qKey, aKey) {
+function renderMC(area,item,qKey,aKey) {
   const correct = item[aKey];
-  const pool = shuffle(vocab.filter(v => v[aKey] !== correct));
-  const opts = shuffle([correct, ...pool.slice(0,3).map(v => v[aKey])]);
-  const isAr = aKey === 'ar';
-  area.innerHTML = `
-    <div class="practice-card">
-      <span class="unit-badge">Unit ${item.u}</span>
-      <p class="prompt-label">${qKey === 'ar' ? 'Choose the correct meaning' : 'Choose the Arabic'}</p>
-      <p class="${qKey === 'ar' ? 'big-arabic' : ''}" style="${qKey !== 'ar' ? 'font-size:1.5rem;font-weight:700;color:var(--slate-900);margin-bottom:0.5rem' : ''}">${item[qKey]}</p>
-      ${qKey === 'ar' ? `<p style="font-size:0.82rem;font-style:italic;color:var(--amber);margin-bottom:0.5rem">${item.tr}</p>` : ''}
-      <div class="mc-options">
-        ${opts.map(o => `<div class="mc-option${isAr?' ar-text':''}" onclick="checkMC(this,'${o.replace(/'/g,"\\'")}','${correct.replace(/'/g,"\\'")}')"><span>${o}</span></div>`).join('')}
-      </div>
-    </div>`;
+  const pool = shuffle(vocab.filter(v=>v[aKey]!==correct));
+  const opts = shuffle([correct,...pool.slice(0,3).map(v=>v[aKey])]);
+  const isAr = aKey==='ar';
+  area.innerHTML = `<div class="practice-card">
+    <span class="unit-badge">Unit ${item.u}</span>
+    <p class="prompt-label">${qKey==='ar'?'Choose the correct meaning':'Choose the Arabic'}</p>
+    <p class="${qKey==='ar'?'big-arabic':''}" style="${qKey!=='ar'?'font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem':''}">${item[qKey]}</p>
+    ${qKey==='ar'?`<p style="font-size:0.85rem;font-style:italic;color:var(--gold-dark);margin-bottom:0.5rem">${item.tr}</p>`:''}
+    <div class="mc-options">${opts.map(o=>`<div class="mc-option${isAr?' ar-text':''}" onclick="checkMC(this,'${o.replace(/'/g,"\\'")}','${correct.replace(/'/g,"\\'")}')"><span>${o}</span></div>`).join('')}</div>
+  </div>`;
 }
 
-function checkMC(el, chosen, correct) {
-  document.querySelectorAll('.mc-option').forEach(o => o.classList.add('disabled'));
-  if (chosen === correct) { el.classList.add('correct'); score++; setTimeout(nextCard, 700); }
-  else { el.classList.add('wrong'); document.querySelectorAll('.mc-option').forEach(o => { if (o.textContent.trim() === correct) o.classList.add('correct'); }); setTimeout(nextCard, 1400); }
+function checkMC(el,chosen,correct) {
+  document.querySelectorAll('.mc-option').forEach(o=>o.classList.add('disabled'));
+  if(chosen===correct){el.classList.add('correct');score++;setTimeout(nextCard,700);}
+  else{el.classList.add('wrong');document.querySelectorAll('.mc-option').forEach(o=>{if(o.textContent.trim()===correct)o.classList.add('correct');});setTimeout(nextCard,1400);}
 }
 
-function renderFill(area, item) {
-  area.innerHTML = `
-    <div class="practice-card">
-      <span class="unit-badge">Unit ${item.u}</span>
-      <p class="prompt-label">Type the Arabic</p>
-      <p style="font-size:1.4rem;font-weight:700;color:var(--slate-900);margin-bottom:0.25rem">${item.en}</p>
-      <p class="transliteration-answer" style="margin-bottom:1rem">${item.tr}</p>
-      <input class="fill-input" id="fillInput" type="text" placeholder="...اكتب هنا" autocomplete="off"
-        onkeydown="if(event.key==='Enter')checkFill('${item.ar.replace(/'/g,"\\'")}')">
-      <div style="margin-top:1rem;display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center">
-        <button class="practice-btn primary" onclick="checkFill('${item.ar.replace(/'/g,"\\'")}')">Check</button>
-        <button class="practice-btn secondary" onclick="document.getElementById('fillInput').value='${item.ar.replace(/'/g,"\\'")}';document.getElementById('fillInput').classList.add('correct')">Reveal</button>
-        <button class="practice-btn secondary" onclick="nextCard()">Skip →</button>
-      </div>
-    </div>`;
-  setTimeout(() => { const i = document.getElementById('fillInput'); if (i) i.focus(); }, 120);
+function renderFill(area,item) {
+  area.innerHTML = `<div class="practice-card">
+    <span class="unit-badge">Unit ${item.u}</span>
+    <p class="prompt-label">Type the Arabic</p>
+    <p style="font-size:1.4rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem">${item.en}</p>
+    <p class="transliteration-answer" style="margin-bottom:1rem">${item.tr}</p>
+    <input class="fill-input" id="fillInput" type="text" placeholder="...اكتب هنا" autocomplete="off" onkeydown="if(event.key==='Enter')checkFill('${item.ar.replace(/'/g,"\\'")}')">
+    <div style="margin-top:1rem;display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center">
+      <button class="practice-btn primary" onclick="checkFill('${item.ar.replace(/'/g,"\\'")}')">Check</button>
+      <button class="practice-btn secondary" onclick="document.getElementById('fillInput').value='${item.ar.replace(/'/g,"\\'")}';document.getElementById('fillInput').classList.add('correct')">Reveal</button>
+      <button class="practice-btn secondary" onclick="nextCard()">Skip →</button>
+    </div>
+  </div>`;
+  setTimeout(()=>{const i=document.getElementById('fillInput');if(i)i.focus();},120);
 }
 
 function checkFill(correct) {
   const inp = document.getElementById('fillInput');
-  const clean = s => s.replace(/[\u064B-\u065F\u0670]/g, '').trim();
-  if (clean(inp.value) === clean(correct)) { inp.classList.add('correct'); score++; setTimeout(nextCard, 700); }
-  else { inp.classList.add('wrong'); inp.value = correct; setTimeout(nextCard, 1400); }
+  const clean = s=>s.replace(/[\u064B-\u065F\u0670]/g,'').trim();
+  if(clean(inp.value)===clean(correct)){inp.classList.add('correct');score++;setTimeout(nextCard,700);}
+  else{inp.classList.add('wrong');inp.value=correct;setTimeout(nextCard,1400);}
 }
 </script>
 </body>
