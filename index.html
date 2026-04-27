@@ -925,6 +925,78 @@ body {
   .mode-btn { font-size: 0.75rem; padding: 0.45rem 0.8rem; }
   .fill-input { width: 100%; }
 }
+
+/* ——— FLOATING TOGGLE ——— */
+.float-toggle {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  z-index: 200;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  padding: 0.5rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border: 1px solid var(--sand-200);
+}
+.float-toggle .toggle-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  text-align: center;
+  font-weight: 700;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--sand-200);
+  margin-bottom: 0.1rem;
+}
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--sand-200);
+  background: var(--sand-50);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-light);
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+}
+.toggle-btn:hover { background: var(--sand-100); border-color: var(--teal); color: var(--teal-dark); }
+.toggle-btn.on  { background: var(--teal); color: var(--white); border-color: var(--teal); }
+.toggle-btn.on:hover { background: var(--teal-dark); }
+.toggle-btn .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: currentColor; flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ——— HIDE STATES (applied to <body>) ——— */
+/* Hide transliteration */
+body.hide-tr .translit,
+body.hide-tr .tr,
+body.hide-tr .tr-cell { display: none !important; }
+
+/* Hide translation/English */
+body.hide-en .english,
+body.hide-en .en,
+body.hide-en .en-cell { display: none !important; }
+
+/* Hide exercise answers (teal) */
+body.hide-en p[style*="--teal-dark"] { display: none !important; }
+body.hide-en p[style*="--gold-dark"] { display: none !important; }
+
+@media (max-width: 600px) {
+  .float-toggle { bottom: 4.5rem; right: 1rem; }
+  .toggle-btn { font-size: 0.68rem; padding: 0.35rem 0.6rem; }
+}
+
 </style>
 </head>
 <body>
@@ -3877,7 +3949,49 @@ function checkFill(correct) {
   if(val===clean||val===correct.trim()){ inp.classList.add('correct'); score++; setTimeout(nextCard,800); }
   else { inp.classList.add('wrong'); inp.value=correct; setTimeout(nextCard,1500); }
 }
+
+// ——— FLOATING TOGGLE ———
+function toggleTr() {
+  const on = document.body.classList.toggle('hide-tr');
+  const btn = document.getElementById('btnTr');
+  btn.classList.toggle('on', !on);
+  btn.querySelector('.dot').style.opacity = on ? '0.3' : '0.7';
+  localStorage.setItem('hidetr', on ? '1' : '');
+}
+function toggleEn() {
+  const on = document.body.classList.toggle('hide-en');
+  const btn = document.getElementById('btnEn');
+  btn.classList.toggle('on', !on);
+  btn.querySelector('.dot').style.opacity = on ? '0.3' : '0.7';
+  localStorage.setItem('hideen', on ? '1' : '');
+}
+// Restore saved state on load
+(function() {
+  if (localStorage.getItem('hidetr')) {
+    document.body.classList.add('hide-tr');
+    const btn = document.getElementById('btnTr');
+    if (btn) { btn.classList.remove('on'); btn.querySelector('.dot').style.opacity = '0.3'; }
+  }
+  if (localStorage.getItem('hideen')) {
+    document.body.classList.add('hide-en');
+    const btn = document.getElementById('btnEn');
+    if (btn) { btn.classList.remove('on'); btn.querySelector('.dot').style.opacity = '0.3'; }
+  }
+})();
+
 </script>
+
+
+<!-- ========== FLOATING TOGGLE ========== -->
+<div class="float-toggle" id="floatToggle">
+  <div class="toggle-label">Display</div>
+  <button class="toggle-btn on" id="btnTr" onclick="toggleTr()" title="Toggle transliteration">
+    <span class="dot"></span>Translit
+  </button>
+  <button class="toggle-btn on" id="btnEn" onclick="toggleEn()" title="Toggle translation">
+    <span class="dot"></span>Translation
+  </button>
+</div>
 
 </body>
 </html>
